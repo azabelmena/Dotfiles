@@ -1,0 +1,26 @@
+<!--
+If you wish to enable portforwarding for ssh,http,etc...
+Follow the example below:
+That is, uncomment the following block <interface type='user'></interface> and
+the following block: <qemu:commandline></qemu:commandline> with the relevant
+info on the ports.
+
+Follow the examples, and add necessary ports. This can be done on the commandline,
+however, this helps "automate" the process.
+
+-->
+
+<domain type='kvm' xmlns:qemu='http://libvirt.org/schemas/domain/qemu/1.0'>
+  <name>Example box</name>
+    <!--<interface type='user'>-->
+      <!--<mac address='52:54:00:7b:45:ef'/>-->
+      <!--<model type='virtio'/>-->
+      <!--<address type='pci' domain='0x0000' bus='0x01' slot='0x00' function='0x0'/>-->
+    <!--</interface>-->
+    <qemu:commandline>
+    <qemu:arg value='-netdev'/>
+    <qemu:arg value='user,id=portforwardingnic,net=192.168.101.0/24,hostfwd=tcp:127.0.0.1:2222-:22'/>
+    <qemu:arg value='-device'/>
+    <qemu:arg value='rtl8139,netdev=portforwardingnic,mac=88:88:88:88:88:88'/>
+  </qemu:commandline>
+</domain>
