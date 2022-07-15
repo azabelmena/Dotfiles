@@ -174,3 +174,5 @@ scripts/optimus-status
 testdisk.log
 .java/
 .config/Bitwarden\ CLI
+.config/openrazer/
+.config/polychromatic/
