@@ -19,8 +19,8 @@ super + ctrl + Return
 super + space
     rofi -show drun
 
-super + Escape
-	pkill -USR1 -x sxhkd
+super + ctrl + space
+    rofi -show window
 
 #zathura
 super + z
@@ -174,9 +174,9 @@ super + {k,j}
 super + shift + {k,j}
     pactl set-sink-volume @DEFAULT_SINK@ {+,-}10%
 
-# Toggle mpd
+# Togglh mpd
 #super + 0
-    #mpc -q toggle
+    #mpd -q toggle
 
 # Navigate mpd playlist
 #super + {comma, period}

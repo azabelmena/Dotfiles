@@ -5,16 +5,16 @@ configuration {
     font: "BlexMono Nerd Font Bold 12";
 
 }
- 
+
 * {
     lines: 15;
     columns: 1;
     background-color: #282828;
     border-color: #282828;
     text-color: #d65d0e;
-    font: "Iosevka 16";
+    font: "BlexMono Nerd Font Bold 12";
 }
- 
+
 #window {
     border: 0;
     border: #282828;
@@ -23,7 +23,7 @@ configuration {
     width: 30%;
     height: 50%;
 }
- 
+
 #mainbox {
     background-color: #282828;
     children: [inputbar, listview];
@@ -33,8 +33,8 @@ configuration {
     border: 1px;
     border-color: @base0D;
 }
- 
- 
+
+
 #listview {
     background-color: #282828;
     fixed-height: 0;
@@ -43,26 +43,26 @@ configuration {
     scrollbar: false;
     padding: 10px 10px 0px;
 }
- 
+
 #element {
     background-color: #d5c4a1;
     border: 0;
     border-radius: 15px;
     padding: 5 0  5 10 ;
 }
- 
+
 #element selected {
     background-color: #cc241d;
     text-color: #fbf1c7;
 }
- 
- 
+
+
 #inputbar {
     children:   [ entry,case-indicator ];
     background-color: #282828;
     padding: 0 0 0 14;
 }
- 
+
 #case-indicator {
     background-color: #282828;
     spacing:    0;
@@ -75,10 +75,11 @@ configuration {
     background-color: #a89984;
     spacing:    0;
 }
- 
+
 #textbox-prompt-colon {
     background-color: #000000;
     expand:     false;
     str:        ":";
     margin:     0px 0.3em 0em 0em ;
 }
+@theme "/usr/share/rofi/themes/gruvbox-dark.rasi"
