@@ -4,10 +4,10 @@
 
 ####User Application ####
 super + b
-	qutebrowser
+	vieb
 
 super + ctrl + b
-    brave
+    firefox
 
 # terminal emulator
 super + Return

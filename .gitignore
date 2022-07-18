@@ -177,3 +177,6 @@ testdisk.log
 .config/openrazer/
 .config/polychromatic/
 .config/Authy Desktop/
+.config/whatsapp-for-linux/
+.npm/
+.config/Vieb/

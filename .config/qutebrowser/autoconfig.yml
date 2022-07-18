@@ -25,7 +25,7 @@ settings:
   statusbar.show:
     global: always
   tabs.show:
-    global: multiple
+    global: always
   url.default_page:
     global: https://www.google.com/
   url.searchengines:
