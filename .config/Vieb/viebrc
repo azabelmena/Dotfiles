@@ -1,6 +1,5 @@
 " Options
 set adblocker=update
-set darkreader
 set devtoolsposition=split
 set downloadmethod=confirm
 set favoritepages=
