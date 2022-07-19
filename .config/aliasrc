@@ -61,6 +61,9 @@ alias kittyrc="vim $HOME/.config/kitty/kitty.conf"
 ## qutebrowser
 alias quterc="vim $HOME/.config/qutebrowser/config.py"
 
+## Vieb browser
+alias viebrc="vim $HOME/.config/Vieb/viebrc"
+
 ##BSPWM
 alias bspwmrc="vim $HOME/.config/bspwm/bspwmrc"
 alias sxhkdrc="vim $HOME/.config/sxhkd/sxhkdrc"
