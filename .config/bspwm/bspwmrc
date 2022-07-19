@@ -33,7 +33,7 @@ $HOME/.config/bspwm/bspswallow &
 
 # workspaces
 
-bspc monitor -d 1 2 4
+bspc monitor -d 1 2 3
 bspc desktop -f ^2      # make workspace 2 the default workspace.
 
 # gaps & borders
