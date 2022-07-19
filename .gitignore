@@ -179,5 +179,26 @@ testdisk.log
 .config/Authy Desktop/
 .config/whatsapp-for-linux/
 .npm/
-.config/Vieb/
 .config/mimeapps.list
+.config/Vieb/blob_storage
+.config/Vieb/blocklists
+.config/Vieb/Cache
+.config/Vieb/Code\ Cache
+.config/Vieb/commandhist
+.config/Vieb/Crashpad
+.config/Vieb/Dictionaries
+.config/Vieb/dls
+.config/Vieb/explorehist
+.config/Vieb/favicons
+.config/Vieb/GPUCache
+.config/Vieb/hist
+.config/Vieb/Local\ Storage
+.config/Vieb/Network\ Persistent\ State
+.config/Vieb/Partitions
+.config/Vieb/Session\ Storage
+.config/Vieb/SingletonCookie
+.config/Vieb/SingletonLock
+.config/Vieb/SingletonSocket
+.config/Vieb/tabs
+.config/Vieb/webviewsettings
+.config/Vieb/windowstate

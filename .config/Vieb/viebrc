@@ -1,7 +1,7 @@
 " Options
 set adblocker=update
 set devtoolsposition=split
-set downloadmethod=confirm
+set downloadmethod=ask
 set favoritepages=
 set favoritepages+=https://vault.bitwarden.com/#/login
 set favoritepages+=https://login.live.com/login.srf?wa=wsignin1.0&rpsnv=13&ct=1658192353&rver=7.0.6737.0&wp=MBI_SSL&wreply=https%3a%2f%2foutlook.live.com%2fowa%2f%3fnlp%3d1%26RpsCsrfState%3d70e3808b-ed30-8119-8573-e965d8b34f41&id=292841&aadredir=1&CBCXT=out&lw=1&fl=dob%2cflname%2cwld&cobrandid=90015
@@ -9,8 +9,10 @@ set favoritepages+=https://miupi.uprrp.edu/
 set favoritepages+=https://portal.upr.edu/uprrp/portal.php?a=rea_login
 set favoritepages+=https://www.github.com/
 set favoritepages+=https://www.youtube.com/
+set favoritepages+=https://system76.com
 set firefoxmode=always
 set guifontsize=16
+set guihidetimeout=5000
 set mapsuggestposition=bottomleft
 set permissioncamera=ask
 set permissiondisplaycapture=ask
