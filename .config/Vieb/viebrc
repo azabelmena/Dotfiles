@@ -10,11 +10,17 @@ set favoritepages+=https://www.github.com/
 set favoritepages+=https://www.youtube.com/
 set favoritepages+=https://system76.com
 set favoritepages+=https://online.uprrp.edu/
+set favoritepages+=https://outlook.office.com/mail/
+set favoritepages+=https://natsci.uprrp.edu/
+set favoritepages+=https://math.uprrp.edu/
+set favoritepages+=https://libgen.li/index.php
+set favoritepages+=https://account.proton.me/login?language=en
 set firefoxmode=always
 set followchars=custom:asdfghjkl
 set guifontsize=16
 set guihidetimeout=5000
 set mapsuggestposition=bottomleft
+set notificationposition=topleft
 set permissioncamera=ask
 set permissiondisplaycapture=ask
 set permissionmediadevices=allow
@@ -51,7 +57,7 @@ nunmap [
 nunmap ]
 nunmap {
 nunmap }
-nmap O <openNewTab><toExploreMode>
+nmap O <openNewTab>
 nmap gU <openNewTabWithCurrentUrl><CR><toParentUrl>
 nmap gt <toCommandMode>buffer<Space>
 nunmap p
