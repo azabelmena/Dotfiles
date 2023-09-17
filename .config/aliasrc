@@ -1,0 +1,97 @@
+alias clear="clear && neofetch"         # continue to flex.
+#alias ls="ls --color=auto"             # add color support to ls (uncomment if exa is not present).
+alias ls="exa"                          # Display fully colored output (comment out if exa is not present).
+alias bat="bat --theme gruvbox-dark"    # Add bat alternative to less.
+
+#CUDA development.
+alias nvcc="/opt/cuda/bin/nvcc"
+
+#System
+alias reboot="reboot"
+alias poweroff="poweroff"
+
+# Make cleanup from pacman easier.
+alias cleanup='sudo pacman -Rns `pacman -Qtdq`'
+
+# Fetching programs
+alias neofetchrc='vim $HOME/.config/neofetch/config.conf'
+
+#redshift
+alias redshiftrc="vim $HOME/.config/redshift/redshift.conf"
+
+#misc
+alias cmatrix="cmatrix -br"
+alias aquarium="asciiquarium"
+
+alias dot="/run/current-system/sw/bin/git --git-dir=$HOME --work-tree=$HOME"
+
+# Config aliases.
+
+##optimus manager
+alias optimusrc="vim $HOME/.config/optimus-manager.conf"
+alias sourceoptimus="sudo cp $HOME/.config/optimus-manager.conf /etc/optimus-manager/optimus-manager.conf"
+
+## grub
+alias grubrc="vi $HOME/.config/grub"
+alias sourcegrub="sudo cp $HOME/.config/grub /etc/default/drub && sudo grub-mkconfig -o /boot/grub/grub.cfg"
+
+##aliasrc
+alias aliasrc="vim $HOME/.config/aliasrc"
+
+alias lfrc="vim $HOME/.config/lf/lfrc"
+
+##vim
+alias vi="vim"
+alias rvi="rvim"
+alias vimrc="vim $HOME/.vimrc"
+alias vifmrc="vim $HOME/.config/vifm/vifmrc"
+alias :q!="exit"
+alias :wq!="exit"
+alias :q="exit"
+alias :wq="exit"
+
+## ZSH
+alias history="history | less"
+alias zshrc="vim $HOME/.zshrc"
+alias starshiprc="vim $HOME/.config/starship.toml"
+alias sourcezsh="source $HOME/.zshrc"
+
+## Kitty terminal
+alias icat="kitty +kitten icat"
+alias kittyrc="vim $HOME/.config/kitty/kitty.conf"
+
+## qutebrowser
+alias quterc="vim $HOME/.config/qutebrowser/config.py"
+
+## Vieb browser
+alias viebrc="vim $HOME/.config/Vieb/viebrc"
+
+##BSPWM
+alias bspwmrc="vim $HOME/.config/bspwm/bspwmrc"
+alias sxhkdrc="vim $HOME/.config/sxhkd/sxhkdrc"
+
+##Hyprland
+alias hyprlandrc="vim /home/alec/.config/hypr/"
+alias waybarrc="vim /home/alec/.config/waybar/config.jsonc"
+alias wofirc="vim /home/alec/.config/wofi/style.css"
+alias swaylockrc="vim $HOME/.config/swaylock/config"
+alias hyprpaperrc="vim $HOME/.config/hypr/hyprpaper.conf"
+
+##Polybar/Picom
+alias polybarrc="vim $HOME/.config/polybar/config"
+alias picomrc="vim $HOME/.config/picom/picom.conf"
+
+##dunst
+alias dunstrc="vim $HOME/.config/dunst/dunstrc"
+
+##TMUX
+alias tmuxrc="vim $HOME/.tmux.conf"
+
+##zathura
+alias zathurarc="vim $HOME/.config/zathura/zathurarc"
+
+##LaTeX
+#alias latex-clean="latexmk -c && rm *.nav *.snm *.vrb *.synctex*"
+
+#nixos
+alias nixrc="vim $HOME/.config/nixos/"
