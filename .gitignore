@@ -293,3 +293,4 @@ data/
 .sage/cache/
 .sage/temp/
 scripts/nixcp
+hardware-configuration.nix
