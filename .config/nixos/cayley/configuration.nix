@@ -29,7 +29,7 @@ boot.kernelPackages = pkgs.linuxPackages_latest;
 boot.loader.systemd-boot.enable = true;
 boot.loader.efi.canTouchEfiVariables = true;
 
-networking.hostName = "cauchy"; # Define your hostname.
+networking.hostName = "cayley"; # Define your hostname.
 # Pick only one of the below networking options.
 networking.networkmanager.enable = true;
 
@@ -51,7 +51,7 @@ environment.sessionVariables = {
 
 # Enable the X11 windowing system.
 services.xserver.enable = true;
-services.xserver.displayManager.gdm.enable = true;
+services.xserver.displayManager.sddm.enable = true;
 
 # Configure keymap in X11
 #services.xserver.layout = "us";

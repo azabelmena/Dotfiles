@@ -1,6 +1,12 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
+
+    imports = [
+        inputs.nix-colors.homeManagerModules.default
+    ];
+    colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-medium;
+
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "alec";
@@ -26,22 +32,39 @@
         (pkgs.nerdfonts.override { fonts = ["IBMPlexMono"]; })
     ];
 
+    programs = {
+        git = {
+            enable = true;
+            userName = "Alec S. Zabel-Mena";
+            userEmail = "alec.zabel@upr.edu";
+        };
+        zsh = (import ./zsh.nix { inherit pkgs; });
+};
+
     # Home Manager is pretty good at managing dotfiles. The primary way to manage
     # plain files is through 'home.file'.
     home.file = {
+        #".local/share/zsh/zsh-autosuggestions".source =
+        #"${pkgs.zsh-autosuggestions}/share/zhs-autosuggestions";
     };
 
     gtk = {
         enable = true;
         theme = {
             name = "adw-gtk3";
+            package = pkgs.adw-gtk3;
         };
         cursorTheme = {
-            name = "Bibata-Modern-Ice";
-            size = 24;
+            name = "Bibata-Modern-Classic";
+            package = pkgs.bibata-cursors;
+            size = 12;
         };
-        iconTheme = {
-            name = "GruvboxPlus";
-        };
+    };
+
+    qt = {
+        enable = true;
+        platformTheme = "gtk";
+        style.name = "adwaita-dark";
+        style.package = pkgs.adwaita-qt;
     };
 }

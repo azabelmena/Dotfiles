@@ -56,4 +56,4 @@ alias zathurarc="vim $HOME/.config/zathura/zathurarc"
 
 #nixos
 alias nixrc="vim $HOME/.config/nixos/"
-alias homemanagerrc="vim $HOME/.config/home-manager/"
+alias homerc="vim $HOME/.config/home-manager/"
