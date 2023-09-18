@@ -12,15 +12,6 @@ alias cleanup='sudo pacman -Rns `pacman -Qtdq`'
 # Fetching programs
 alias neofetchrc='vim $HOME/.config/neofetch/config.conf'
 
-#redshift
-alias redshiftrc="vim $HOME/.config/redshift/redshift.conf"
-
-#misc
-alias cmatrix="cmatrix -br"
-alias aquarium="asciiquarium"
-
-alias dot="/run/current-system/sw/bin/git --git-dir=$HOME --work-tree=$HOME"
-
 # Config aliases.
 
 ##optimus manager
