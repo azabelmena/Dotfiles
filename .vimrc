@@ -140,15 +140,10 @@ call plug#begin('~/.vim/plugged')
     Plug 'lervag/vimtex'
     Plug 'vim-syntastic/syntastic'
     Plug 'preservim/nerdcommenter'
-
-    Plug 'MarcWeber/vim-addon-mw-utils'
-    Plug 'tomtom/tlib_vim'
-    Plug 'garbas/vim-snipmate'
-
+    Plug 'SirVer/ultisnips'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'godlygeek/tabular'
-    Plug 'tpope/vim-surround'
 call plug#end()
 
 let g:SimpylFold_docstring_preview = 1
@@ -171,19 +166,32 @@ let g:syntastic_filetype_map = {
 let g:syntastic_mode_map = {
     \ "passive_filetypes": ["tex", "md", "markdown", "s"] }
 
+"=> Vim Airline.
+"let g:airline_theme='base16_gruvbox_dark_hard'
+
+"=> NERDTree
+"autocmd vimenter * NERDTree
+let g:NERDTreeWinPos = "left"
+let NERDTreeShowHidden=0
+let NERDTreeIgnore = ['\.pyc$', '__pycache__']
+let g:NERDTreeWinSize=25
+let NERDTreeNaturalSort=1
+let NERDTreeCascadeSingleChildDir=0
+let NERDTreeShowLineNumbers=1
+map <C-n> :NERDTreeToggle<CR>
+map <C-B> :NERDTreeFromBookmark<Space>
+map <C-f> :NERDTreeFind<CR>
+
 "=> vimtex
 let g:tex_flavor='latex'
 let g:vimtex_parser_bib_backend='bibtex'
-let g:vimtex_view_general_viewer='zathura'
+let g:vimtex_view_general_viewer='zathura --mode=fullscreen'
 let g:vimtex_quickfix_mode=0
 set conceallevel=1
 let g:tex_conceal='abdmg'
 
 "=> SimplyFold
 let g:SimpylFold_docstring_preview = 1
-
-"=> SnipMate
-let g:snipMate = { 'snippet_version' : 1 }
 
 "=> Autosaving
 let g:auto_save = 0
@@ -209,6 +217,7 @@ autocmd BufRead, BufNewFile *.cu set filetype cuda
 
 " Clear whitespace on save.
 autocmd BufWritePre * %s/\s\+$//e
+autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab and indent related
@@ -329,33 +338,24 @@ noremap <C-u> <C-u>zz
 noremap n nzz
 noremap N Nzz
 
-nnoremap <buffer> <Up> <Nop>
-nnoremap <buffer> <Left> <Nop>
-nnoremap <buffer> <Right> <Nop>
-nnoremap <buffer> <Down> <Nop>
-nnoremap <buffer> <BS> <Nop>
-nnoremap <buffer> <Del> <Nop>
-nnoremap <buffer> <PageUp> <Nop>
-nnoremap <buffer> <PageDown> <Nop>
-nnoremap <buffer> <Home> <Nop>
-nnoremap <buffer> <End> <Nop>
+nnoremap <Up>       <Nop>
+nnoremap <Left>     <Nop>
+nnoremap <Right>    <Nop>
+nnoremap <Down>     <Nop>
+nnoremap <Down>     <Nop>
+nnoremap <PageUp>   <Nop>
+nnoremap <PageDown> <Nop>
 
-inoremap <buffer> <Up> <Nop>
-inoremap <buffer> <Left> <Nop>
-inoremap <buffer> <Right> <Nop>
-inoremap <buffer> <Down> <Nop>
-inoremap <buffer> <PageUp> <Nop>
-inoremap <buffer> <PageDown> <Nop>
-inoremap <buffer> <Home> <Nop>
-inoremap <buffer> <End> <Nop>
+inoremap <Up>       <Nop>
+inoremap <Left>     <Nop>
+inoremap <Right>    <Nop>
+inoremap <Down>     <Nop>
+inoremap <Down>     <Nop>
 
-vnoremap <buffer> <Up> <Nop>
-vnoremap <buffer> <Left> <Nop>
-vnoremap <buffer> <Right> <Nop>
-vnoremap <buffer> <Down> <Nop>
-vnoremap <buffer> <BS> <Nop>
-vnoremap <buffer> <Del> <Nop>
-vnoremap <buffer> <PageUp> <Nop>
-vnoremap <buffer> <PageDown> <Nop>
-vnoremap <buffer> <Home> <Nop>
-vnoremap <buffer> <End> <Nop>
+vnoremap <Up> <Nop>
+vnoremap <Left> <Nop>
+vnoremap <Right> <Nop>
+vnoremap <Down> <Nop>
+vnoremap <Down> <Nop>
+vnoremap <PageUp> <Nop>
+vnoremap <PageDown> <Nop>
