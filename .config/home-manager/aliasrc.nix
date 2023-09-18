@@ -16,7 +16,6 @@
 
     ## ZSH
     history="history | less";
-    zshrc="vim $HOME/.zshrc";
     starshiprc="vim $HOME/.config/starship.toml";
     sourcezsh="source $HOME/.zshrc";
 
