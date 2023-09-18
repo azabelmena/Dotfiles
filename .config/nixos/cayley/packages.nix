@@ -9,6 +9,7 @@ environment.systemPackages = with pkgs; [
     lshw
     file
     vim
+    vifm
     gcc
     python3
     llvmPackages_9.openmp

@@ -31,28 +31,17 @@
     home.file = {
     };
 
-    programs.git = {
-        enable = true;
-        userName = "Alec S. Zabel-Mena";
-        userEmail = "alec.zabel@upr.edu";
-        aliases = {
-            dot="/run/current-system/sw/bin/git --git-dir=$HOME --work-tree=$HOME";
-        };
-    };
-
     gtk = {
         enable = true;
         theme = {
-            name = "rose-pine-gtk-theme";
-            package = pkgs.rose-pine-gtk-theme;
+            name = "adw-gtk3";
         };
         cursorTheme = {
             name = "Bibata-Modern-Ice";
             size = 24;
         };
         iconTheme = {
-            name = "rose-pine-icon-theme";
-            package = pkgs.rose-pine-icon-theme;
+            name = "GruvboxPlus";
         };
     };
 }
