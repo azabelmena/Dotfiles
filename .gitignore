@@ -297,3 +297,4 @@ hardware-configuration.nix
 .config/environment.d/
 .vim/.netrwhist
 flake.lock
+.zsh*
