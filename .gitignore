@@ -294,3 +294,6 @@ data/
 .sage/temp/
 scripts/nixcp
 hardware-configuration.nix
+.config/environment.d/
+.vim/.netrwhist
+flake.lock
