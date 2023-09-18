@@ -1,7 +1,6 @@
 { config, pkgs, inputs, ... }:
 
 {
-
     imports = [
         inputs.nix-colors.homeManagerModules.default
     ];
@@ -23,6 +22,7 @@
 
     home.sessionVariables = {
         EDITOR = "vim";
+        #XDG_CONFIG_HOME = ".config";
     };
 
     programs.home-manager.enable = true;
@@ -39,6 +39,10 @@
             userEmail = "alec.zabel@upr.edu";
         };
         zsh = (import ./zsh/zsh.nix { inherit pkgs; });
+        tmux = (import ./tmux.nix { inherit pkgs; });
+        kitty = (import ./kitty.nix { inherit pkgs; });
+        zathura = (import ./zathura.nix { inherit pkgs; });
+        waybar = (import ./waybar/waybar.nix { inherit pkgs; });
 };
 
     # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -48,18 +52,18 @@
         #"${pkgs.zsh-autosuggestions}/share/zhs-autosuggestions";
     };
 
-    gtk = {
-        enable = true;
-        theme = {
-            name = "adw-gtk3";
-            package = pkgs.adw-gtk3;
-        };
-        cursorTheme = {
-            name = "Bibata-Modern-Classic";
-            package = pkgs.bibata-cursors;
-            size = 12;
-        };
-    };
+      gtk = {
+          enable = true;
+          theme = {
+              name = "adw-gtk3";
+              package = pkgs.adw-gtk3;
+          };
+          cursorTheme = {
+              name = "Bibata-Modern-Classic";
+              package = pkgs.bibata-cursors;
+              size = 12;
+          };
+      };
 
     qt = {
         enable = true;

@@ -37,9 +37,13 @@ networking.networkmanager.enable = true;
 time.timeZone = "America/Puerto_Rico";
 
 environment.sessionVariables = {
-    #WLR_NO_HARDWARE_CURSORS = "1";
+    WLR_NO_HARDWARE_CURSORS = "1";
     NIXOS_OZONE_WL = "1";
 };
+environment.systemPackages = [
+  pkgs.libsForQt5.qt5.qtquickcontrols2
+  pkgs.libsForQt5.qt5.qtgraphicaleffects
+];
 
 # Select internationalisation properties.
 #i18n.defaultLocale = "en_US.UTF-8";
@@ -50,8 +54,13 @@ environment.sessionVariables = {
 #};
 
 # Enable the X11 windowing system.
-services.xserver.enable = true;
-services.xserver.displayManager.sddm.enable = true;
+services.xserver = {
+  enable = true;
+  displayManager = {
+    sddm.enable = true;
+    sddm.theme = "${import ./sddm.nix { inherit pkgs; }}";
+  };
+};
 
 # Configure keymap in X11
 #services.xserver.layout = "us";

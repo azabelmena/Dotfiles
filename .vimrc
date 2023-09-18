@@ -169,19 +169,6 @@ let g:syntastic_mode_map = {
 "=> Vim Airline.
 "let g:airline_theme='base16_gruvbox_dark_hard'
 
-"=> NERDTree
-"autocmd vimenter * NERDTree
-let g:NERDTreeWinPos = "left"
-let NERDTreeShowHidden=0
-let NERDTreeIgnore = ['\.pyc$', '__pycache__']
-let g:NERDTreeWinSize=25
-let NERDTreeNaturalSort=1
-let NERDTreeCascadeSingleChildDir=0
-let NERDTreeShowLineNumbers=1
-map <C-n> :NERDTreeToggle<CR>
-map <C-B> :NERDTreeFromBookmark<Space>
-map <C-f> :NERDTreeFind<CR>
-
 "=> vimtex
 let g:tex_flavor='latex'
 let g:vimtex_parser_bib_backend='bibtex'
@@ -192,13 +179,6 @@ let g:tex_conceal='abdmg'
 
 "=> SimplyFold
 let g:SimpylFold_docstring_preview = 1
-
-"=> Autosaving
-let g:auto_save = 0
-augroup latex
-    au!
-    au FileType latex, tex let b:autosave = 1
-augroup END
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Files, backups and undo

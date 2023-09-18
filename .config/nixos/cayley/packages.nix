@@ -8,7 +8,7 @@ environment.systemPackages = with pkgs; [
     # System essential programs
     lshw
     file
-    vim
+    vim-full
     vifm
     gcc
     python3
@@ -25,6 +25,7 @@ environment.systemPackages = with pkgs; [
     kitty
     neofetch
     exa
+    tmux
 
     # Browsers
     qutebrowser
