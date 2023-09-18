@@ -13,13 +13,16 @@ in {
 
     initExtra = ''
         neofetch
+
         autoload -U colors && colors
         PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
+
         eval "$(starship init zsh)" 2>/dev/null # dump errors.
+
         PATH=$PATH:/home/alec/scripts/
         PATH=$PATH:/home/alec/scripts/userscripts/
         PATH=$PATH:/home/alec/scripts/math
-        EDITOR=vim
+
         export KEYTIMEOUT=1
     '';
 

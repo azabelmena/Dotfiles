@@ -38,7 +38,7 @@
             userName = "Alec S. Zabel-Mena";
             userEmail = "alec.zabel@upr.edu";
         };
-        zsh = (import ./zsh.nix { inherit pkgs; });
+        zsh = (import ./zsh/zsh.nix { inherit pkgs; });
 };
 
     # Home Manager is pretty good at managing dotfiles. The primary way to manage
