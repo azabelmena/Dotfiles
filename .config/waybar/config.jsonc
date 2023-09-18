@@ -3,9 +3,9 @@
   "position": "top",
   "height": 32,
 
-  "modules-left":   ["temperature"],
+  "modules-left":   ["workspaces", "memory", "temperature"],
   "modules-center": ["clock"],
-  "modules-right":  ["tray", "idle_inhibitor","backlight","pulseaudio", "network", "battery"],
+  "modules-right":  ["tray", "idle_inhibitor","backlight","pulseaudio", "network", "battery", "custom/power"],
 
   "wlr/taskbar": {
 	"format": "{icon} {app_id}",
@@ -49,23 +49,6 @@
 		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
 		"tooltip": true
     },
-"custom/music": {
-        "format": "{icon}{}",
-        "format-icons": {
-            // "Playing": " ", // Uncomment if not using the dynamic script
-            "Paused": "󰏥 ",
-            "Stopped": "&#x202d;󰙦 " // This stop symbol is RTL. So &#x202d; is left-to-right override.
-        },
-        "escape": true,
-        "tooltip": true,
-        "exec": "~/.config/waybar/scripts/caway.sh -e",
-        "return-type": "json",
-        "on-click": "playerctl play-pause",
-        "on-scroll-up": "playerctl previous",
-        "on-scroll-down": "playerctl next",
-        "on-click-right": "g4music",
-        "max-length": 35
-    },
 
   "network": {
     	"interval": 1,
@@ -89,7 +72,6 @@
       "headset": "  ",
       "phone": "  ",
       "portable": "  ",
-      "car": "  ",
        "default": ["", "", ""]
     },
     "states": {
@@ -114,11 +96,30 @@
 
   "temperature": {
 		"hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
-		"critical-threshold": 85,
+		"critical-threshold": 90,
 		"interval": 1,
 		"format": "<span font='12' rise='-2500'>󰔏</span> {temperatureC}°C",
 		"tooltip": false
 	},
+    "memory": {
+        "interval": 30,
+        "format": "<span font='12' rise='-2500'> 󰍛 </span> {}%",
+        "max-length": 10
+    },
+    "cpu": {
+        "interval": 1,
+        "format": "{icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}",
+        "format-icons": [
+            "<span color='#69ff94'>▁</span>", // green
+            "<span color='#2aa9ff'>▂</span>", // blue
+            "<span color='#f8f8f2'>▃</span>", // white
+            "<span color='#f8f8f2'>▄</span>", // white
+            "<span color='#ffffa5'>▅</span>", // yellow
+            "<span color='#ffffa5'>▆</span>", // yellow
+            "<span color='#ff9977'>▇</span>", // orange
+            "<span color='#dd532e'>█</span>"  // red
+        ]
+    },
 
   "backlight": {
             "format": "󰃠 {percent}%",
@@ -144,52 +145,5 @@
   "custom/power": {
     "format": " ⏻ ",
     "on-click": "~/.config/hypr/scripts/rofi-power"
-  },
-  "custom/playerctl": {
-    //"format": "<span font='12' rise='-2500'>{icon}</span> {}",
-    "format": "<span font='10' rise='-1000'>󰎈</span>  {} ",
-    "format-icons": {
-	"Playing": "󰐊",
-        "Paused": "󰏤"
-    },
-    	"escape": true,
-   	"return-type": "json",
-    	"max-length": 40,
-    	"on-click": "playerctl play-pause",
-    	"on-click-right": "playerctl stop",
-        "on-click-middle": "killall spotify",
-    	"smooth-scrolling-threshold": 10,
-    	"on-scroll-up": "playerctl next",
-    	"on-scroll-down": "playerctl previous",
-    	"exec": "playerctl -a metadata --format '{\"text\": \"{{markup_escape(title)}} - {{artist}}\", \"tooltip\": \"{{status}} : {{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F"
-    },
-
-  "mpd": {
-    "format": " {stateIcon}   {artist} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S})    ",
-    "format-disconnected": " Disconnected  ",
-    "format-stopped": " Stopped  ",
-    "interval": 2,
-    "consume-icons": {
-      "on": " " // Icon shows only when "consume" is on
-    },
-    "random-icons": {
-      "off": "<span color=\"#fb4934\"> </span>", // Icon grayed out when "random" is off
-      "on": " "
-    },
-    "repeat-icons": {
-      "on": " "
-    },
-    "single-icons": {
-      "on": "1 "
-    },
-    "state-icons": {
-      "paused": "",
-      "playing": ""
-    },
-    "on-click": "playerctl play-pause",
-    "on-scroll-up": "playerctl next",
-    "on-scroll-down": "playerctl previous",
-    "tooltip-format": "MPD (connected)",
-    "tooltip-format-disconnected": "MPD (disconnected)"
   }
 }

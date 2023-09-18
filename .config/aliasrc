@@ -6,10 +6,6 @@ alias bat="bat --theme gruvbox-dark"    # Add bat alternative to less.
 #CUDA development.
 alias nvcc="/opt/cuda/bin/nvcc"
 
-#System
-alias reboot="reboot"
-alias poweroff="poweroff"
-
 # Make cleanup from pacman easier.
 alias cleanup='sudo pacman -Rns `pacman -Qtdq`'
 
@@ -71,9 +67,9 @@ alias bspwmrc="vim $HOME/.config/bspwm/bspwmrc"
 alias sxhkdrc="vim $HOME/.config/sxhkd/sxhkdrc"
 
 ##Hyprland
-alias hyprlandrc="vim /home/alec/.config/hypr/"
-alias waybarrc="vim /home/alec/.config/waybar/config.jsonc"
-alias wofirc="vim /home/alec/.config/wofi/style.css"
+alias hyprlandrc="vim HOME/.config/hypr/"
+alias waybarrc="vim HOME/.config/waybar/config.jsonc"
+alias wofirc="vim HOME/.config/wofi/style.css"
 alias swaylockrc="vim $HOME/.config/swaylock/config"
 alias hyprpaperrc="vim $HOME/.config/hypr/hyprpaper.conf"
 
@@ -95,3 +91,4 @@ alias zathurarc="vim $HOME/.config/zathura/zathurarc"
 
 #nixos
 alias nixrc="vim $HOME/.config/nixos/"
+alias homemanagerrc="vim $HOME/.config/home-manager/"

@@ -2,6 +2,7 @@
 
 {
 # List packages installed in system profile. To search, run:
+# Cayley NIX!
 
 environment.systemPackages = with pkgs; [
     # System essential programs
@@ -38,6 +39,8 @@ environment.systemPackages = with pkgs; [
     dunst
     libnotify
     xdg-desktop-portal-gtk
+    pavucontrol
+    home-manager
 
     # Themeing
     nerdfonts
@@ -50,6 +53,9 @@ environment.systemPackages = with pkgs; [
     # Gaming
     steam
     discord
+
+    # Email services
+    tutanota-desktop
 ];
 programs.zsh.enable = true;
 
@@ -59,7 +65,8 @@ programs.hyprland = {
   xwayland.enable = true;
 };
 environment.sessionVariables = {
-    WLR_NO_HARDWARE_CURSORS = "1";
+    #WLR_NO_HARDWARE_CURSORS = "1";
+    NIXOS_OZONE_WL = "1";
 };
 hardware = {
     opengl.enable = true;

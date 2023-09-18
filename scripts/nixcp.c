@@ -12,16 +12,17 @@ int main(int argc, char *argv[]){
 
 
     if(strstr("cayley", argv[1])){
-        system("sudo cp /home/alec/.config/nixos/cayley/configuration.nix /etc/nixos/configuration.nix");
-        system("sudo cp /home/alec/.config/nixos/cayley/fdisk.nix /etc/nixos/fdisk.nix");
-        system("sudo cp /home/alec/.config/nixos/cayley/nvidia.nix /etc/nixos/nvidia.nix");
-        system("sudo cp /home/alec/.config/nixos/cayley/packages.nix /etc/nixos/packages.nix");
+        system("sudo cp /home/alec/.config/nixos/cayley/* /etc/nixos/");
+        /*system("sudo cp /home/alec/.config/nixos/cayley/configuration.nix /etc/nixos/configuration.nix");*/
+        /*system("sudo cp /home/alec/.config/nixos/cayley/nvidia.nix /etc/nixos/nvidia.nix");*/
+        /*system("sudo cp /home/alec/.config/nixos/cayley/packages.nix /etc/nixos/packages.nix");*/
     }
     else if(strstr("cauchy", argv[1])) {
-        system("sudo cp /home/alec/.config/nixos/cauchy.g/configuration.nix /etc/nixos/configuration.nix");
-        system("sudo cp /home/alec/.config/nixos/cauchy.g/fdisk.nix /etc/nixos/fdisk.nix");
-        system("sudo cp /home/alec/.config/nixos/cauchy.g/nvidia.nix /etc/nixos/nvidia.nix");
-        system("sudo cp /home/alec/.config/nixos/cauchy.g/packages.nix /etc/nixos/packages.nix");
+        system("sudo cp /home/alec/.config/nixos/cauchy/* /etc/nixos/");
+
+        /*system("sudo cp /home/alec/.config/nixos/cauchy.g/configuration.nix /etc/nixos/configuration.nix");*/
+        /*system("sudo cp /home/alec/.config/nixos/cauchy.g/nvidia.nix /etc/nixos/nvidia.nix");*/
+        /*system("sudo cp /home/alec/.config/nixos/cauchy.g/packages.nix /etc/nixos/packages.nix");*/
     }
     else{
         fprintf(stderr, "Invalid arguments.\n");

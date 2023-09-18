@@ -1,6 +1,8 @@
 { config, lib, pkgs, ... }:
 {
 
+# Cayley NIX!
+
 hardware.opengl = {
     enable = true;
     driSupport = true;

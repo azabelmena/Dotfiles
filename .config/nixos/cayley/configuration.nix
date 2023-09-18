@@ -36,6 +36,11 @@ networking.networkmanager.enable = true;
 # Set your time zone.
 time.timeZone = "America/Puerto_Rico";
 
+environment.sessionVariables = {
+    #WLR_NO_HARDWARE_CURSORS = "1";
+    NIXOS_OZONE_WL = "1";
+};
+
 # Select internationalisation properties.
 #i18n.defaultLocale = "en_US.UTF-8";
 #console = {
