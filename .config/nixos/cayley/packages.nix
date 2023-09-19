@@ -51,6 +51,8 @@ environment.systemPackages = with pkgs; [
     texlive.combined.scheme-full
     sage
     zathura
+    inkscape
+    geogebra
 
     # Gaming
     steam

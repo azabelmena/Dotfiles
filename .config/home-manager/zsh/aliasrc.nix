@@ -1,6 +1,6 @@
 {
-
     dot="/run/current-system/sw/bin/git --git-dir=$HOME --work-tree=$HOME";
+
     clear="clear && neofetch";         # continue to flex.
     ls="exa";
     bat="bat --theme gruvbox-dark";    # Add bat alternative to less.
@@ -21,14 +21,12 @@
 
     ## Kitty terminal
     icat="kitty +kitten icat";
-    kittyrc="vim $HOME/.config/kitty/kitty.conf";
 
     ## qutebrowser
     quterc="vim $HOME/.config/qutebrowser/config.py";
 
     ##Hyprland
     hyprlandrc="vim HOME/.config/hypr/";
-    waybarrc="vim HOME/.config/waybar/config.jsonc";
     wofirc="vim HOME/.config/wofi/style.css";
     swaylockrc="vim $HOME/.config/swaylock/config";
     hyprpaperrc="vim $HOME/.config/hypr/hyprpaper.conf";

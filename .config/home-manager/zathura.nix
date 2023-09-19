@@ -3,16 +3,14 @@
   enable = true;
 
   mappings = {
-    "u" =  "scroll half-up";
-    "d" = "scroll half-down";
-    "r"  = "reload";
-    "R"  = "rotate";
-    "i" = "recolor";
-    "p" = "print";
+    "[normal] u" =  "scroll half-up";
+    "[normal] d" = "scroll half-down";
+    "[normal] r" = "reload";
+    "[normal] i" = "recolor";
+    "[normal] p"  = "print";
   };
-
-  options = {
-    completion-group-bg = "#282828";
+ options = {
+   completion-group-bg = "#282828";
     completion-group-fg = "#ebdbb2";
     completion-bg = "#282828";
     completion-fg = "#ebdbb2";

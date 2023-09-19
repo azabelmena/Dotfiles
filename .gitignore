@@ -298,3 +298,4 @@ hardware-configuration.nix
 .vim/.netrwhist
 flake.lock
 .zsh*
+geogebra/
