@@ -2,25 +2,37 @@
 
 {
 # List packages installed in system profile. To search, run:
+# Cayley NIX!
 
 environment.systemPackages = with pkgs; [
+    # System essential programs
     lshw
     file
-vim
+    vim-full
+    vifm
+    gcc
+    python3
+    llvmPackages_9.openmp
+    git
 
+    # zsh
     zsh
     zsh-syntax-highlighting
     zsh-autosuggestions
 
+    # terminals
     starship
     kitty
-
-    qutebrowser
-    lynx
     neofetch
     exa
+    tmux
+
+    # Browsers
+    qutebrowser
+    lynx
     authy
 
+    # Desktop management
     hyprland
     waybar
     hyprpaper
@@ -29,18 +41,25 @@ vim
     dunst
     libnotify
     xdg-desktop-portal-gtk
+    pavucontrol
+    home-manager
 
+    # Themeing
     nerdfonts
-    home-manager
 
+    # mathematics and pdf viewing.
     texlive.combined.scheme-full
-    zathura
-    gcc
-    python3
-    llvmPackages_9.openmp
-    git
     sage
-    home-manager
+    zathura
+    inkscape
+    geogebra
+
+    # Gaming
+    steam
+    discord
+
+    # Email services
+    tutanota-desktop
 ];
 programs.zsh.enable = true;
 
@@ -50,7 +69,8 @@ programs.hyprland = {
   xwayland.enable = true;
 };
 environment.sessionVariables = {
-    WLR_NO_HARDWARE_CURSORS = "1";
+    #WLR_NO_HARDWARE_CURSORS = "1";
+    NIXOS_OZONE_WL = "1";
 };
 hardware = {
     opengl.enable = true;

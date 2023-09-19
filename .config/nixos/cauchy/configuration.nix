@@ -36,6 +36,15 @@ networking.networkmanager.enable = true;
 # Set your time zone.
 time.timeZone = "America/Puerto_Rico";
 
+environment.sessionVariables = {
+    WLR_NO_HARDWARE_CURSORS = "1";
+    NIXOS_OZONE_WL = "1";
+};
+environment.systemPackages = [
+  pkgs.libsForQt5.qt5.qtquickcontrols2
+  pkgs.libsForQt5.qt5.qtgraphicaleffects
+];
+
 # Select internationalisation properties.
 #i18n.defaultLocale = "en_US.UTF-8";
 #console = {
@@ -45,8 +54,13 @@ time.timeZone = "America/Puerto_Rico";
 #};
 
 # Enable the X11 windowing system.
-services.xserver.enable = true;
-services.xserver.displayManager.gdm.enable = true;
+services.xserver = {
+  enable = true;
+  displayManager = {
+    sddm.enable = true;
+    sddm.theme = "${import ./sddm.nix { inherit pkgs; }}";
+  };
+};
 
 # Configure keymap in X11
 #services.xserver.layout = "us";
@@ -67,7 +81,6 @@ services.pipewire = {
 };
 
 #hardware.pulseaudio.enable = true;
-#hardware.system76.enableAll = true; # uncomment when building nix on system76 hardware.
 
 # Enable touchpad support (enabled default in most desktopManager).
 # services.xserver.libinput.enable = true;
