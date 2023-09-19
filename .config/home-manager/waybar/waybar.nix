@@ -4,9 +4,9 @@
   settings = {
     bar = {
       layer = "top";
-      modules-left = ["custom/launcher" "disk" "cpu" "memory" "temperature"];
+      modules-left = ["custom/logo" "disk" "cpu" "memory" "temperature"];
       modules-center = ["clock"];
-      modules-right = ["pulseaudio" "custom/power"];
+      modules-right = [ "pulseaudio" "bluetooth" "network"];
 
       "pulseaudio" = {
         tooltip = false;
@@ -31,7 +31,7 @@
           critical = 20;
         };
         format = "{icon}  {capacity}%";
-        format-charging = "  {capacity}%";
+        format-charging = "󱐋 {capacity}%";
         format-plugged = "  {capacity}%";
         format-alt = "{time} {icon}";
         format-icons = [" " " " " " " " " "];
@@ -62,34 +62,54 @@
           };
       };
 
+      "network"= {
+          "interface"= "wlp0s2*";
+          "format-wifi"= "   {essid}";
+          "format-ethernet"= "{ipaddr}/{cidr} ";
+          "tooltip-format"= "{ifname} via {gwaddr} ";
+          "format-linked"= "{ifname} (No IP) ";
+          "format-disconnected"= "Disconnected ⚠";
+          "format-alt"= "{ifname}= {ipaddr}/{cidr}";
+      };
+
+      "bluetooth"= {
+          "controller"= "controller1";
+          "format"= "  ";
+          "format-disabled"= " 󰂲 ";
+          "format-connected"= " {num_connections} connected";
+          "tooltip-format"= "{controller_alias}\t{controller_address}";
+          "tooltip-format-connected"= "{controller_alias}\t{controller_address}\n\n{device_enumerate}";
+          "tooltip-format-enumerate-connected"= "{device_alias}\t{device_address}";
+      };
+
       "disk"= {
-          "interval"= 30;
+          "interval"= 60;
           "format"= "󰋊 {percentage_free}% ";
           "path"= "/";
       };
 
       "cpu" = {
-        interval = 15;
-        format = "  {}% ";
+        interval = 1;
+        format = " 󰍛 {}% ";
         max-length = 10;
       };
 
       "memory" = {
-        interval = 30;
-        format = "  {}% ";
+        interval = 1;
+        format = "   {}% ";
         max-length = 10;
       };
 
       "temperature" = {
-          hwmon-path = "/sys/class/hwmon/hwmon3/temp1_input";
-          critical-threshol = 90;
+          hwmon-path = "/sys/class/hwmon/hwmon2/temp1_input";
+          critical-threshold = 90;
           interval = 1;
           format = "󰔏 {temperatureC}°C ";
           tooltip = false;
       };
 
-      "custom/launcher" = {
-        format = "     ";
+      "custom/logo" = {
+        format = "      ";
       };
     };
   };
