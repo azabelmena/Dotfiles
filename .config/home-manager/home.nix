@@ -52,23 +52,27 @@
         #"${pkgs.zsh-autosuggestions}/share/zhs-autosuggestions";
     };
 
-      gtk = {
-          enable = true;
-          theme = {
-              name = "adw-gtk3";
-              package = pkgs.adw-gtk3;
-          };
-          cursorTheme = {
-              name = "Bibata-Modern-Classic";
-              package = pkgs.bibata-cursors;
-              size = 12;
-          };
-      };
-
-    qt = {
+    gtk = {
         enable = true;
-        platformTheme = "gtk";
-        style.name = "adwaita-dark";
-        style.package = pkgs.adwaita-qt;
+        theme = {
+        name = "adw-gtk3";
+        package = pkgs.adw-gtk3;
+        };
+        cursorTheme = {
+        name = "Bibata-Modern-Classic";
+        package = pkgs.bibata-cursors;
+        size = 12;
+        };
+        #iconTheme = {
+            #name = "GruvBoxPlus";
+            #package = gruvboxPlus;
+        #};
     };
+
+    #qt = {
+        #enable = true;
+        #platformTheme = "gtk";
+        #style.name = "adwaita-dark";
+        #style.package = pkgs.adwaita-qt;
+    #};
 }

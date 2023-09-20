@@ -82,6 +82,8 @@ services.pipewire = {
 
 #hardware.pulseaudio.enable = true;
 hardware.system76.enableAll = true; # uncomment when building nix on system76 hardware.
+hardware.bluetooth.enable = true;
+services.blueman.enable = true;
 
 # Enable touchpad support (enabled default in most desktopManager).
 # services.xserver.libinput.enable = true;

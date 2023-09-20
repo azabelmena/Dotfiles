@@ -63,7 +63,7 @@
       };
 
       "network"= {
-          "interface"= "wlp0s2*";
+          "interface"= "wlo1";
           "format-wifi"= "   {essid}";
           "format-ethernet"= "{ipaddr}/{cidr} ";
           "tooltip-format"= "{ifname} via {gwaddr} ";
@@ -78,7 +78,8 @@
           "format-disabled"= " 󰂲 ";
           "format-connected"= " {num_connections} connected";
           "tooltip-format"= "{controller_alias}\t{controller_address}";
-          "tooltip-format-connected"= "{controller_alias}\t{controller_address}\n\n{device_enumerate}";
+          "tooltip-format-connected"=
+              "{controller_alias}\t{controller_address}\n\n{device_enumerate}";
           "tooltip-format-enumerate-connected"= "{device_alias}\t{device_address}";
       };
 
