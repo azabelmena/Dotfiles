@@ -91,7 +91,7 @@
 
       "cpu" = {
         interval = 1;
-        format = " 󰍛 {}% ";
+        format = " 󰻠 {}% ";
         max-length = 10;
       };
 
