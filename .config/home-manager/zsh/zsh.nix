@@ -24,6 +24,9 @@ in {
         PATH=$PATH:/home/alec/scripts/math
 
         export KEYTIMEOUT=1
+
+        eval "$(ssh-agent -s)" &> /dev/null
+        ssh-add $HOME/.ssh/id_github &> /dev/null
     '';
 
     inherit shellAliases;
