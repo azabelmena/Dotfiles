@@ -193,11 +193,10 @@ set undofile
 
 " Fix file types
 autocmd BufRead, BufNewFile *.tex set filetype=tex
-autocmd BufRead, BufNewFile *.cu set filetype cuda
+autocmd BufRead, BufNewFile *.cu set filetype=cuda
 
 " Clear whitespace on save.
 autocmd BufWritePre * %s/\s\+$//e
-autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab and indent related
