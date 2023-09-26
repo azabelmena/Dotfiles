@@ -63,13 +63,15 @@
       };
 
       "network"= {
-          "interface"= "wlo1";
-          "format-wifi"= "   {essid}";
-          "format-ethernet"= "{ipaddr}/{cidr} ";
-          "tooltip-format"= "{ifname} via {gwaddr} ";
-          "format-linked"= "{ifname} (No IP) ";
-          "format-disconnected"= "Disconnected ⚠";
-          "format-alt"= "{ifname}= {ipaddr}/{cidr}";
+          "format"= "{ifname}";
+          "format-wifi"= "  {essid} ({signalStrength}%)";
+          "format-ethernet"= "󰈁 {ipaddr}/{cidr}";
+          "format-disconnected"= "";
+          "tooltip-format"= "󰈁 {ifname} via {gwaddr}";
+          "tooltip-format-wifi"= "  {essid} ({signalStrength}%)";
+          "tooltip-format-ethernet"= "{ifname} ";
+          "tooltip-format-disconnected"= "";
+          "max-length"= 50;
       };
 
       "bluetooth"= {

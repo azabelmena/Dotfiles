@@ -133,6 +133,51 @@ set encoding=utf8
 set fileformats=unix
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Netrw
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:netrw_banner = 0
+let g:netrw_browssplit = 0
+let g:netrw_liststyle = 1
+
+let g:NetrwIsOpen=0
+
+function! ToggleNetrw()
+    if g:NetrwIsOpen
+        let i = bufnr("$")
+        while (i >= 1)
+            if (getbufvar(i, "&filetype") == "netrw")
+                silent exe "bwipeout " . i
+            endif
+            let i-=1
+        endwhile
+        let g:NetrwIsOpen=0
+    else
+        let g:NetrwIsOpen=1
+        silent Explore!
+    endif
+endfunction
+
+function! ToggleSexplore()
+    if g:NetrwIsOpen
+        let i = bufnr("$")
+        while (i >= 1)
+            if (getbufvar(i, "&filetype") == "netrw")
+                silent exe "bwipeout " . i
+            endif
+            let i-=1
+        endwhile
+        let g:NetrwIsOpen=0
+    else
+        let g:NetrwIsOpen=1
+        silent Sex!
+    endif
+endfunction
+
+" Add your own mapping. For example:
+noremap <silent> <C-N> :call ToggleNetrw()<CR>
+noremap <silent> <C-S> :call ToggleSexplore()<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged')

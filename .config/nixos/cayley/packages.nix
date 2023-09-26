@@ -56,6 +56,7 @@ environment.systemPackages = with pkgs; [
 
     # Gaming
     steam
+    protonup-ng
     discord
 
     # Email services
