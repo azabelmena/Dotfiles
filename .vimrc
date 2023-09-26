@@ -139,6 +139,7 @@ set fileformats=unix
 let g:netrw_banner = 0
 let g:netrw_browssplit = 0
 let g:netrw_liststyle = 1
+let g:netrw_bufsettings = 'noma nomod nonu nowrap ro nobl'
 
 let g:NetrwIsOpen=0
 
