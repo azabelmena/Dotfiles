@@ -6,6 +6,7 @@
 "    -> General
 "    -> VIM user interface
 "    -> Colors and Fonts
+"    -> Netrw
 "    -> Files and backups
 "    -> Plugins
 "    -> Shortcuts
