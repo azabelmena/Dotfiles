@@ -133,37 +133,6 @@ set encoding=utf8
 " Use Unix as the standard file type
 set fileformats=unix
 
-"=> NETRW
-
-let g:netrw_banner = 0
-let g:netrw_browse_split = 0
-let g:netrw_liststyle = 3
-let g:netrw_winsize = 20
-
-let g:NetrwIsOpen=0
-
-function! ToggleNetrw()
-    if g:NetrwIsOpen
-        let i = bufnr("$")
-        while (i >= 1)
-            if (getbufvar(i, "&filetype") == "netrw")
-                silent exe "bwipeout " . i
-            endif
-            let i-=1
-        endwhile
-
-        let g:NetrwIsOpen=0
-
-        else
-
-        let g:NetrwIsOpen=1
-        silent Explore!
-    endif
-endfunction
-
-" Add your own mapping. For example:
-noremap <silent> <C-N> :call ToggleNetrw()<CR>
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Netrw
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -173,6 +142,7 @@ let g:netrw_liststyle = 1
 
 let g:NetrwIsOpen=0
 
+" Toggles Netrw with Explore!
 function! ToggleNetrw()
     if g:NetrwIsOpen
         let i = bufnr("$")
@@ -185,11 +155,12 @@ function! ToggleNetrw()
         let g:NetrwIsOpen=0
     else
         let g:NetrwIsOpen=1
-        silent Explore!
+        silent Ex!
     endif
 endfunction
 
-function! ToggleSexplore()
+" Toggles Sex!
+function! ToggleSex()
     if g:NetrwIsOpen
         let i = bufnr("$")
         while (i >= 1)
@@ -205,9 +176,8 @@ function! ToggleSexplore()
     endif
 endfunction
 
-" Add your own mapping. For example:
 noremap <silent> <C-N> :call ToggleNetrw()<CR>
-noremap <silent> <C-S> :call ToggleSexplore()<CR>
+noremap <silent> <C-S> :call ToggleSex()<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins
