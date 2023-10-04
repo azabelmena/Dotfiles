@@ -10,7 +10,7 @@
     "[normal] p"  = "print";
   };
  options = {
-    guioptions = "none"
+    guioptions = "none";
     completion-group-bg = "#282828";
     completion-group-fg = "#ebdbb2";
     completion-bg = "#282828";
