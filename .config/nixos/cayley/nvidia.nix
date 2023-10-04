@@ -16,7 +16,7 @@ hardware.opengl = {
         powerManagement.enable = false;
         powerManagement.finegrained = false;
 
-        #open = true; # Open source driver (nvidia-open-dkms)
+        open = true; # Open source driver (nvidia-open-dkms)
 
         nvidiaSettings = true;
 
