@@ -37,7 +37,7 @@ environment.systemPackages = with pkgs; [
     waybar
     hyprpaper
     swaylock
-    wofi
+    rofi-wayland
     dunst
     libnotify
     xdg-desktop-portal-gtk
@@ -58,6 +58,7 @@ environment.systemPackages = with pkgs; [
     steam
     protonup-ng
     discord
+    obs-studio
 
     # Email services
     tutanota-desktop

@@ -43,6 +43,7 @@
         kitty = (import ./kitty.nix { inherit pkgs; });
         zathura = (import ./zathura.nix { inherit pkgs; });
         waybar = (import ./waybar/waybar.nix { inherit pkgs; });
+        rofi = (import ./rofi.nix { inherit pkgs; });
 };
 
     # Home Manager is pretty good at managing dotfiles. The primary way to manage
