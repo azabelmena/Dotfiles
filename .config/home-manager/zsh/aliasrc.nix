@@ -31,10 +31,9 @@
     quterc="vim $HOME/.config/qutebrowser/config.py";
 
     ##Hyprland
-    hyprlandrc="vim $HOME/.config/hypr/";
+    hyprrc="vim $HOME/.config/hypr/";
     wofirc="vim HOME/.config/wofi/style.css";
     swaylockrc="vim $HOME/.config/swaylock/config";
-    hyprpaperrc="vim $HOME/.config/hypr/hyprpaper.conf";
 
     ##dunst
     dunstrc="vim $HOME/.config/dunst/dunstrc";
