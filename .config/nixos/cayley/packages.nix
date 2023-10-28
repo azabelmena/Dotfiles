@@ -13,19 +13,27 @@ environment.systemPackages = with pkgs; [
     gcc
     python3
     llvmPackages_9.openmp
+    gnumake
+    htop-vim
+    mpi
     git
+    slurm
 
     # zsh
     zsh
     zsh-syntax-highlighting
     zsh-autosuggestions
 
-    # terminals
-    starship
+    # Essential Terminal Programs.
     kitty
     neofetch
-    exa
     tmux
+    mpv
+    bc
+
+    # Extra Terminal Programs
+    starship
+    exa
 
     # Browsers
     qutebrowser
@@ -36,7 +44,7 @@ environment.systemPackages = with pkgs; [
     hyprland
     waybar
     hyprpaper
-    swaylock
+    swaylock-effects
     rofi-wayland
     dunst
     libnotify
@@ -49,6 +57,7 @@ environment.systemPackages = with pkgs; [
 
     # mathematics and pdf viewing.
     texlive.combined.scheme-full
+    flint
     sage
     zathura
     inkscape

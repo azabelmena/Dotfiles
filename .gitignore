@@ -300,3 +300,9 @@ flake.lock
 .zshenv
 geogebra/
 aematrp.github.io/
+.config/kitty/kitty.conf
+.config/qutebrowser/quickmarks
+.config/rofi/config.rasi
+.config/tmux/tmux.conf
+.config/zathura/zathurarc
+.zshrc

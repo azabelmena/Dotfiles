@@ -76,6 +76,12 @@ hardware.system76.enableAll = true; # uncomment when building nix on system76 ha
 hardware.bluetooth.enable = true;
 services.blueman.enable = true;
 
+security.pam.services.swaylock = {
+  text = ''
+      auth include login
+  '';
+};
+
 # Enable touchpad support (enabled default in most desktopManager).
 # services.xserver.libinput.enable = true;
 
