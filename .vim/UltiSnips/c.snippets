@@ -4,8 +4,17 @@ snippet header "Header comment." bA
 */
 endsnippet
 
-snippet main "The main function" bA
+snippet main "The main function" b
 int main(){
+
+	$0
+
+	return 0;
+}
+endsnippet
+
+snippet mainargs "The main function" b
+int main(int argc, char **argv){
 
 	$0
 
@@ -87,9 +96,21 @@ else if($0){
 endsnippet
 
 snippet printf "Autocomplete printf" iA
-printf($0);
+printf("$0\n");
+endsnippet
+
+snippet fprintf "Autocomplete printf" iA
+fprintf($0,"$1\n");
 endsnippet
 
 snippet scanf "Autocomplete scanf" iA
 scanf($0);
+endsnippet
+
+snippet atoi "Autocomplete atoi" iA
+atoi($0);
+endsnippet
+
+snippet malloc "Autocomplete malloc" iA
+malloc($0);
 endsnippet

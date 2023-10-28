@@ -29,6 +29,7 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible
 set nopaste
+set pastetoggle=<F10>
 " Sets how many lines of history VIM has to remember
 set history=500
 set relativenumber
@@ -220,6 +221,7 @@ let g:syntastic_mode_map = {
 "=> vimtex
 let g:tex_flavor='latex'
 let g:vimtex_parser_bib_backend='bibtex'
+let g:vimtex_view_automatic = 0
 let g:vimtex_view_general_viewer='zathura'
 let g:vimtex_quickfix_mode=0
 set conceallevel=1
@@ -267,7 +269,7 @@ set smartindent
 " Linebreaking.
 set linebreak
 set textwidth=80        " Linebreak on 80 characters.
-"set wrap                " Wrap the text around.
+set nowrap              " Don't wrap the text around.
 set nolist
 set formatoptions+=t    " Keeps the linebreak formatting on editing lines.
 set colorcolumn=81      " Set a color columnt to keep tabs on the margin.

@@ -91,6 +91,13 @@ snippet example "begin{} / end{}" b
 \end{example}
 endsnippet
 
+snippet examples "begin{} / end{}" b
+\begin{example}\label{$0}
+	\begin{enumerate}
+	\end{enumerate}
+\end{example}
+endsnippet
+
 snippet problem "begin{} / end{}" b
 \begin{problem}$0
 \end{problem}
@@ -227,24 +234,12 @@ snippet inn "Inclusion of an Element" iA
 \in
 endsnippet
 
-snippet Nn "cap" iA
-\cap
-endsnippet
-
-snippet UU "cup" iA
-\cup
-endsnippet
-
-snippet uuu "bigcup" iA
-\bigcup_{${1:i \in ${2: I}}} $0
-endsnippet
-
-snippet nnn "bigcap" iA
-\bigcap_{${1:i \in ${2: I}}} $0
-endsnippet
-
 snippet ooo "\infty" iA
 \infty
+endsnippet
+
+snippet ... "\dots" iA
+\dots
 endsnippet
 
 snippet == "Equals" iA
