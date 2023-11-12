@@ -6,7 +6,7 @@ in {
     enableAutosuggestions = true;
     enableCompletion = true;
     autocd = true;
-    dotDir = "";
+    dotDir = ".config";
     defaultKeymap = "viins";
     historySubstringSearch.enable = true;
     syntaxHighlighting.enable = true;
@@ -19,9 +19,9 @@ in {
 
         eval "$(starship init zsh)" 2>/dev/null # dump errors.
 
-        PATH=$PATH:/home/alec/scripts/
-        PATH=$PATH:/home/alec/scripts/userscripts/
-        PATH=$PATH:/home/alec/scripts/math
+        PATH=$PATH:$HOME/scripts/
+        PATH=$PATH:$HOME/scripts/userscripts/
+        PATH=$PATH:$HOME/scripts/math
 
         export KEYTIMEOUT=1
 
