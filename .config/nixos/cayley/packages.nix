@@ -4,21 +4,30 @@
 # List packages installed in system profile. To search, run:
 # Cayley NIX!
 
-environment.systemPackages = with pkgs; [
-    # System essential programs
-    lshw
+environment.systemPackages = with pkgs; [ # System essential programs
+    autoconf
+    automake
+    bc
+    btop
+    cmake
+    cudatoolkit
+    flint
     file
-    vim-full
-    vifm
     gcc
-    python3
-    llvmPackages_9.openmp
+    git
+    gmp
     gnumake
     htop-vim
+    llvmPackages_9.openmp
+    lshw
     mpi
-    git
+    mpfr
+    python3
     slurm
+    vim-full
+];
 
+users.users.alec.packages = with pkgs; [
     # zsh
     zsh
     zsh-syntax-highlighting
@@ -26,52 +35,51 @@ environment.systemPackages = with pkgs; [
 
     # Essential Terminal Programs.
     kitty
+    mpv
     neofetch
     tmux
-    mpv
-    bc
-
     # Extra Terminal Programs
-    starship
     exa
+    starship
+    vifm
 
     # Browsers
-    qutebrowser
-    lynx
     authy
+    qutebrowser
 
     # Desktop management
-    hyprland
-    waybar
-    hyprpaper
-    swaylock-effects
-    rofi-wayland
     dunst
-    libnotify
-    xdg-desktop-portal-gtk
-    pavucontrol
     home-manager
+    hyprland
+    hyprpaper
+    libnotify
+    localsend
+    pavucontrol
+    rofi-wayland
+    swaylock-effects
+    waybar
+    xdg-desktop-portal-gtk
 
     # Themeing
     nerdfonts
 
     # mathematics and pdf viewing.
-    texlive.combined.scheme-full
-    flint
-    sage
-    zathura
-    inkscape
     geogebra
+    inkscape
+    sage
+    texlive.combined.scheme-full
+    zathura
 
     # Gaming
-    steam
-    protonup-ng
     discord
     obs-studio
+    protonup-ng
+    steam
 
     # Email services
     tutanota-desktop
 ];
+
 programs.zsh.enable = true;
 
 programs.hyprland = {
@@ -91,7 +99,7 @@ xdg.portal.enable = true;
 xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
 
 fonts.fonts = with pkgs; [
-   (nerdfonts.override {fonts  = ["FiraCode"];})
+   (nerdfonts.override {fonts  = ["IBMPlexMono"];})
 ];
 
 }
