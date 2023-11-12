@@ -1,11 +1,11 @@
 { pkgs }:
 
 let
-  imgLink = "https://www.readersdigest.ca/wp-content/uploads/2019/11/cat-10-e1573844975155.jpg";
+  imgLink = "https://github.com/azabelmena/Dotfiles/blob/main/Pictures/Wallpapers/vridovdnpl991.png?raw=true";
 
   image = pkgs.fetchurl {
     url = imgLink;
-    sha256 = "0wmlgaiazrpajvkazk47471frbpgfvqgq74gib6w0zfa70754wlx";
+    sha256 = "0lp8gmk3klbsqr2mrqgy5q8kvc2salrdk63s9v4gcnam4pgyq5y1";
   };
 in
 pkgs.stdenv.mkDerivation {
