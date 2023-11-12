@@ -86,7 +86,7 @@ HTB/
 Head_First_C/
 Mathematics/
 ORIG_HEAD
-Pictures/
+Pictures/Screenshots
 THM/
 compsci/
 description
@@ -301,8 +301,10 @@ flake.lock
 geogebra/
 aematrp.github.io/
 .config/kitty/kitty.conf
-.config/qutebrowser/quickmarks
 .config/rofi/config.rasi
 .config/tmux/tmux.conf
 .config/zathura/zathurarc
 .zshrc
+.sage/
+LDPC/
+*.log
