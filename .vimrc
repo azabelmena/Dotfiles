@@ -248,6 +248,13 @@ autocmd BufRead, BufNewFile *.cu set filetype=cuda
 " Clear whitespace on save.
 autocmd BufWritePre * %s/\s\+$//e
 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => filetypes
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+autocmd bufreadpre *.csv setlocal nowrap nolinebreak textwidth=0
+autocmd bufreadpre *.c setlocal nowrap nolinebreak textwidth=0
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab and indent related
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
