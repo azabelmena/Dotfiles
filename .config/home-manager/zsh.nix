@@ -5,7 +5,7 @@ in {
     enable = true;
     enableAutosuggestions = true;
     enableCompletion = true;
-    autocd = true;
+    autocd = false;
     dotDir = ".config";
     defaultKeymap = "viins";
     historySubstringSearch.enable = true;
