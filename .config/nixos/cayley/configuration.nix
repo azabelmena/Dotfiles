@@ -10,7 +10,7 @@ nix.settings = {
 };
 
 imports = [
-  ./hardware-configuration.nix
+  /etc/nixos/hardware-configuration.nix
   ./packages.nix
   ./nvidia.nix
 ];
@@ -49,7 +49,7 @@ services.xserver = {
   enable = true;
   displayManager = {
     sddm.enable = true;
-    sddm.theme = "${import ./sddm.nix { inherit pkgs; }}";
+    sddm.theme = "${import /home/alec/.config/home-manager/sddm/sddm.nix { inherit pkgs; }}";
   };
 };
 
@@ -91,6 +91,11 @@ users.users.alec = {
     extraGroups = [ "wheel" "networkmanager" ]; # Enable ‘sudo’ for the user.
     shell = pkgs.zsh;
 };
+
+nix.nixPath = [
+  "nixpkgs=/nix/var/nix/profiles/per-user/root/channels/nixos/nixpkgs"
+  "nixos-config=/home/alec/.config/nixos/cayley/configuration.nix"
+];
 
 # Some programs need SUID wrappers, can be configured further or are
 # started in user sessions.

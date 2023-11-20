@@ -11,7 +11,6 @@ environment.systemPackages = with pkgs; [ # System essential programs
     btop
     cmake
     cudatoolkit
-    flint
     file
     gcc
     git
@@ -23,7 +22,6 @@ environment.systemPackages = with pkgs; [ # System essential programs
     mpi
     mpfr
     python3
-    slurm
     vim-full
 ];
 
