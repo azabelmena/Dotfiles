@@ -11,8 +11,8 @@ nix.settings = {
 
 imports = [
   /etc/nixos/hardware-configuration.nix
-  ./packages.nix
-  ./nvidia.nix
+  /home/alec/.config/nixos/cayley/packages.nix
+  /home/alec/.config/nixos/cayley/nvidia.nix
 ];
 
 # Use the systemd-boot EFI boot loader.
