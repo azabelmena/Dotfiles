@@ -22,7 +22,7 @@
     ## ZSH
     history="history | less";
     starshiprc="vim $HOME/.config/starship.toml";
-    sourcezsh="source $HOME/.zshrc";
+    sourcezsh="source $HOME/.config/.zshrc";
 
     ## Kitty terminal
     icat="kitty +kitten icat";

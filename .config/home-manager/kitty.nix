@@ -5,7 +5,7 @@
     theme = "Gruvbox Dark Soft";
 
     font = {
-            name = "";
+            name = "IBMPlexMono";
             size = 12;
     };
 
@@ -15,6 +15,7 @@
 
         "ctrl+shift+delete" = "clear_terminal reset active";
         "ctrl+shift+f" = "toggle_fullscreen";
+        "ctrl+shift+t" = "no_op";
     };
 
     settings = {

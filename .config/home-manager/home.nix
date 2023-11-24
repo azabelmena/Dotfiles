@@ -18,7 +18,7 @@
   # You should not change this value, even if you update Home Manager. If you do
   # want to update the value, then make sure to first check the Home Manager
   # release notes.
-    home.stateVersion = "22.11"; # Please read the comment before changing.
+    home.stateVersion = "23.11"; # Please read the comment before changing.
 
     home.sessionVariables = {
         EDITOR = "vim";
@@ -38,19 +38,19 @@
             userName = "Alec S. Zabel-Mena";
             userEmail = "alec.zabel@upr.edu";
         };
-        zsh = (import ./zsh/zsh.nix { inherit pkgs; });
+
+        bash = (import ./bash.nix { inherit pkgs; });
+        zsh = (import ./zsh.nix { inherit pkgs; });
         tmux = (import ./tmux.nix { inherit pkgs; });
-        kitty = (import ./kitty.nix { inherit pkgs; });
         zathura = (import ./zathura.nix { inherit pkgs; });
-        waybar = (import ./waybar/waybar.nix { inherit pkgs; });
         rofi = (import ./rofi.nix { inherit pkgs; });
 };
 
     # Home Manager is pretty good at managing dotfiles. The primary way to manage
     # plain files is through 'home.file'.
     home.file = {
-        #".local/share/zsh/zsh-autosuggestions".source =
-        #"${pkgs.zsh-autosuggestions}/share/zhs-autosuggestions";
+        ".local/share/zsh/zsh-autosuggestions".source =
+        "${pkgs.zsh-autosuggestions}/share/zhs-autosuggestions";
     };
 
     gtk = {
@@ -60,8 +60,8 @@
         package = pkgs.adw-gtk3;
         };
         cursorTheme = {
-        name = "Bibata-Modern-Classic";
-        package = pkgs.bibata-cursors;
+        name = "GoogleDot-Black";
+        package = pkgs.google-cursor;
         size = 12;
         };
         #iconTheme = {
