@@ -36,6 +36,9 @@ in {
 
         source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
+        eval "$(ssh-agent -s)" &>/dev/null # dump output.
+        ssh-add $HOME/.ssh/id_github 2>/dev/null
+
     '';
 
     inherit shellAliases;
