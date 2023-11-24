@@ -28,16 +28,16 @@ environment.systemPackages = with pkgs; [ # System essential programs
 users.users.alec.packages = with pkgs; [
     # zsh
     zsh
-    zsh-syntax-highlighting
-    zsh-autosuggestions
+    #zsh-vi-mode
 
     # Essential Terminal Programs.
     kitty
+    alacritty
     mpv
     neofetch
     tmux
     # Extra Terminal Programs
-    exa
+    eza
     starship
     vifm
 
@@ -82,21 +82,18 @@ programs.zsh.enable = true;
 
 programs.hyprland = {
   enable = true;
-  nvidiaPatches = true;
+  enableNvidiaPatches = true;
   xwayland.enable = true;
 };
 environment.sessionVariables = {
     #WLR_NO_HARDWARE_CURSORS = "1";
     NIXOS_OZONE_WL = "1";
 };
-hardware = {
-    opengl.enable = true;
-    nvidia.modesetting.enable = true;
-};
+
 xdg.portal.enable = true;
 xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
 
-fonts.fonts = with pkgs; [
+fonts.packages = with pkgs; [
    (nerdfonts.override {fonts  = ["IBMPlexMono"];})
 ];
 
