@@ -22,6 +22,7 @@ environment.systemPackages = with pkgs; [ # System essential programs
     mpi
     mpfr
     python3
+    stdmanpages
     vim-full
 ];
 
@@ -57,9 +58,6 @@ users.users.alec.packages = with pkgs; [
     swaylock-effects
     waybar
     xdg-desktop-portal-gtk
-
-    # Themeing
-    nerdfonts
 
     # mathematics and pdf viewing.
     geogebra
