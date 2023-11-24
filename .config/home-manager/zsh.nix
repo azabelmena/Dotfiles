@@ -14,6 +14,8 @@ in {
     initExtra = ''
         neofetch
 
+        bindkey -v
+
         autoload -U colors && colors
         PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
 
@@ -32,8 +34,8 @@ in {
           export EDITOR='vim'
         fi
 
-        eval "$(ssh-agent -s)" &> /dev/null
-        ssh-add $HOME/.ssh/id_github &> /dev/null
+        source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+
     '';
 
     inherit shellAliases;
