@@ -308,3 +308,6 @@ aematrp.github.io/
 .sage/
 LDPC/
 *.log
+.config/pupgui/
+.nix-channels
+.profile
