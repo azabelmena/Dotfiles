@@ -33,6 +33,7 @@ set pastetoggle=<F10>
 " Sets how many lines of history VIM has to remember
 set history=500
 set relativenumber
+set splitbelow
 
 " This set the cursor to an i-beam on entering insert mode
 " and revert back to a block when leaving. Keep replace mode
@@ -45,7 +46,6 @@ set relativenumber
 "   [5 i-beam (blinking)
 "   [6 fixed i-beam
 
-set cursorcolumn
 set cursorline
 
 let &t_SI = "\<esc>[6 q"
@@ -184,18 +184,6 @@ noremap <silent> <C-S> :call ToggleSex()<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-call plug#begin('~/.vim/plugged')
-    Plug 'ryanoasis/vim-devicons'
-    Plug 'lervag/vimtex'
-    Plug 'vim-syntastic/syntastic'
-    Plug 'preservim/nerdcommenter'
-    Plug 'SirVer/ultisnips'
-    Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
-    Plug 'godlygeek/tabular'
-call plug#end()
-
-let g:SimpylFold_docstring_preview = 1
 
 "=> Syntastic
 
@@ -215,9 +203,6 @@ let g:syntastic_filetype_map = {
 let g:syntastic_mode_map = {
     \ "passive_filetypes": ["tex", "md", "markdown", "s"] }
 
-"=> Vim Airline.
-"let g:airline_theme='base16_gruvbox_dark_hard'
-
 "=> vimtex
 let g:tex_flavor='latex'
 let g:vimtex_parser_bib_backend='bibtex'
@@ -227,8 +212,6 @@ let g:vimtex_quickfix_mode=0
 set conceallevel=1
 let g:tex_conceal='abdmg'
 
-"=> SimplyFold
-let g:SimpylFold_docstring_preview = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Files, backups and undo
