@@ -33,7 +33,6 @@ users.users.alec.packages = with pkgs; [
 
     # Essential Terminal Programs.
     kitty
-    alacritty
     mpv
     neofetch
     tmux
