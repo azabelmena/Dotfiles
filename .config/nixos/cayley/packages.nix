@@ -39,6 +39,7 @@ users.users.alec.packages = with pkgs; [
     tmux
     # Extra Terminal Programs
     eza
+    bat
     starship
     vifm
 

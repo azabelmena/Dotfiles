@@ -1,6 +1,6 @@
 # Cayley NIX!
 
-{ config, pkgs, ... }:
+{inputs, config, pkgs, ... }:
 
 {
 
@@ -10,10 +10,17 @@ nix.settings = {
 };
 
 imports = [
-  /etc/nixos/hardware-configuration.nix
-  /home/alec/.config/nixos/cayley/packages.nix
-  /home/alec/.config/nixos/cayley/nvidia.nix
+  ./hardware-configuration.nix
+  ./packages.nix
+  ./nvidia.nix
+
+  inputs.home-manager.nixosModules.home-manager
 ];
+
+home-manager = {
+  extraSpecialArgs = { inherit inputs; };
+  users.alec = import ../../home-manager/home.nix;
+};
 
 # Use the systemd-boot EFI boot loader.
 boot.kernelPackages = pkgs.linuxPackages_zen;
@@ -49,7 +56,7 @@ services.xserver = {
   enable = true;
   displayManager = {
     sddm.enable = true;
-    sddm.theme = "${import /home/alec/.config/home-manager/sddm/sddm.nix { inherit pkgs; }}";
+    sddm.theme = "${import ../../home-manager/sddm/sddm.nix { inherit pkgs; }}";
   };
 };
 
@@ -127,7 +134,6 @@ networking.firewall.enable = true;
 # this value at the release version of the first install of this system.
 # Before changing this value read the documentation for this option
 # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-#system.stateVersion = "23.05"; # Did you read the comment?
 system.stateVersion = "unstable"; # Did you read the comment?
 
 }
