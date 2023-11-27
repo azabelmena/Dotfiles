@@ -311,3 +311,4 @@ LDPC/
 .config/pupgui/
 .nix-channels
 .profile
+.vim/pack/
