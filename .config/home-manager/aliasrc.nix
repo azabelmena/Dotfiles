@@ -47,4 +47,5 @@
     #nixos
     nixrc="vim $HOME/.config/nixos/";
     homerc="vim $HOME/.config/home-manager/";
+    flakerc="vim $HOME/.config/flake.nix";
 }

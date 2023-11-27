@@ -5,7 +5,7 @@
     theme = "Gruvbox Dark Soft";
 
     font = {
-            name = "IBMPlexMono";
+            name = "BlexMono Nerd Font Mono";
             size = 12;
     };
 

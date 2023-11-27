@@ -1,10 +1,10 @@
 { config, pkgs, inputs, ... }:
 
 {
-    imports = [
-        inputs.nix-colors.homeManagerModules.default
-    ];
-    colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-medium;
+    #imports = [
+        #inputs.nix-colors.homeManagerModules.default
+    #];
+    #colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-medium;
 
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -42,8 +42,10 @@
         bash = (import ./bash.nix { inherit pkgs; });
         zsh = (import ./zsh.nix { inherit pkgs; });
         tmux = (import ./tmux.nix { inherit pkgs; });
+        kitty = (import ./kitty.nix { inherit pkgs; });
         zathura = (import ./zathura.nix { inherit pkgs; });
         rofi = (import ./rofi.nix { inherit pkgs; });
+        waybar = (import ./waybar/waybar.nix { inherit pkgs; });
 };
 
     # Home Manager is pretty good at managing dotfiles. The primary way to manage
