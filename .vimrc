@@ -47,9 +47,10 @@ set splitbelow
 "   [6 fixed i-beam
 
 set cursorline
+set cursorcolumn
 
 let &t_SI = "\<esc>[6 q"
-let &t_SR = "\<esc>[2 q"
+let &t_SR = "\<esc>[4 q"
 let &t_EI = "\<esc>[2 q"
 
 " Enable filetype plugins
@@ -281,9 +282,6 @@ map k gk
 map $ g$
 map 0 g0
 
-" Map <Space> to / (search)
-map <space> /
-
 " Smart way to move between windows
 map <C-h> <C-W>h
 map <C-j> <C-W>j
@@ -352,8 +350,8 @@ map <leader>s? z=
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Remove the Windows ^M - when the encodings gets messed up
 noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
-noremap <C-d> <C-d>zz
-noremap <C-u> <C-u>zz
+noremap J     <C-d>zz
+noremap K     <C-u>zz
 noremap n nzz
 noremap N Nzz
 
