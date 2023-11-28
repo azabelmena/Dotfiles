@@ -185,6 +185,14 @@ noremap <silent> <C-S> :call ToggleSex()<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" List of plugins
+"
+"   nerdcommenter/
+"   syntastic/
+"   ultisnips/
+"   vim-airline/
+"   vim-nix/
+"   vimtex/
 
 "=> Syntastic
 
