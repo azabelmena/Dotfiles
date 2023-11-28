@@ -1,5 +1,5 @@
 {
-  description = "NixOS configuration";
+  description = "NixOS Configuration for Cayley and Cauchy.";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
