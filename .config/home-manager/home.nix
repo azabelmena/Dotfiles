@@ -64,7 +64,7 @@
         cursorTheme = {
         name = "GoogleDot-Black";
         package = pkgs.google-cursor;
-        size = 12;
+        size = 16;
         };
         #iconTheme = {
             #name = "GruvBoxPlus";
