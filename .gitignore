@@ -312,3 +312,4 @@ LDPC/
 .nix-channels
 .profile
 .vim/pack/
+.vim/view/
