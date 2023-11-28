@@ -37,7 +37,6 @@ users.users.alec.packages = with pkgs; [
     neofetch
     tmux
     # Extra Terminal Programs
-    eza
     bat
     starship
     vifm
