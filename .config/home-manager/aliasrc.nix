@@ -7,7 +7,7 @@
 
     # Listing
     clear="clear && neofetch";         # continue to flex.
-    ls="exa";
+    ls="ls --color=auto -F";
     bat="bat --theme gruvbox-dark";    # Add bat alternative to less.
 
     # Fetching programs
@@ -48,4 +48,7 @@
     nixrc="vim $HOME/.config/nixos/";
     homerc="vim $HOME/.config/home-manager/";
     flakerc="vim $HOME/.config/flake.nix";
+
+    # Nix Darwin
+    darwinrc="vim $HOME/.config/nix-darwin/flake.nix";
 }
