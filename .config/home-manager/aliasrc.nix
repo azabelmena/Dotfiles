@@ -50,5 +50,5 @@
     flakerc="vim $HOME/.config/flake.nix";
 
     # Nix Darwin
-    darwinrc="vim $HOME/.config/nix-darwin/flake.nix";
+    darwinrc="vim $HOME/.config/nix-darwin/";
 }
