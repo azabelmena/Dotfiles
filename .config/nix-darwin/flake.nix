@@ -1,70 +1,37 @@
 {
-
   description = "Darwin System Configuration for Noether.";
 
   inputs = {
-    nixpkgs = {
-      url = "github:/nixos/nixpkgs-unstable";
-    };
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
-    home-manager = {
-      url = "github:/nix-community/home-manager/master";
+    home-manager.url = "github:/nix-community/home-manager";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-      home-manager.inputs.nixpkgs.follows = "nixpkgs";
-
-      darwin = {
-        url = "github:/LnL7/nix-darwin";
-
-      darwin.inputs.nixpkgs.follows = "nixpkgs";
-      };
-    };
+    darwin.url = "github:LnL7/nix-darwin";
+    darwin.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs :{
+  outputs = {self, nixpkgs, darwin, home-manager, ...}@inputs:
+  let
+
+    system = "aarch64-darwin";
+    pkgs = import nixpkgs { inherit system; };
+
+  in{
     darwinConfigurations = {
-      noether = inputs.darwin.lib.darwinSystem;
-      pkgs = import inputs.nixpkgs { system = "aarch64-darwin"; };
-    };
+      noether = inputs.darwin.lib.darwinSystem{
 
-    modules = [
-      ({pkgs, ...}: {
-        documentation.enable = true;
+        modules = [
+          ./configuration.nix
 
-        programs.zsh.enable = true;
-        environment.shells = with pkgs; [
-          bash
-          zsh
+          home-manager.darwinModules.home-manager{
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.alec = import ./home.nix;
+          }
         ];
-        environment.loginShell = zsh;
 
-        nix.extraOptions = ''
-          experimental-features = nix-command flakes
-        '';
-
-        system.keyboard.enableKeyMapping = true;
-        system.keyboard.remapCapsLockToControl = true;
-
-        fonts.fontDir.enable = true;
-        fonts.fonts = with pkgs; [(nerdfonts.override { fonts = ["IBMPlexMono"]; })];
-
-        services.nix-daemon.enable = true;
-
-        system.defaults.finder.AppleShowAllExtensions = true;
-        system.defaults.finder._FXShowPosixPathInTitle = true;
-      })
-
-      (inputs.home-manager.darwinModules.home-manager {
-        home-manager = {
-          useGlobalPkgs = true;
-          useUserPkgs = true;
-
-          users.alec.imports = [
-            ./home-manager/home.nix
-          ];
-
-        };
-      })
-    ];
-
+      };
+    };
   };
 }
