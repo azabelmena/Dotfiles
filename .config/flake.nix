@@ -26,7 +26,7 @@
         specialArgs = { inherit inputs system-x86_64-linux; };
 
         modules = [
-          ./nixos/cayley/configuration.nix
+          ./nix/cayley/configuration.nix
         ];
       };
 
@@ -34,7 +34,7 @@
         specialArgs = { inherit inputs system-x86_64-linux; };
 
         modules = [
-          ./nixos/cauchy/configuration.nix
+          ./nix/cauchy/configuration.nix
         ];
       };
 
@@ -44,10 +44,12 @@
       noether = inputs.darwin.lib.darwinSystem{
 
         modules = [
+          ./nix/noether/configuration.nix
+
           home-manager.darwinModules.home-manager{
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            #home-manager.users.alec = import ./home.nix;
+            home-manager.users.alec = import ./home-manager/noether.nix;
           }
         ];
 
