@@ -12,7 +12,7 @@ in {
     syntaxHighlighting.enable = true;
 
     initExtra = ''
-        neofetch
+        neofetch --config ~/.config/neofetch/config.conf
 
         bindkey -v
 
