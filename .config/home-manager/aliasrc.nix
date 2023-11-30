@@ -6,49 +6,46 @@
     hibernate="systemctl hibernate";
 
     # Listing
-    clear="clear && neofetch";         # continue to flex.
-    ls="ls --color=auto -F";
+    clear="clear && neofetch --config ~/.config/neofetch/config.conf"; # continue to flex.
+    ls="exa";
     bat="bat --theme gruvbox-dark";    # Add bat alternative to less.
 
     # Fetching programs
-    neofetchrc="vim $HOME/.config/neofetch/config.conf";
+    neofetchrc="vim ~/.config/neofetch/config.conf";
 
     ##vim
     vi="vim";
     rvi="rvim";
-    vimrc="vim $HOME/.vimrc";
-    vifmrc="vim $HOME/.config/vifm/vifmrc";
+    vimrc="vim ~/.vimrc";
+    vifmrc="vim ~/.config/vifm/vifmrc";
 
     ## ZSH
     history="history | less";
-    starshiprc="vim $HOME/.config/starship.toml";
-    sourcezsh="source $HOME/.config/.zshrc";
+    starshiprc="vim ~/.config/starship.toml";
+    sourcezsh="source ~/.config/.zshrc";
 
     ## Kitty terminal
     icat="kitty +kitten icat";
 
     ## qutebrowser
-    quterc="vim $HOME/.config/qutebrowser/config.py";
+    quterc="vim ~/.config/qutebrowser/config.py";
 
     ##Hyprland
-    hyprrc="vim $HOME/.config/hypr/";
+    hyprrc="vim ~/.config/hypr/";
     wofirc="vim HOME/.config/wofi/style.css";
-    swaylockrc="vim $HOME/.config/swaylock/config";
+    swaylockrc="vim ~/.config/swaylock/config";
 
     ##dunst
-    dunstrc="vim $HOME/.config/dunst/dunstrc";
+    dunstrc="vim ~/.config/dunst/dunstrc";
 
     ##TMUX
-    tmuxrc="vim $HOME/.tmux.conf";
+    tmuxrc="vim ~/.tmux.conf";
 
     ##zathura
-    zathurarc="vim $HOME/.config/zathura/zathurarc";
+    zathurarc="vim ~/.config/zathura/zathurarc";
 
     #nixos
-    nixrc="vim $HOME/.config/nixos/";
-    homerc="vim $HOME/.config/home-manager/";
-    flakerc="vim $HOME/.config/flake.nix";
-
-    # Nix Darwin
-    darwinrc="vim $HOME/.config/nix-darwin/";
+    nixrc="vim ~/.config/nix/";
+    homerc="vim ~/.config/home-manager/";
+    flakerc="vim ~/.config/flake.nix";
 }
