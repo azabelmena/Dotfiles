@@ -5,6 +5,7 @@
 # Cayley NIX!
 
 environment.systemPackages = with pkgs; [ # System essential programs
+    coreutils
     autoconf
     automake
     bc

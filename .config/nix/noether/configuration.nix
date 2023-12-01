@@ -36,6 +36,7 @@
     sagetex
     skhd
     texlive.combined.scheme-full
+    jq
     eza
     yabai
     bat
@@ -59,6 +60,8 @@
         CreateDesktop = false;
       };
 
+      screencapture.location = "/tmp/";
+
       dock.autohide = true;
     };
 
@@ -75,12 +78,13 @@
 
     yabai = {
       enable = true;
+      enableScriptingAddition = true;
       config = {
         layout = "bsp";
         auto_balance = "off";
         split_ratio = "0.50";
         window_border = "on";
-        window_border_width = "2";
+        window_border_width = "10";
         window_placement = "second_child";
         focus_follows_mouse = "autoraise";
         mouse_follows_focus = "off";
@@ -95,46 +99,39 @@
     skhd = {
       enable = true;
       skhdConfig = ''
-        #cmd - return  : '/Applications/Nix Apps/kitty.app/Contents/MacOS'/kitty
+        cmd - return      : '/Applications/Nix Apps/kitty.app/Contents/MacOS'/kitty --hold sh -c 'cd'
+        cmd - b           : /Applications/qutebrowser.app/Contents/MacOS/qutebrowser
+        cmd - z           : /run/current-system/sw/bin/zathura
 
-        cmd - return      : open -a kitty
-        cmd - b           : open -a qutebrowser
+        cmd - t           : yabai --message window --toggle float && yabai --message window --grid 4:4:1:1:2:2
+        cmd - f           : yabai --message window --toggle zoom-fullscreen
+        cmd - q           : yabai --message window --close
 
-        cmd - t : yabai -m window --toggle float && yabai -m window --grid 4:4:1:1:2:2
-        cmd - f : yabai -m window --toggle zoom-fullscreen
-        cmd - q : yabai -m window --close
+        cmd - h           : yabai --message window --focus west
+        cmd - j           : yabai --message window --focus south
+        cmd - k           : yabai --message window --focus north
+        cmd - l           : yabai --message window --focus east
 
-        cmd - h : yabai -m window --focus west
-        cmd - j : yabai -m window --focus south
-        cmd - k : yabai -m window --focus north
-        cmd - l : yabai -m window --focus east
+        cmd - tab         : yabai --message window --focus next
+        shift + cmd - tab : yabai --message window --focus prev
 
-        cmd - tab         : yabai -m window --focus next
-        cmd + shift - tab : yabai -m window --focus prev
+        shift + cmd - 1   : yabai --message window --space 1 --focus
+        shift + cmd - 2   : yabai --message window --space 2 --focus
+        shift + cmd - 3   : yabai --message window --space 3 --focus
+        shift + cmd - 4   : yabai --message window --space 4 --focus
+        shift + cmd - 5   : yabai --message window --space 5 --focus
+        shift + cmd - 6   : yabai --message window --space 6 --focus
+        shift + cmd - 7   : yabai --message window --space 7 --focus
+        shift + cmd - 8   : yabai --message window --space 8 --focus
+        shift + cmd - 9   : yabai --message window --space 9 --focus
 
         # Swap Window
-        shift + cmd - h : yabai -m window --swap west
-        shift + cmd - j : yabai -m window --swap south
-        shift + cmd - k : yabai -m window --swap north
-        shift + cmd - l : yabai -m window --swap east
+        shift + cmd - h   : yabai --message window --swap west
+        shift + cmd - j   : yabai --message window --swap south
+        shift + cmd - k   : yabai --message window --swap north
+        shift + cmd - l   : yabai --message window --swap east
 
-        cmd - 1 : yabai -m space --focus 1
-        cmd - 2 : yabai -m space --focus 2
-        cmd - 3 : yabai -m space --focus 3
-        cmd - 4 : yabai -m space --focus 4
-        cmd - 5 : yabai -m space --focus 5
-        #cmd - left : yabai -m space --focus prev
-        #cmd - right: yabai -m space --focus next
-
-        shift + cmd - 1 : yabai -m window --space 1
-        shift + cmd - 2 : yabai -m window --space 2
-        shift + cmd - 3 : yabai -m window --space 3
-        shift + cmd - 4 : yabai -m window --space 4
-        shift + cmd - 5 : yabai -m window --space 5
-        #shift + cmd - left : yabai -m window --space prev && yabai -m space --focus prev
-        #shift + cmd - right : yabai -m window --space next && yabai -m space --focus next
-
-        #cmd + space : for now its using the default keybinding to open Spotlight Search
+        #cmd + space      : for now its using the default keybinding to open Spotlight Search
       '';
     };
   };
