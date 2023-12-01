@@ -5,12 +5,12 @@
 # Cayley NIX!
 
 environment.systemPackages = with pkgs; [ # System essential programs
-    coreutils
     autoconf
     automake
     bc
     btop
     cmake
+    coreutils
     cudatoolkit
     file
     gcc
@@ -20,46 +20,46 @@ environment.systemPackages = with pkgs; [ # System essential programs
     htop-vim
     llvmPackages_9.openmp
     lshw
-    mpi
     mpfr
+    mpi
     python3
     stdmanpages
     vim-full
 ];
 
 users.users.alec.packages = with pkgs; [
-    zsh
-    kitty
-    mpv
-    neofetch
-    tmux
-    bat
-    starship
-    vifm
     authy
-    qutebrowser
+    bat
+    discord
     dunst
+    eza
+    geogebra
     home-manager
     hyprland
     hyprpaper
+    inkscape
+    kitty
     libnotify
     localsend
+    mpv
+    neofetch
+    obs-studio
     pavucontrol
+    protonup-ng
+    qutebrowser
     rofi-wayland
+    sage
+    starship
+    steam
     swaylock-effects
+    texlive.combined.scheme-full
+    tmux
+    tutanota-desktop
+    vifm
     waybar
     xdg-desktop-portal-gtk
-    geogebra
-    inkscape
-    sage
-    texlive.combined.scheme-full
     zathura
-    discord
-    obs-studio
-    protonup-ng
-    steam
-    tutanota-desktop
-    eza
+    zsh
 ];
 
 programs.zsh.enable = true;

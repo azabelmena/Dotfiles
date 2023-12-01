@@ -14,32 +14,33 @@
   };
 
   environment.systemPackages = with pkgs; [
+    bat
     coreutils
+    eza
     gcc
-    llvmPackages_15.openmp
-    openmpi
-    vim-full
-    neofetch
+    inkscape
+    inkscape
+    jq
+    karabiner
     kitty
-    zathura
-    vim-full
-    vifm
-    inkscape
+    llvmPackages_15.openmp
+    neofetch
+    openmpi
     qbittorrent
-    zsh
-    zsh-syntax-highlighting
-    zsh-autosuggestions
-    zsh-vi-mode
-    inkscape
     qbittorrent
-    starship
     sagetex
     skhd
+    starship
     texlive.combined.scheme-full
-    jq
-    eza
+    vifm
+    vim-full
+    vim-full
     yabai
-    bat
+    zathura
+    zsh
+    zsh-autosuggestions
+    zsh-syntax-highlighting
+    zsh-vi-mode
   ];
 
   documentation.enable = true;
