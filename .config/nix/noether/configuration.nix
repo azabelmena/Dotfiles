@@ -21,7 +21,7 @@
     inkscape
     inkscape
     jq
-    karabiner
+    karabiner-elements
     kitty
     llvmPackages_15.openmp
     neofetch
