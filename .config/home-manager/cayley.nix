@@ -40,7 +40,7 @@
         };
 
         bash = (import ./bash.nix { inherit pkgs; });
-        zsh = (import ./zsh.nix { inherit pkgs; });
+        zsh = (import ./zsh/zsh.nix { inherit pkgs; });
         tmux = (import ./tmux.nix { inherit pkgs; });
         kitty = (import ./kitty/kitty.nix { inherit pkgs; });
         zathura = (import ./zathura.nix { inherit pkgs; });

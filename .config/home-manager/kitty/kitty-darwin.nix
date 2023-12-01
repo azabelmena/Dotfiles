@@ -15,6 +15,7 @@
 
         "ctrl+shift+delete" = "clear_terminal reset active";
         "ctrl+shift+f" = "toggle_fullscreen";
+        "ctrl+shift+t" = "no_op";
     };
 
     settings = {
@@ -31,5 +32,4 @@
         inactive_tab_font_style = "normal";
 
     };
-    #extraConfig = "macos_quit_when_last_window_closed = yes";
 }
