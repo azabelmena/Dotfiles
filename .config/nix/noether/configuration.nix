@@ -33,13 +33,11 @@
     sagetex
     skhd
     starship
-    steam
     texlive.combined.scheme-full
     vifm
     vim-full
     yabai
     zathura
-    zoom
     zsh
     zsh-autosuggestions
     zsh-syntax-highlighting
