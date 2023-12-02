@@ -22,7 +22,7 @@
             userEmail = "alec.zabel@upr.edu";
         };
 
-        bash = (import ./bash.nix { inherit pkgs; });
+        bash = (import ./bash/bash-darwin.nix { inherit pkgs; });
         zsh = (import ./zsh/zsh-darwin.nix { inherit pkgs; });
         tmux = (import ./tmux.nix { inherit pkgs; });
         kitty = (import ./kitty/kitty-darwin.nix { inherit pkgs; });
