@@ -24,7 +24,7 @@
     karabiner-elements
     kitty
     llvmPackages_15.openmp
-    neofetch
+    fastfetch
     openmpi
     qbittorrent
     qbittorrent

@@ -42,7 +42,7 @@ users.users.alec.packages = with pkgs; [
     libnotify
     localsend
     mpv
-    neofetch
+    fastfetch
     obs-studio
     pavucontrol
     protonup-ng
