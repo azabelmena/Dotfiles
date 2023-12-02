@@ -1,6 +1,6 @@
 { pkgs, ... }:
 
-let shellAliases = import ../aliasrc.nix;
+let shellAliases = import ../aliases/aliasrc-darwin.nix;
 in {
     enable = true;
     enableAutosuggestions = true;
@@ -12,7 +12,7 @@ in {
     syntaxHighlighting.enable = true;
 
     initExtra = ''
-        neofetch --config ~/.config/neofetch/config.conf
+        fastfetch --logo macos
 
         bindkey -v
 

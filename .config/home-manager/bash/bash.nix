@@ -1,13 +1,14 @@
 {pkgs, ...}:
 
-{
+let shellAliases = import ../aliases/aliasrc.nix;
+in{
     enable = true;
 
-    shellAliases = import ./aliasrc.nix;
-
     initExtra = ''
-      neofetch 2>/dev/null
+      fastfetch --logo pop_os 2> /dev/null
       set -o vi
       eval "$(starship init bash)" 2>/dev/null
     '';
+
+    inherit shellAliases;
 }

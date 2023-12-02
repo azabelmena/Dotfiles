@@ -39,7 +39,7 @@
             userEmail = "alec.zabel@upr.edu";
         };
 
-        bash = (import ./bash.nix { inherit pkgs; });
+        bash = (import ./bash/bash.nix { inherit pkgs; });
         zsh = (import ./zsh/zsh.nix { inherit pkgs; });
         tmux = (import ./tmux.nix { inherit pkgs; });
         kitty = (import ./kitty/kitty.nix { inherit pkgs; });

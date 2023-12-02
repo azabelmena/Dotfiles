@@ -6,12 +6,12 @@
     hibernate="systemctl hibernate";
 
     # Listing
-    clear="clear && neofetch --config ~/.config/neofetch/config.conf"; # continue to flex.
+    clear="clear && fastfetch --logo macos"; # continue to flex.
     ls="exa";
     bat="bat --theme gruvbox-dark";    # Add bat alternative to less.
 
     # Fetching programs
-    neofetchrc="vim ~/.config/neofetch/config.conf";
+    fastfetchrc="vim ~/.config/fastfetch/config.jsonc";
 
     ##vim
     vi="vim";
@@ -51,4 +51,5 @@
     nixrc="vim ~/.config/nix/";
     homerc="vim ~/.config/home-manager/";
     flakerc="vim ~/.config/flake.nix";
+    nix-shell="nix-shell --command 'zsh'";
 }
