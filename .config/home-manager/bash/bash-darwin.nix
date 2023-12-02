@@ -5,9 +5,8 @@ in{
     enable = true;
 
     initExtra = ''
-      fastfetch --logo macos 2> /dev/null
       set -o vi
-      eval "$(starship init bash)" 2>/dev/null
+      eval "$(starship init bash)" 2> /dev/null
     '';
 
     inherit shellAliases;
