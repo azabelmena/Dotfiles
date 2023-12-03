@@ -12,6 +12,7 @@ in {
     syntaxHighlighting.enable = true;
 
     initExtra = ''
+        sleep 0.1
         fastfetch --logo macos
 
         bindkey -v
