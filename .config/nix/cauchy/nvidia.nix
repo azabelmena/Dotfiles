@@ -1,29 +1,35 @@
 { config, lib, pkgs, ... }:
 {
 
-# Cayley NIX!
+# cauchy NIX!
 
-hardware.opengl = {
-    enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
-};
+  hardware.opengl = {
+      enable = true;
+      driSupport = true;
+      driSupport32Bit = true;
+  };
 
-    services.xserver.videoDrivers = ["nvidia"];
+  services.xserver.videoDrivers = ["nvidia"];
 
-    hardware.nvidia = {
-        modesetting.enable = true;
-        powerManagement.enable = false;
-        powerManagement.finegrained = false;
+  hardware.nvidia = {
+      modesetting.enable = true;
+      powerManagement.enable = true;
+      powerManagement.finegrained = false;
 
-        #open = true; # Open source driver (nvidia-open-dkms)
+      open = true; # Open source driver (nvidia-open-dkms)
 
-        nvidiaSettings = true;
+      nvidiaSettings = true;
 
-        package = config.boot.kernelPackages.nvidiaPackages.stable;
+      prime = {
+        offload = {
+          enable = true;
+          enableOffloadCmd = true;
+      };
 
-        prime = {
-            nvidiaBusId = "PCI:1:0:0";
-            intelBusId = "PCI:0:2:0";};
-        };
+      intelBusId = "PCI:0:2:0";
+      nvidiaBusId = "PCI:1:0:0";
+	};
+
+      package = config.boot.kernelPackages.nvidiaPackages.stable;
+  };
 }
