@@ -1,0 +1,269 @@
+snippet section "section{}" b
+\section{$0}
+endsnippet
+
+snippet *section "section{}" b
+\section*{$0}
+endsnippet
+
+snippet begin "begin{} / end{}" b
+\begin{$0}
+\end{$0}
+endsnippet
+
+snippet def "begin{} / end{}" b
+\begin{definition}$0
+\end{definition}
+endsnippet
+
+snippet enum "begin{} / end{}" b
+\begin{enumerate}$0
+\end{enumerate}
+endsnippet
+
+snippet itemize "begin{} / end{}" b
+\begin{itemize}$0
+\end{itemize}
+endsnippet
+
+snippet axm "begin{} / end{}" b
+\begin{axiom}\label{}$0
+\end{axiom}
+endsnippet
+
+snippet *axm "begin{} / end{}" b
+\begin{axm*}$0
+\end{axm*}
+endsnippet
+
+snippet lemma "begin{} / end{}" b
+\begin{lemma}\label{}$0
+\end{lemma}
+endsnippet
+
+snippet *lemma "begin{} / end{}" b
+\begin{lemma*}$0
+\end{lemma*}
+endsnippet
+
+snippet thm "begin{} / end{}" b
+\begin{theorem}\label{}$0
+\end{theorem}
+endsnippet
+
+snippet *thm "begin{} / end{}" b
+\begin{theorem*}$0
+\end{theorem*}
+endsnippet
+
+snippet prop "begin{} / end{}" b
+\begin{proposition}$0
+\end{proposition}
+endsnippet
+
+snippet *prop "begin{} / end{}" b
+\begin{proposition*}$0
+\end{proposition*}
+endsnippet
+
+snippet crlry "begin{} / end{}" b
+\begin{corollary}$0
+\end{corollary}
+endsnippet
+
+snippet prf "begin{} / end{}" b
+\begin{proof}$0
+\end{proof}
+endsnippet
+
+snippet algo "begin{} / end{}" b
+\begin{algorithm}[$0]
+\end{algorithm}
+endsnippet
+
+snippet remark "begin{} / end{}" b
+\begin{remark}$0
+\end{remark}
+endsnippet
+
+snippet example "begin{} / end{}" b
+\begin{example}\label{$0}
+\end{example}
+endsnippet
+
+snippet examples "begin{} / end{}" b
+\begin{example}\label{$0}
+	\begin{enumerate}
+	\end{enumerate}
+\end{example}
+endsnippet
+
+snippet problem "begin{} / end{}" b
+\begin{problem}$0
+\end{problem}
+endsnippet
+
+snippet solution "begin{} / end{}" b
+\begin{solution}$0
+\end{solution}
+endsnippet
+
+snippet figure "begin{} / end{}" b
+\begin{figure}[h]
+	\centering
+	\includegraphics[$0]{}
+	\caption{}
+	\label{}
+\end{figure}
+endsnippet
+
+snippet equation "begin{} / end{}" b
+\begin{equation}$0
+\end{equation}
+endsnippet
+
+snippet *equation "begin{} / end{}" b
+\begin{equation*}$0
+\end{equation*}
+endsnippet
+
+snippet align "begin{} / end{}" b
+\begin{align}$0
+\end{align}
+endsnippet
+
+snippet *align  "begin{} / end{}" b
+\begin{align*}$0
+\end{align*}
+endsnippet
+
+snippet frame "begin{} / end{}" b
+\begin{frame}{$0}
+\end{frame}
+endsnippet
+
+snippet $ "Math" wA
+$${1}$`!p
+if t[2] and t[2][0] not in [',', '.', '?', '-', ' ']:
+    snip.rv = ' '
+else:
+    snip.rv = ''
+`$2
+endsnippet
+
+snippet \pmatrix "Math" wA
+\begin{pmatrix}$1\end{pmatrix}
+ $0
+endsnippet
+
+snippet \bold "Math" wA
+\textbf{$0}
+endsnippet
+
+snippet \italic "Math" wA
+\textit{$0}
+endsnippet
+
+snippet \text "Math" wA
+\text{$0}
+endsnippet
+
+snippet -> "Math" wA
+\xrightarrow{}
+endsnippet
+
+snippet ( "Math" iA
+($0)
+endsnippet
+
+snippet { "Math" iA
+{$0}
+endsnippet
+
+snippet [ "Math" iA
+[$0]
+endsnippet
+
+snippet '' "Quote" iA
+``$0''
+endsnippet
+
+snippet \< "Math" iA
+\langle
+endsnippet
+
+snippet \> "Math" iA
+\rangle
+endsnippet
+
+snippet '([A-Za-z])(\d)' "auto subscript" wrA
+`!p snip.rv = match.group(1)`_`!p snip.rv = match.group(2)`
+endsnippet
+
+snippet '([A-Za-z])_(\d\d)' "auto subscript2" wrA
+`!p snip.rv = match.group(1)`_{`!p snip.rv = match.group(2)`}
+endsnippet
+
+snippet \sqrt "Fraction" iA
+\sqrt{$1}$0
+endsnippet
+
+snippet \factor "Factor sets." iA
+\faktor{$1}{$2}$0
+endsnippet
+
+snippet \frac "Fraction" iA
+\frac{$1}{$2}$0
+endsnippet
+
+snippet \com "Fraction" iA
+\com{$1}{$2}$0
+endsnippet
+
+snippet cc "Subseteq" iA
+\subseteq
+endsnippet
+
+snippet inn "Inclusion of an Element" iA
+\in
+endsnippet
+
+snippet ooo "\infty" iA
+\infty
+endsnippet
+
+snippet ... "\dots" iA
+\dots
+endsnippet
+
+snippet == "Equals" iA
+&= $1 \\\\
+endsnippet
+
+snippet != "Not Equal" iA
+\neq
+endsnippet
+
+snippet <= "leq" iA
+\leq
+endsnippet
+
+snippet >= "geq" iA
+\geq
+endsnippet
+
+snippet <! "normal" iA
+\unlhd
+endsnippet
+
+snippet xx "cross" iA
+\times
+endsnippet
+
+snippet ceil "Ceil" wi
+\left\lceil $1 \right\rceil $0
+endsnippet
+
+snippet floor "Floor" wi
+\left\lfloor $1 \right\rfloor$0
+endsnippet

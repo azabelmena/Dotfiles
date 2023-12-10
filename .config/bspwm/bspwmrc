@@ -1,0 +1,75 @@
+#! /bin/sh
+
+# start necessary processes
+
+killall  -9 sxhkd picom polybar feh unclutter dunst
+killall -9 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
+$HOME/.config/polybar/launch.sh
+
+syndaemon &
+
+sxhkd &
+
+# compositor
+picom &
+
+# Notifications.
+dunst &
+
+#feh
+feh --bg-fill $HOME/Pictures/Wallpapers/System76-Wallpapers/System76-System76_Logo_Gray-by_Kate_Hazen_of_System76.jpg
+
+# For professional situations.
+
+xsetroot -cursor_name left_ptr
+
+# Autohide the mous cursor.
+unclutter --timeout 1 &
+
+# Autostart polkit authentication service
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+
+# Swallow windows.
+$HOME/.config/bspwm/bspswallow &
+
+# workspaces
+
+bspc monitor HDMI-0 -d 1 2 3
+bspc desktop -f ^2      # make workspace 4 the default workspace.
+
+# gaps & borders
+bspc config border_width    3
+bspc config window_gap      8
+
+# colors
+bspc config normal_border_color   '#458588'
+bspc config focused_border_color  '#d40000'
+
+# windows
+bspc config split_ratio          0.50
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+# window rules
+bspc rule -a Gimp state=floating follow=on
+#bspc rule -a Steam state=floating follow=on
+
+# Zathura is floating by default, so force tiling.
+bspc rule -a Zathura state=tiled follow=on
+
+# do not overlap with the top bar
+bspc config top_padding         45
+bspc config left_padding        5
+bspc config right_padding       5
+bspc config bottom_padding      5
+
+# Mice bindings
+#   Set mouse 1 to move floating windows
+bspc config pointer_action1 move
+
+#   Mouse 2 button resizes the window by side
+bspc config pointer_action2 resize_side
+
+#   Mouse 3 button (right mouse) resize by corner
+bspc config pointer_action2 resize_corner
