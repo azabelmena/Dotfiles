@@ -3,6 +3,7 @@
 .DS_Store
 .RData
 .Rhistory
+.Trash/
 .Xauthority
 .bash_history
 .bash_history
@@ -260,4 +261,4 @@ router_hacking/
 scripts/
 storage
 testdisk.log
-.Trash/
+~/
