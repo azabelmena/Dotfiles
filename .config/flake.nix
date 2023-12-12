@@ -9,6 +9,8 @@
 
     darwin.url = "github:LnL7/nix-darwin";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
+
+    nix-colors.url = "github:misterio77/nix-colors";
   };
 
   outputs = {self, nixpkgs, darwin, home-manager, ...}@inputs:

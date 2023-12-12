@@ -1,34 +1,27 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
-    enable = true;
 
-    theme = "Gruvbox Dark Soft";
+  enable = true;
 
-    font = {
-            name = "BlexMono Nerd Font Mono";
-            size = 12;
-    };
+  theme = "Gruvbox Dark Soft";
 
-    keybindings = {
-        "ctrl+shift+l" = "next_tab";
-        "ctrl+shift+h" = "previous_tab";
+  font = {
+          name = "BlexMono Nerd Font Mono";
+          size = 12;
+  };
 
-        "ctrl+shift+delete" = "clear_terminal reset active";
-        "ctrl+shift+f" = "toggle_fullscreen";
-        "ctrl+shift+t" = "no_op";
-    };
+  keybindings = {
+      "ctrl+shift+l" = "next_tab";
+      "ctrl+shift+h" = "previous_tab";
 
-    settings = {
-        enable_audio_bell = "no";
-        remember_window_size = "yes";
-        confirm_os_window_close = "0";
+      "ctrl+shift+delete" = "clear_terminal reset active";
+      "ctrl+shift+f" = "toggle_fullscreen";
+      "ctrl+shift+t" = "no_op";
+  };
 
-        active_tab_background = "#32302f";
-        active_tab_foreground = "#d4be98";
-        active_tab_font_style = "bold";
-        inactive_tab_background = "#32302f";
-        inactive_tab_foreground = "#a89984";
-        inactive_tab_font_style = "normal";
-
-    };
+  settings = {
+      enable_audio_bell = "no";
+      remember_window_size = "yes";
+      confirm_os_window_close = "0";
+  };
 }

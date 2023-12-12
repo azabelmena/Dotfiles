@@ -1,10 +1,10 @@
 { config, pkgs, inputs, ... }:
 
 {
-    #imports = [
-        #inputs.nix-colors.homeManagerModules.default
-    #];
-    #colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-medium;
+  imports = [
+    inputs.nix-colors.homeManagerModules.default
+  ];
+  colorScheme = inputs.nix-colors.colorSchemes.everforest;
 
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -42,7 +42,7 @@
         bash = (import ./bash/bash.nix { inherit pkgs; });
         zsh = (import ./zsh/zsh.nix { inherit pkgs; });
         tmux = (import ./tmux.nix { inherit pkgs; });
-        kitty = (import ./kitty/kitty.nix { inherit pkgs; });
+        kitty = (import ./kitty/kitty.nix { inherit pkgs config; });
         zathura = (import ./zathura.nix { inherit pkgs; });
         rofi = (import ./rofi.nix { inherit pkgs; });
         waybar = (import ./waybar/waybar.nix { inherit pkgs; });
