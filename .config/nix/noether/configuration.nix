@@ -21,6 +21,7 @@
     fastfetch
     gcc
     git
+    hugo
     inkscape
     inkscape
     jq

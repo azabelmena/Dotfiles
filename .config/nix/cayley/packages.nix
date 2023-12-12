@@ -35,9 +35,10 @@ users.users.alec.packages = with pkgs; [
     eza
     geogebra
     home-manager
+    hugo
     hyprland
     hyprpaper
-    inkscape
+    inkscape-with-extensions
     kitty
     libnotify
     localsend
