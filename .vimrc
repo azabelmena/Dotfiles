@@ -179,8 +179,25 @@ function! ToggleSex()
     endif
 endfunction
 
+function! ToggleSplit()
+    if g:NetrwIsOpen
+        let i = bufnr("$")
+        while (i >= 1)
+            if (getbufvar(i, "&filetype") == "netrw")
+                silent exe "bwipeout " . i
+            endif
+            let i-=1
+        endwhile
+        let g:NetrwIsOpen=0
+    else
+        let g:NetrwIsOpen=1
+        silent split!
+    endif
+endfunction
+
 noremap <silent> <C-N> :call ToggleNetrw()<CR>
 noremap <silent> <C-S> :call ToggleSex()<CR>
+noremap <silent> <C-B> :call ToggleSplit()<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins
