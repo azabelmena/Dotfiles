@@ -133,6 +133,7 @@
 .config/zathura/zathurarc
 .config/zoom.conf
 .config/zoomus.conf
+.cups/
 .dmrc
 .eclipes/
 .fehbg
