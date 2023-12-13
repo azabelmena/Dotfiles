@@ -7,6 +7,7 @@
 
     # Listing
     clear="clear && fastfetch --logo macos"; # continue to flex.
+    Clear="Clear && fastfetch --logo macos"; # continue to flex.
     ls="exa";
     bat="bat --theme gruvbox-dark";    # Add bat alternative to less.
 
@@ -45,7 +46,7 @@
     scriptrc="vim ~/scripts/";
 
     ##zathura
-    zathurarc="vim ~/.config/zathura/zathurarc";
+    #zathura="/etc/profiles/per-user/alec/bin/zathura";
 
     #nixos
     nixrc="vim ~/.config/nix/";

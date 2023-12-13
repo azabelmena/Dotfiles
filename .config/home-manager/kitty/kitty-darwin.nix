@@ -23,6 +23,7 @@
         remember_window_size = "yes";
         confirm_os_window_close = "0";
         macos_quit_when_last_window_closed = "yes";
+        hide_window_decorations = "titlebar-only";
 
         active_tab_background = "#32302f";
         active_tab_foreground = "#d4be98";

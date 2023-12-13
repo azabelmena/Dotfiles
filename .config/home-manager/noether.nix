@@ -10,9 +10,8 @@
 
     programs.home-manager.enable = true;
 
-    home.packages = [
-        # Fonts
-        (pkgs.nerdfonts.override { fonts = ["IBMPlexMono"]; })
+    home.packages = with pkgs; [
+        (nerdfonts.override { fonts = ["IBMPlexMono"]; })
     ];
 
     programs = {
@@ -23,13 +22,14 @@
         };
 
         bash = (import ./bash/bash-darwin.nix { inherit pkgs; });
-        zsh = (import ./zsh/zsh-darwin.nix { inherit pkgs; });
-        tmux = (import ./tmux.nix { inherit pkgs; });
         kitty = (import ./kitty/kitty-darwin.nix { inherit pkgs; });
-        zathura = (import ./zathura.nix { inherit pkgs; });
-        #yabai = (import ./yabai.nix { inherit pkgs; });
         #skhd = (import ./skhd.nix { inherit pkgs; });
-};
+        tmux = (import ./tmux.nix { inherit pkgs; });
+        vim = (import ./vim.nix { inherit pkgs; });
+        #yabai = (import ./yabai.nix { inherit pkgs; });
+        zathura = (import ./zathura.nix { inherit pkgs; });
+        zsh = (import ./zsh/zsh-darwin.nix { inherit pkgs; });
+    };
 
     home.file = {
         ".local/share/zsh/zsh-autosuggestions".source =
