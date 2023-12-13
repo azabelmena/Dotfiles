@@ -48,3 +48,4 @@ c.search.incremental = False
 
 c.content.javascript.enabled = True
 config.source('gruvbox.py')
+config.source('config.py')
