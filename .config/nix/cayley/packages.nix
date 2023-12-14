@@ -40,10 +40,11 @@ users.users.alec.packages = with pkgs; [
     hyprpaper
     inkscape-with-extensions
     kitty
+    fastfetch
     libnotify
     localsend
+    manix
     mpv
-    fastfetch
     obs-studio
     pavucontrol
     protonup-ng
