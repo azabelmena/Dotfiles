@@ -3,6 +3,15 @@
 
     enable = true;
 
+    plugins = with pkgs; [
+      vimPlugins.nerdcommenter
+      vimPlugins.syntastic
+      vimPlugins.ultisnips
+      vimPlugins.vim-airline
+      vimPlugins.vim-nix
+      vimPlugins.vimtex
+    ];
+
     extraConfig = ''
 set nocompatible
 set nopaste

@@ -40,12 +40,13 @@
         };
 
         bash = (import ./bash/bash.nix { inherit pkgs; });
-        zsh = (import ./zsh/zsh.nix { inherit pkgs; });
-        tmux = (import ./tmux.nix { inherit pkgs; });
         kitty = (import ./kitty/kitty.nix { inherit pkgs config; });
-        zathura = (import ./zathura.nix { inherit pkgs; });
         rofi = (import ./rofi.nix { inherit pkgs; });
+        tmux = (import ./tmux.nix { inherit pkgs; });
+        vim = (import ./vim.nix { inherit pkgs; });
         waybar = (import ./waybar/waybar.nix { inherit pkgs; });
+        zathura = (import ./zathura.nix { inherit pkgs; });
+        zsh = (import ./zsh/zsh.nix { inherit pkgs; });
     };
 
     home.file = {
