@@ -122,8 +122,8 @@
         cmd - k           : yabai --message window --focus north
         cmd - l           : yabai --message window --focus east
 
-        cmd - tab         : yabai --message window --focus next
-        shift + cmd - tab : yabai --message window --focus prev
+        cmd - tab         : yabai --message window --focus next || yabai --message window --focus first
+        shift + cmd - tab : yabai --message window --focus prev || yabai --message window --focus last
 
         ctrl + cmd - tab  : yabai --message space --create
         shift + ctrl + cmd - tab  : yabai --message space --destroy
