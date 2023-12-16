@@ -4,7 +4,7 @@
   imports = [
     inputs.nix-colors.homeManagerModules.default
   ];
-  colorScheme = inputs.nix-colors.colorSchemes.everforest;
+  colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-soft;
 
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -41,6 +41,7 @@
 
         bash = (import ./bash/bash.nix { inherit pkgs; });
         kitty = (import ./kitty/kitty.nix { inherit pkgs config; });
+        qutebrowser = (import ./qutebrowser/qutebrowser.nix { inherit pkgs config; });
         rofi = (import ./rofi.nix { inherit pkgs; });
         tmux = (import ./tmux.nix { inherit pkgs; });
         vim = (import ./vim.nix { inherit pkgs; });
