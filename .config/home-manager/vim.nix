@@ -119,7 +119,7 @@ function! ToggleSex()
     endif
 endfunction
 
-function! ToggleSplit()
+function! ToggleSex2()
     if g:NetrwIsOpen
         let i = bufnr("$")
         while (i >= 1)
@@ -131,13 +131,16 @@ function! ToggleSplit()
         let g:NetrwIsOpen=0
     else
         let g:NetrwIsOpen=1
-        silent split!
+        silent Sex?
     endif
 endfunction
 
 noremap <silent> <C-N> :call ToggleNetrw()<CR>
 noremap <silent> <C-S> :call ToggleSex()<CR>
 noremap <silent> <C-B> :call ToggleSplit()<CR>
+nnoremap <C-]> :bnext<CR>
+nnoremap <C-[> :bprevious<CR>
+nnoremap <C-p> :bdelete<CR>
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -237,12 +240,15 @@ if has("autocmd")
     autocmd BufWritePre *.*:call CleanExtraSpaces()
 endif
 
-autocmd Filetype tex, latex setlocal spell spelllang=en_us
 
-set spelllang=en_gb
+set nospell
+set spelllang=en_us
+
+highlight SpellBad    ctermfg=160      ctermbg=000     cterm=none
+
+autocmd Filetype tex setlocal spell spelllang=en_us
 
 map <leader>ss :setlocal spell!<cr>
-
 map <leader>sn ]s
 map <leader>sp [s
 map <leader>sa zg

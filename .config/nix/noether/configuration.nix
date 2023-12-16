@@ -28,6 +28,8 @@
     kitty
     libreoffice-bin
     llvmPackages_15.openmp
+    manix
+    mpv
     openmpi
     python3
     qbittorrent
@@ -101,8 +103,13 @@
       extraConfig=''
         sudo yabai --load-sa
         source "~/.config/colors.sh"
+        echo "yabai configuration loaded..."
 
-        yabai -m rule --add app="^(System Settings)$" manage=off
+        yabai -m rule --add title='Preferences' manage=off layer=above
+        yabai -m rule --add app='^System Preferences$' manage=off layer=above
+        yabai -m rule --add app='Activity Monitor' manage=off layer=above
+        yabai -m rule --add app='Finder' manage=off layer=above
+        yabai -m rule --add app='^System Information$' manage=off layer=above
       '';
     };
 
@@ -115,15 +122,14 @@
 
         cmd - t           : yabai --message window --toggle float && yabai --message window --grid 4:4:1:1:2:2
         cmd - f           : yabai --message window --toggle zoom-fullscreen
-        cmd - q           : yabai --message window --close
 
         cmd - h           : yabai --message window --focus west
         cmd - j           : yabai --message window --focus south
         cmd - k           : yabai --message window --focus north
         cmd - l           : yabai --message window --focus east
 
-        cmd - tab         : yabai --message window --focus next
-        shift + cmd - tab : yabai --message window --focus prev
+        cmd - tab         : yabai --message window --focus next || yabai --message window --focus first
+        shift + cmd - tab : yabai --message window --focus prev || yabai --message window --focus last
 
         ctrl + cmd - tab  : yabai --message space --create
         shift + ctrl + cmd - tab  : yabai --message space --destroy
