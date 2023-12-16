@@ -15,7 +15,7 @@
     fastfetchrc="vim ~/.config/fastfetch/config.jsonc";
 
     ##vim
-    vi="vim .";
+    vi="vim";
     vifmrc="vim ~/.config/vifm/vifmrc";
 
     ## ZSH
