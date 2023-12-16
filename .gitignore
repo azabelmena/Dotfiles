@@ -262,4 +262,6 @@ router_hacking/
 scripts/
 storage
 testdisk.log
+.config/qutebrowser/
+.config/qutebrowserrc
 ~/
