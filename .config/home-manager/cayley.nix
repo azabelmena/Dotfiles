@@ -4,6 +4,7 @@
   imports = [
     inputs.nix-colors.homeManagerModules.default
   ];
+  #colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-soft;
   colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-soft;
 
   # Home Manager needs a bit of information about you and the paths it should
@@ -54,6 +55,8 @@
         ".local/share/zsh/zsh-autosuggestions".source =
         "${pkgs.zsh-autosuggestions}/share/zhs-autosuggestions";
         "~/.config/kitty/kitty.conf".source = "${pkgs.kitty}/kitty/kitty.conf";
+        "~/.config/qutebrowser/config.py".source = "${pkgs.qutebrowser}/qutebrowser/config.py";
+        "~/.config/qutebrowser/quickmarks".source = "${pkgs.qutebrowser}/qutebrowser/quickmarks";
     };
 
     gtk = {

@@ -2,8 +2,6 @@
 {
     enable = true;
 
-    theme = "Gruvbox Dark Soft";
-
     font = {
             name = "BlexMono Nerd Font Mono";
             size = 16;
@@ -25,12 +23,23 @@
         macos_quit_when_last_window_closed = "yes";
         hide_window_decorations = "titlebar-only";
 
-        active_tab_background = "#32302f";
-        active_tab_foreground = "#d4be98";
-        active_tab_font_style = "bold";
-        inactive_tab_background = "#32302f";
-        inactive_tab_foreground = "#a89984";
-        inactive_tab_font_style = "normal";
+        cursor = "#${config.colorScheme.colors.base06}";
+        cursor_text_color = "#${config.colorScheme.colors.base00}";
+        foreground = "#${config.colorScheme.colors.base06}";
+        background = "#${config.colorScheme.colors.base00}";
+        selection_background = "#${config.colorScheme.colors.base09}";
+        selection_foreground = "#${config.colorScheme.colors.base03}";
 
+        color0 = "#${config.colorScheme.colors.base00}";
+        color1 = "#${config.colorScheme.colors.base08}";
+        color2 = "#${config.colorScheme.colors.base0B}";
+        color3 = "#${config.colorScheme.colors.base0A}";
+        color4 = "#${config.colorScheme.colors.base0D}";
+        color5 = "#${config.colorScheme.colors.base0E}";
+        color6 = "#${config.colorScheme.colors.base0C}";
+        color7 = "#${config.colorScheme.colors.base06}";
+        color8 = "#${config.colorScheme.colors.base00}";
+
+        macos_colorspace = "srgb";
     };
 }
