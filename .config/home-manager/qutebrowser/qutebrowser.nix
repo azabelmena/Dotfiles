@@ -29,7 +29,7 @@
       web.family.fantasy = "BlexMono Nerd Font";
     };
 
-    colors = (import ./colors.nix { inherit pkgs config; });
+    colors = (import ./gruvbox.nix { inherit pkgs config; });
 
   };
 
