@@ -72,7 +72,7 @@
       syntax enable
 
       set background=dark
-
+      let g:gruvbox_contrast_dark='soft'
       colorscheme gruvbox
 
       set encoding=utf8
