@@ -1,14 +1,16 @@
-{pkgs, ...}:
+{ pkgs, ...}:
 {
 
     enable = true;
 
-    plugins = with pkgs; [
-      vimPlugins.nerdcommenter
-      vimPlugins.ultisnips
-      vimPlugins.vim-airline
-      vimPlugins.vim-nix
-      vimPlugins.vimtex
+    plugins = with pkgs.vimPlugins; [
+      nerdcommenter
+      ultisnips
+      vim-airline
+      vim-airline-themes
+      vim-gruvbox8
+      vim-nix
+      vimtex
     ];
 
     extraConfig = ''
@@ -72,8 +74,7 @@
       syntax enable
 
       set background=dark
-      let g:gruvbox_contrast_dark='soft'
-      colorscheme gruvbox
+      colorscheme gruvbox8_soft
 
       set encoding=utf8
 
@@ -144,6 +145,9 @@
       set statusline+=%#warningmsg#
       set statusline+=%{SyntasticStatuslineFlag()}
       set statusline+=%*
+
+      let g:airline_experimental = 1
+      let g:airline_theme='base16_gruvbox_dark_hard'
 
       let g:syntastic_always_populate_loc_list = 1
       let g:syntastic_auto_loc_list = 0
