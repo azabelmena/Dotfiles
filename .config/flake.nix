@@ -43,19 +43,21 @@
     };
 
     darwinConfigurations = {
-      noether = inputs.darwin.lib.darwinSystem{
 
+      noether = darwin.lib.darwinSystem{
         modules = [
           ./nix/noether/configuration.nix
 
           home-manager.darwinModules.home-manager{
+            home-manager.extraSpecialArgs = { inherit inputs system-aarch64-darwin; };
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.alec = import ./home-manager/noether.nix;
           }
         ];
-
       };
+
     };
+
   };
 }
