@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, inputs, ... }: #NOETHER NIX!
 
 {
 
@@ -29,6 +29,7 @@
 
       bash = (import ./bash/bash-darwin.nix { inherit pkgs; });
       kitty = (import ./kitty/kitty-darwin.nix { inherit pkgs config; });
+      starship = ( import ./starship.nix { inherit pkgs config; });
       tmux = (import ./tmux.nix { inherit pkgs; });
       vim = (import ./vim.nix { inherit pkgs; });
       zathura = (import ./zathura.nix { inherit pkgs; });
@@ -39,5 +40,6 @@
       ".local/share/zsh/zsh-autosuggestions".source =
       "${pkgs.zsh-autosuggestions}/share/zhs-autosuggestions";
       "~/.config/kitty/kitty.conf".source = "${pkgs.kitty}/kitty/kitty.conf";
+      "~/.config/starship.toml".source = "${pkgs.starship}/starship.toml";
     };
 }

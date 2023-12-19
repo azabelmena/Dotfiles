@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, inputs, ... }:  # CAYLEY NIX!
 
 {
   imports = [
@@ -32,6 +32,7 @@
       kitty = (import ./kitty/kitty.nix { inherit pkgs config; });
       qutebrowser = (import ./qutebrowser/qutebrowser.nix { inherit pkgs config; });
       rofi = (import ./rofi.nix { inherit pkgs; });
+      starship = ( import ./starship.nix { inherit pkgs config; });
       tmux = (import ./tmux.nix { inherit pkgs; });
       vim = (import ./vim.nix { inherit pkgs; });
       waybar = (import ./waybar/waybar.nix { inherit pkgs; });
@@ -45,6 +46,7 @@
       "~/.config/kitty/kitty.conf".source = "${pkgs.kitty}/kitty/kitty.conf";
       "~/.config/qutebrowser/config.py".source = "${pkgs.qutebrowser}/qutebrowser/config.py";
       "~/.config/qutebrowser/quickmarks".source = "${pkgs.qutebrowser}/qutebrowser/quickmarks";
+      "~/.config/starship.toml".source = "${pkgs.starship}/starship.toml";
   };
 
   gtk = {

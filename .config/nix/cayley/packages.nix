@@ -34,6 +34,7 @@ users.users.alec.packages = with pkgs; [
     dunst
     eza
     geogebra
+    grimblast
     home-manager
     hugo
     hyprland
