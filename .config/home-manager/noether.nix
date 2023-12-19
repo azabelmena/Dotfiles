@@ -39,7 +39,5 @@
     home.file = {
       ".local/share/zsh/zsh-autosuggestions".source =
       "${pkgs.zsh-autosuggestions}/share/zhs-autosuggestions";
-      "~/.config/kitty/kitty.conf".source = "${pkgs.kitty}/kitty/kitty.conf";
-      "~/.config/starship.toml".source = "${pkgs.starship}/starship.toml";
     };
 }
