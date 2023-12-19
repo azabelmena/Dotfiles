@@ -18,17 +18,17 @@
     scan_timeout = 10;
 
     character = {
-      success_symbol = "[>](bold #${config.colorScheme.colors.base0B})";
-      error_symbol = "[>](bold #${config.colorScheme.colors.base08})";
-      vimcmd_symbol = "[>](bold #${config.colorScheme.colors.base0B})";
-      vimcmd_visual_symbol = "[>](bold #${config.colorScheme.colors.base0E})";
-      vimcmd_replace_symbol = "[>](bold #${config.colorScheme.colors.base0A})";
-      vimcmd_replace_one_symbol = "[>](bold #${config.colorScheme.colors.base0A})";
+      success_symbol = "[>]( #${config.colorScheme.colors.base0B})";
+      error_symbol = "[>]( #${config.colorScheme.colors.base08})";
+      vimcmd_symbol = "[>]( #${config.colorScheme.colors.base0B})";
+      vimcmd_visual_symbol = "[>]( #${config.colorScheme.colors.base0E})";
+      vimcmd_replace_symbol = "[>]( #${config.colorScheme.colors.base0A})";
+      vimcmd_replace_one_symbol = "[>]( #${config.colorScheme.colors.base0A})";
     };
 
     username = {
-      style_user = "bold #${config.colorScheme.colors.base0D}";
-      style_root = "bold #${config.colorScheme.colors.base08}";
+      style_user = " #${config.colorScheme.colors.base0D}";
+      style_root = " #${config.colorScheme.colors.base08}";
 
       show_always = true;
 
@@ -37,25 +37,25 @@
 
     hostname = {
       ssh_only = false;
-      style = "bold #${config.colorScheme.colors.base08}";
-      format = "[@$hostname]($style):";
+      style= " #${config.colorScheme.colors.base08}";
+      format = "[@](#${config.colorScheme.colors.base0A})[$hostname]($style)[:](#${config.colorScheme.colors.base0A})";
     };
 
     directory = {
       truncation_length = 1;
       truncation_symbol = "../";
 
-      style = "bold #${config.colorScheme.colors.base0D}";
+      style = " #${config.colorScheme.colors.base0D}";
       format = "[$path]($style)[$lock_symbol]($lock_style) ";
     };
 
     git_branch = {
-      style = "bold #${config.colorScheme.colors.base0A}";
+      style = " #${config.colorScheme.colors.base0A}";
       format = "[$branch]($style) ";
     };
 
     git_status = {
-      style = "bold #${config.colorScheme.colors.base08}";
+      style = " #${config.colorScheme.colors.base08}";
       ahead = "[⇡]($style)";
       diverged = "[⇕]($style)";
       behind = "[⇣]($style)";
@@ -70,11 +70,11 @@
       fish_indicator = "fish";
       powershell_indicator = "❯_";
       disabled = false;
-      format = "[$indicator](bold #${config.colorScheme.colors.base08})";
+      format = "[$indicator]( #${config.colorScheme.colors.base08})";
     };
 
     nix_shell = {
-      style = "bold #${config.colorScheme.colors.base0C}";
+      style = " #${config.colorScheme.colors.base0C}";
       symbol = "";
       impure_msg = "(impure)";
       pure_msg = "(pure)";
