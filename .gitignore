@@ -75,6 +75,7 @@
 .config/dolphin-emu/
 .config/enchant/
 .config/environment.d/
+.config/fontconfig/
 .config/gedit/
 .config/gnome-control-center/
 .config/gnome-session
@@ -87,6 +88,7 @@
 .config/hakuneko-desktop/
 .config/htop
 .config/htop/
+.config/hypr/
 .config/ibus
 .config/inkscape/
 .config/kde.org/
@@ -109,9 +111,11 @@
 .config/pulse/
 .config/pupgui/
 .config/qBittorrent/
+.config/qutebrowser/
 .config/qutebrowser/__pycache__
 .config/qutebrowser/bookmarks/
 .config/qutebrowser/qsettings/QtProject.conf
+.config/qutebrowserrc
 .config/retroarch/
 .config/rofi/config.rasi
 .config/rstudio/
@@ -119,6 +123,8 @@
 .config/screengrab/
 .config/spectaclerc
 .config/stacer/
+.config/starship.toml
+.config/systemd/
 .config/tlpui
 .config/tmux/tmux.conf
 .config/tuta_integration/
@@ -166,6 +172,7 @@
 .python_history
 .qutebrowser/
 .rustup/
+.sage/
 .sage/cache/
 .sage/temp/
 .screenrc
@@ -262,8 +269,3 @@ router_hacking/
 scripts/
 storage
 testdisk.log
-.config/qutebrowser/
-.config/qutebrowserrc
-.config/starship.toml
-.config/systemd/
-.config/hypr/
