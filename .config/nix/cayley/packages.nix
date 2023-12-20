@@ -32,6 +32,7 @@ users.users.alec.packages = with pkgs; [
     bat
     discord
     eza
+    fastfetch
     geogebra
     grimblast
     home-manager
@@ -40,7 +41,7 @@ users.users.alec.packages = with pkgs; [
     hyprpaper
     inkscape-with-extensions
     kitty
-    fastfetch
+    lf
     libnotify
     localsend
     mako
@@ -58,7 +59,6 @@ users.users.alec.packages = with pkgs; [
     texlive.combined.scheme-full
     tmux
     tutanota-desktop
-    vifm
     waybar
     xdg-desktop-portal-gtk
     zathura
