@@ -74,7 +74,7 @@
     };
 
     nix_shell = {
-      style = " #${config.colorScheme.colors.base0C}";
+      style = " #${config.colorScheme.colors.base0E}";
       symbol = "";
       impure_msg = "(impure)";
       pure_msg = "(pure)";
