@@ -21,6 +21,10 @@
       (pkgs.nerdfonts.override { fonts = ["IBMPlexMono"]; })
   ];
 
+  wayland.windowManager.hyprland = ( import ./hyprland.nix { inherit pkgs config;});
+
+  services.mako = ( import ./mako.nix { inherit pkgs config; } );
+
   programs = {
       git = {
           enable = true;

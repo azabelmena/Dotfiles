@@ -31,7 +31,6 @@ users.users.alec.packages = with pkgs; [
     authy
     bat
     discord
-    dunst
     eza
     geogebra
     grimblast
@@ -44,6 +43,7 @@ users.users.alec.packages = with pkgs; [
     fastfetch
     libnotify
     localsend
+    mako
     manix
     mpv
     obs-studio

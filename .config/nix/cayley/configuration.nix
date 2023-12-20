@@ -52,13 +52,17 @@ environment.systemPackages = [
 #};
 
 # Enable the X11 windowing system.
-services.xserver = {
-  enable = true;
-  displayManager = {
-    sddm.enable = true;
-    sddm.theme = "${import ../../home-manager/sddm/sddm.nix { inherit pkgs; }}";
+services = {
+  xserver = {
+    enable = true;
+    displayManager = {
+      sddm.enable = true;
+      sddm.theme = "${import ../../home-manager/sddm/sddm.nix { inherit pkgs; }}";
+    };
   };
 };
+
+
 
 # Configure keymap in X11
 #services.xserver.layout = "us";

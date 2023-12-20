@@ -49,6 +49,7 @@ users.users.alec.packages = with pkgs; [
     rofi-wayland
     sage
     starship
+    swaybg
     swaylock-effects
     texlive.combined.scheme-full
     tmux
