@@ -1,11 +1,11 @@
 { pkgs, config, ... }:
 {
 
+  package = pkgs.starship;
+
   enable = true;
   enableBashIntegration = true;
   enableZshIntegration = true;
-
-  package = pkgs.starship;
 
   settings = {
     add_newline = false;

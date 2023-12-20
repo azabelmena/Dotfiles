@@ -1,6 +1,7 @@
 {  pkgs, ... }:
 
 {
+  package = pkgs.skhd;
   enable = true;
   skhdConfig = ''
     cmd - return      : '/Applications/Nix Apps/kitty.app/Contents/MacOS'/kitty --hold sh -c 'cd'

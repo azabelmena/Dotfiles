@@ -1,5 +1,8 @@
 { pkgs, config, ... }:
 {
+
+    package = pkgs.kitty;
+
     enable = true;
 
     font = {

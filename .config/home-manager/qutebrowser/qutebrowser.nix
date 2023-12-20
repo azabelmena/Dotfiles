@@ -1,6 +1,8 @@
 {pkgs, config, ...}:
 {
 
+  package = pkgs.qutebrowser;
+
   enable = true;
 
   enableDefaultBindings = true;
@@ -29,7 +31,7 @@
       web.family.fantasy = "BlexMono Nerd Font";
     };
 
-    colors = (import ./gruvbox.nix { inherit pkgs config; });
+    colors = (import ./colors.nix { inherit pkgs config; });
 
   };
 

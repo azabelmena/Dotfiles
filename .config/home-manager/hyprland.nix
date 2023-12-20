@@ -1,6 +1,8 @@
 { pkgs, config, ... }:
 {
 
+  package = pkgs.hyprland;
+
   enable = true;
   enableNvidiaPatches = true;
 

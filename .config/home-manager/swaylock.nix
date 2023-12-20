@@ -1,6 +1,8 @@
 { pkgs, config, ... }:
 {
 
+  package = pkgs.swaylock-effects;
+
   enable = true;
 
   settings = {

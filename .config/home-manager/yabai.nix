@@ -1,5 +1,6 @@
 { pkgs, ... }:
 {
+  package = pkgs.yabai;
   enable = true;
   enableScriptingAddition = true;
   config = {

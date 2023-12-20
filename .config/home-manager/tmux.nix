@@ -1,5 +1,7 @@
 { pkgs, ... }:
 {
+  package = pkgs.tmux;
+
   enable = true;
   baseIndex = 1;
   historyLimit = 10000;

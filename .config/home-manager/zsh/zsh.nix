@@ -1,7 +1,10 @@
 { pkgs, ... }:
 
 let shellAliases = import ../aliases/aliasrc.nix;
-in {
+in
+  {
+
+    package = pkgs.zsh;
     enable = true;
     enableAutosuggestions = true;
     enableCompletion = true;

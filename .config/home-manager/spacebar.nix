@@ -1,5 +1,6 @@
 { pkgs, ...}:
 {
+  package = pkgs.spacebar;
   enable = true;
   package = pkgs.spacebar;
   config = {

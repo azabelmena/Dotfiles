@@ -1,6 +1,8 @@
 { pkgs, config, ... }:
 {
 
+  package = pkgs.mako;
+
   enable = true;
   actions = true;
 

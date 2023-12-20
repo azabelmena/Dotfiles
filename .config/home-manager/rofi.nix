@@ -1,5 +1,6 @@
 { pkgs, ... }:
 {
+  package = pkgs.rofi-wayland;
   enable = true;
   configPath = "/home/alec/.config/rofi/config.rasi";
 

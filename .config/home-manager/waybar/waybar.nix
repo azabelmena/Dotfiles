@@ -1,5 +1,8 @@
 { pkgs, ... }:
 {
+
+  package = pkgs.waybar;
+
   enable = true;
   settings = {
     bar = {

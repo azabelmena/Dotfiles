@@ -1,5 +1,6 @@
 { pkgs, ... }:
 {
+  package = pkgs.zathura;
   enable = true;
 
   mappings = {
