@@ -33,6 +33,7 @@
       qutebrowser = (import ./qutebrowser/qutebrowser.nix { inherit pkgs config; });
       rofi = (import ./rofi.nix { inherit pkgs; });
       starship = ( import ./starship.nix { inherit pkgs config; });
+      swaylock = ( import ./swaylock.nix { inherit pkgs config; });
       tmux = (import ./tmux.nix { inherit pkgs; });
       vim = (import ./vim.nix { inherit pkgs; });
       waybar = (import ./waybar/waybar.nix { inherit pkgs; });
@@ -43,10 +44,6 @@
   home.file = {
       ".local/share/zsh/zsh-autosuggestions".source =
       "${pkgs.zsh-autosuggestions}/share/zhs-autosuggestions";
-      "~/.config/kitty/kitty.conf".source = "${pkgs.kitty}/kitty/kitty.conf";
-      "~/.config/qutebrowser/config.py".source = "${pkgs.qutebrowser}/qutebrowser/config.py";
-      "~/.config/qutebrowser/quickmarks".source = "${pkgs.qutebrowser}/qutebrowser/quickmarks";
-      "~/.config/starship.toml".source = "${pkgs.starship}/starship.toml";
   };
 
   gtk = {
