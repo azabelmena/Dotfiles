@@ -1,11 +1,11 @@
 # Cayley NIX!
 
-{inputs, config, pkgs, ... }:
+{inputs, config, pkgs, lib, ... }:
 
 {
 
 nixpkgs.config.allowUnfree = true;
-nix.settings = {
+nix.settings = lib.mkDefault {
     experimental-features = ["nix-command" "flakes"];
 };
 
@@ -20,38 +20,31 @@ imports = [
 home-manager = {
   extraSpecialArgs = { inherit inputs; };
   users.alec = import ../../home-manager/cayley.nix;
+  useGlobalPkgs = true;
+  useUserPackages = true;
 };
 
-# Use the systemd-boot EFI boot loader.
 boot.kernelPackages = pkgs.linuxPackages_zen;
 boot.loader.systemd-boot.enable = true;
 boot.loader.efi.canTouchEfiVariables = true;
 
-networking.hostName = "cayley"; # Define your hostname.
-# Pick only one of the below networking options.
+networking.hostName = "cayley";
 networking.networkmanager.enable = true;
 
-# Set your time zone.
 time.timeZone = "America/Puerto_Rico";
 
 environment.sessionVariables = {
     WLR_NO_HARDWARE_CURSORS = "1";
     NIXOS_OZONE_WL = "1";
 };
-environment.systemPackages = [
-  pkgs.libsForQt5.qt5.qtquickcontrols2
-  pkgs.libsForQt5.qt5.qtgraphicaleffects
-];
 
-# Select internationalisation properties.
-#i18n.defaultLocale = "en_US.UTF-8";
-#console = {
-#    font = "Lat2-Terminus16";
-#    keyMap = "us";
-#    useXkbConfig = true; # use xkbOptions in tty.
-#};
+i18n.defaultLocale = "en_US.UTF-8";
+console = lib.mkDefault {
+    font = "Lat2-Terminus16";
+    keyMap = "us";
+    useXkbConfig = true;
+};
 
-# Enable the X11 windowing system.
 services = {
   xserver = {
     enable = true;
@@ -62,16 +55,10 @@ services = {
   };
 };
 
+services.xserver.layout = "us";
 
-
-# Configure keymap in X11
-#services.xserver.layout = "us";
-#services.xserver.xkbOptions = "eurosign:e,caps:escape";
-
-# Enable CUPS to print documents.
 services.printing.enable = true;
 
-# Enable sound.
 sound.enable = true;
 security.rtkit.enable = true;
 services.pipewire = {
@@ -82,8 +69,7 @@ services.pipewire = {
         jack.enable = true;
 };
 
-#hardware.pulseaudio.enable = true;
-hardware.system76.enableAll = true; # uncomment when building nix on system76 hardware.
+hardware.system76.enableAll = true;
 hardware.bluetooth.enable = true;
 services.blueman.enable = true;
 
@@ -93,13 +79,9 @@ security.pam.services.swaylock = {
   '';
 };
 
-# Enable touchpad support (enabled default in most desktopManager).
-# services.xserver.libinput.enable = true;
-
-# Define a user account. Don't forget to set a password with ‘passwd’.
 users.users.alec = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "networkmanager" ];
     shell = pkgs.zsh;
 };
 
@@ -108,17 +90,12 @@ nix.nixPath = [
   "nixos-config=/home/alec/.config/nixos/cayley/configuration.nix"
 ];
 
-# Some programs need SUID wrappers, can be configured further or are
-# started in user sessions.
-# programs.mtr.enable = true;
+programs.mtr.enable = true;
 programs.gnupg.agent = {
   enable = true;
   enableSSHSupport = true;
 };
 
-# List services that you want to enable:
-
-# Enable the OpenSSH daemon.
 services.openssh.enable = true;
 
 services.avahi = {
@@ -127,23 +104,10 @@ services.avahi = {
   openFirewall = true;
 };
 
-# Open ports in the firewall.
-#networking.firewall.allowedTCPPorts = [ 80 443 22 53317 ];
-#networking.firewall.allowedUDPPorts = [];
-# Or disable the firewall altogether.
+networking.firewall.allowedTCPPorts = [ 80 443 22 53317 ];
+networking.firewall.allowedUDPPorts = [ 80 443 22 53317 ];
 networking.firewall.enable = false;
 
-# Copy the NixOS configuration file and link it from the resulting system
-# (/run/current-system/configuration.nix). This is useful in case you
-# accidentally delete configuration.nix.
-# system.copySystemConfiguration = true;
-
-# This value determines the NixOS release from which the default
-# settings for stateful data, like file locations and database versions
-# on your system were taken. It's perfectly fine and recommended to leave
-# this value at the release version of the first install of this system.
-# Before changing this value read the documentation for this option
-# (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-system.stateVersion = "unstable"; # Did you read the comment?
+system.stateVersion = "unstable";
 
 }

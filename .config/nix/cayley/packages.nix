@@ -1,8 +1,6 @@
-{ config, pkgs, ... }:
+{ config, pkgs, ... }: # Cayley NIX!
 
 {
-# List packages installed in system profile. To search, run:
-# Cayley NIX!
 
 environment.systemPackages = with pkgs; [ # System essential programs
     autoconf
@@ -18,6 +16,8 @@ environment.systemPackages = with pkgs; [ # System essential programs
     gmp
     gnumake
     htop-vim
+    libsForQt5.qt5.qtgraphicaleffects
+    libsForQt5.qt5.qtquickcontrols2
     llvmPackages_9.openmp
     lshw
     mpfr
