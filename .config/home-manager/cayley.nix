@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:  # CAYLEY NIX!
+{ config, pkgs, inputs, lib, ... }:  # CAYLEY NIX!
 
 {
   imports = [
@@ -18,12 +18,15 @@
   programs.home-manager.enable = true;
 
   home.packages = [
-      (pkgs.nerdfonts.override { fonts = ["IBMPlexMono"]; })
+    (pkgs.nerdfonts.override { fonts = ["IBMPlexMono"]; })
   ];
 
   wayland.windowManager.hyprland = ( import ./hyprland.nix { inherit pkgs config;});
 
-  services.mako = ( import ./mako.nix { inherit pkgs config; } );
+  services = {
+    mako = ( import ./mako.nix { inherit pkgs config; } );
+    wlsunset = ( import ./wlsunset.nix { inherit pkgs; } );
+  };
 
   programs = {
       git = {
@@ -35,7 +38,7 @@
       bash = (import ./bash/bash.nix { inherit pkgs; });
       kitty = (import ./kitty/kitty.nix { inherit pkgs config; });
       qutebrowser = (import ./qutebrowser/qutebrowser.nix { inherit pkgs config; });
-      rofi = (import ./rofi.nix { inherit pkgs; });
+      rofi = (import ./rofi/rofi.nix { inherit pkgs config lib; });
       starship = ( import ./starship.nix { inherit pkgs config; });
       swaylock = ( import ./swaylock.nix { inherit pkgs config; });
       tmux = (import ./tmux.nix { inherit pkgs; });

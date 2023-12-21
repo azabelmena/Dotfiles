@@ -20,10 +20,11 @@ environment.systemPackages = with pkgs; [ # System essential programs
     libsForQt5.qt5.qtquickcontrols2
     llvmPackages_9.openmp
     lshw
+    man-pages
+    man-pages-posix
     mpfr
     mpi
     python3
-    stdmanpages
     vim-full
 ];
 
@@ -60,28 +61,34 @@ users.users.alec.packages = with pkgs; [
     tmux
     tutanota-desktop
     waybar
+    wlsunset
     xdg-desktop-portal-gtk
     zathura
     zsh
 ];
 
-programs.zsh.enable = true;
-
-programs.hyprland = {
-  enable = true;
-  enableNvidiaPatches = true;
-  xwayland.enable = true;
+programs = {
+  zsh.enable = true;
+  hyprland.enable = true;
 };
+
 environment.sessionVariables = {
-    #WLR_NO_HARDWARE_CURSORS = "1";
     NIXOS_OZONE_WL = "1";
 };
 
-xdg.portal.enable = true;
-xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
+xdg.portal = {
+  enable = true;
+  extraPortals = [pkgs.xdg-desktop-portal-gtk];
+  config = {
+    common.default = "*";
+  };
+};
+
 
 fonts.packages = with pkgs; [
    (nerdfonts.override {fonts  = ["IBMPlexMono"];})
 ];
+
+documentation.dev.enable = true;
 
 }
