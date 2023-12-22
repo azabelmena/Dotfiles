@@ -241,7 +241,6 @@ description
 emulation/
 extra_storage
 finite_field/
-flake.lock
 galois-cuda/
 galois/
 games
