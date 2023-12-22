@@ -5,7 +5,7 @@
 {
 
 nixpkgs.config.allowUnfree = true;
-nix.settings = lib.mkDefault {
+nix.settings = {
     experimental-features = ["nix-command" "flakes"];
 };
 
