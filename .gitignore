@@ -117,6 +117,7 @@
 .config/qutebrowser/qsettings/QtProject.conf
 .config/qutebrowserrc
 .config/retroarch/
+.config/rofi/
 .config/rofi/config.rasi
 .config/rstudio/
 .config/rygel.conf
