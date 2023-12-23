@@ -29,13 +29,8 @@
   };
 
   programs = {
-      git = {
-          enable = true;
-          userName = "Alec S. Zabel-Mena";
-          userEmail = "alec.zabel@upr.edu";
-      };
-
       bash = (import ./bash/bash.nix { inherit pkgs; });
+      git = ( import ./git.nix { inherit pkgs; } );
       kitty = (import ./kitty/kitty.nix { inherit pkgs config; });
       qutebrowser = (import ./qutebrowser/qutebrowser.nix { inherit pkgs config; });
       rofi = (import ./rofi/rofi.nix { inherit pkgs config lib; });
