@@ -12,6 +12,7 @@
 
     exec-once = [
       "waybar &  mako"
+      "wlsunset -S 06:30 -s 18:30"
       "${pkgs.swaybg}/bin/swaybg -i ~/Pictures/Wallpapers/gruvbox-dark-lockscreen-scalable.png"
       "swayidle -w timeout 300 'swaylock' before-sleep 'swaylock"
       "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
@@ -96,6 +97,7 @@
     bind = $mod_main, V, exec, vifm
     bind = $mod_main, Z, exec, zathura
     bind = $mod_main, SPACE, exec, rofi -show drun
+    bind = $mod_shift, SPACE, exec, rofi -show window
 
     bind = $mod_main, Q, killactive,
     bind = $mod_exit, DELETE, exit,

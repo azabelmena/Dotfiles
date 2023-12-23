@@ -25,7 +25,6 @@
 
   services = {
     mako = ( import ./mako.nix { inherit pkgs config; } );
-    wlsunset = ( import ./wlsunset.nix { inherit pkgs; } );
   };
 
   programs = {
