@@ -49,6 +49,7 @@ users.users.alec.packages = with pkgs; [
     manix
     mpv
     obs-studio
+    papirus-icon-theme
     pavucontrol
     protonup-ng
     qutebrowser

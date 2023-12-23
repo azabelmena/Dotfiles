@@ -37,6 +37,7 @@ in
     text-color = mkLiteral "@foreground-color";
   };
   "listview" = {
+    background-color = mkLiteral "@background-color";
     border = mkLiteral "2px solid 0 0";
     padding = mkLiteral "2px 0 0";
     border-color = mkLiteral "@seperator-color";

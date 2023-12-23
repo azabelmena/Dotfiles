@@ -7,11 +7,10 @@
   theme = ( import ./theme.nix { inherit pkgs config lib; } );
 
   extraConfig = {
-    modi = "combi";
-    display-drun = "drun";
-    display-run = "run";
-    display-window = "window";
+    modi = "drun";
+    display-drun = "";
     show-icons = true;
+    icon-theme = "Papirus";
   };
 
   plugins = [

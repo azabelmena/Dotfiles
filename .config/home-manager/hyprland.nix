@@ -43,7 +43,7 @@
     decoration = {
 
       active_opacity = 1;
-      inactive_opacity = 0.5;
+      inactive_opacity = 0.8;
 
       rounding = 0;
       drop_shadow = true;
