@@ -9,6 +9,7 @@
   extraConfig = {
     modi = "drun";
     display-drun = "";
+    display-window = "";
     show-icons = true;
     icon-theme = "Papirus";
   };
