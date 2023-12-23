@@ -104,9 +104,9 @@ services.avahi = {
   openFirewall = true;
 };
 
-networking.firewall.allowedTCPPorts = [ 80 443 22 53317 ];
-networking.firewall.allowedUDPPorts = [ 80 443 22 53317 ];
-networking.firewall.enable = false;
+networking.firewall.allowedTCPPorts = [ 22 80 443 1024 53317 ];
+networking.firewall.allowedUDPPorts = [ 22 80 443 53317 ];
+networking.firewall.enable = true;
 
 system.stateVersion = "unstable";
 
