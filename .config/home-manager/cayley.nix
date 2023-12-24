@@ -12,7 +12,7 @@
   home.stateVersion = "23.11";
 
   home.sessionVariables = {
-      EDITOR = "vim";
+      EDITOR = "nvim";
   };
 
   programs.home-manager.enable = true;
@@ -37,7 +37,7 @@
       starship = ( import ./starship.nix { inherit pkgs config; });
       swaylock = ( import ./swaylock.nix { inherit pkgs config; });
       tmux = (import ./tmux.nix { inherit pkgs; });
-      vim = (import ./vim.nix { inherit pkgs; });
+      neovim = ( import ./nvim/nvim.nix { inherit pkgs config; } );
       waybar = (import ./waybar/waybar.nix { inherit pkgs; });
       zathura = (import ./zathura.nix { inherit pkgs; });
       zsh = (import ./zsh/zsh.nix { inherit pkgs; });
@@ -46,6 +46,12 @@
   home.file = {
       ".local/share/zsh/zsh-autosuggestions".source =
       "${pkgs.zsh-autosuggestions}/share/zhs-autosuggestions";
+
+      "nvim" = {
+        recursive = true;
+        source = "/home/alec/.config/home-manager/nvim/lua/";
+        target = ".config/nvim/lua";
+      };
   };
 
   gtk = {

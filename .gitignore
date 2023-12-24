@@ -269,3 +269,5 @@ router_hacking/
 scripts/
 storage
 testdisk.log
+.config/nvim/
+.vim/undodir/
