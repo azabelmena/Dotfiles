@@ -44,7 +44,7 @@
     decoration = {
 
       active_opacity = 1;
-      inactive_opacity = 0.8;
+      inactive_opacity = 0.75;
 
       rounding = 0;
       drop_shadow = true;
@@ -84,6 +84,7 @@
     misc = {
       enable_swallow = true;
       swallow_regex="^(kitty)$";
+      no_direct_scanout = true;
     };
   };
 
