@@ -10,6 +10,9 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.smartindent = true
 
+vim.opt.cursorline = true
+vim.opt.cursorcolumn = true
+
 local indent_map = {
 	nix = { tabstop = 2, shiftwidth = 2, expandtab = true },
 	markdown = { tabstop = 4, shiftwidth = 4, expandtab = true },
