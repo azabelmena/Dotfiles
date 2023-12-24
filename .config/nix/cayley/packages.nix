@@ -34,6 +34,7 @@ users.users.alec.packages = with pkgs; [
     discord
     eza
     fastfetch
+    gamemode
     geogebra
     grimblast
     home-manager
@@ -56,7 +57,6 @@ users.users.alec.packages = with pkgs; [
     rofi-wayland
     sage
     starship
-    steam
     swaylock-effects
     texlive.combined.scheme-full
     tmux
@@ -71,6 +71,11 @@ users.users.alec.packages = with pkgs; [
 programs = {
   zsh.enable = true;
   hyprland.enable = true;
+  steam = {
+    enable = true;
+    remotePlay.openFirewall = true;
+    dedicatedServer.openFirewall = true;
+  };
 };
 
 environment.sessionVariables = {

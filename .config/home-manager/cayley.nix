@@ -45,6 +45,7 @@
   home.file = {
       ".local/share/zsh/zsh-autosuggestions".source =
       "${pkgs.zsh-autosuggestions}/share/zhs-autosuggestions";
+      ".vimrc".source = "${pkgs.vim-full}/share/vim/vimrc";
   };
 
   gtk = {
