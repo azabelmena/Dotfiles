@@ -270,4 +270,4 @@ scripts/
 storage
 testdisk.log
 .config/nvim/
-.vim/undodir/
+.vim/
