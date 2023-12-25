@@ -13,7 +13,7 @@ package = pkgs.neovim-unwrapped;
 
   plugins = with pkgs.vimPlugins; [
     nerdcommenter
-    ultisnips
+    luasnip
     vim-nix
     vimtex
     gruvbox-nvim
@@ -21,8 +21,12 @@ package = pkgs.neovim-unwrapped;
   ];
 
   extraLuaConfig = ''
+
+    local ls = require("luasnip")
+
     require("general")
     require("remap")
+    require("luasnip.loaders.from_lua").load({paths = "~/.config/nvim/LuaSnip/"})
     require("gruvbox").setup()
     require("lualine").setup()
   '';
