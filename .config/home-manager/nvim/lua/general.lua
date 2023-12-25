@@ -1,8 +1,11 @@
 vim.g.netrw_banner = 0
 vim.g.netrw_browse_split = 0
 vim.g.netrw_browse_liststyle = 1
-vim.g.netrw_browse_bufsettings = "noma nomod nou nowrap ro nobl"
 
+vim.cmd([[let g:netrw_bufsettings = 'noma nomod nu nowrap ro nobl']])
+vim.cmd("colorscheme gruvbox")
+
+vim.opt.nu = true
 vim.opt.relativenumber = true
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
@@ -52,3 +55,11 @@ vim.opt.updatetime = 50
 vim.o.termguicolors = true
 
 vim.opt.colorcolumn = "81"
+
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+  pattern = { "*" },
+  command = [[%s/\s\+$//e]],
+})
+
+
+vim.cmd("command C let @/=\"\"")
