@@ -49,13 +49,15 @@
 
       "nvim" = {
         recursive = true;
-        source = "/home/alec/.config/home-manager/nvim/lua/";
-        target = ".config/nvim/lua";
+        source = config.lib.file.mkOutOfStoreSymlink
+        "/home/alec/.config/home-manager/nvim/lua/";
+        target = ".config/nvim/lua/";
       };
 
       "ultisnips" = {
         recursive = true;
-        source = "/home/alec/.config/home-manager/nvim/UltiSnips";
+        source = config.lib.file.mkOutOfStoreSymlink
+        "/home/alec/.config/home-manager/nvim/UltiSnips";
         target = ".config/nvim/UltiSnips/";
       };
   };
