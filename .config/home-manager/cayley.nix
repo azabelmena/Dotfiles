@@ -38,7 +38,7 @@
       tmux = (import ./tmux.nix { inherit pkgs; });
       neovim = ( import ./nvim/nvim.nix { inherit pkgs config; } );
       waybar = (import ./waybar/waybar.nix { inherit pkgs; });
-      zathura = (import ./zathura.nix { inherit pkgs; });
+      zathura = (import ./zathura.nix { inherit pkgs config; });
       zsh = (import ./zsh/zsh.nix { inherit pkgs; });
   };
 
