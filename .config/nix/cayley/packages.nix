@@ -66,6 +66,7 @@ users.users.alec.packages = with pkgs; [
     xdg-desktop-portal-gtk
     zathura
     zsh
+    neovim
 ];
 
 programs = {
