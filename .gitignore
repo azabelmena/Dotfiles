@@ -135,6 +135,7 @@
 .config/user-dirs.dirs/
 .config/user-dirs.locale/
 .config/vifm/vifminfo.json
+.config/waybay/
 .config/whatsapp-for-linux/
 .config/whatsdesk/
 .config/wireshark/
@@ -183,11 +184,13 @@
 .steampath
 .steampid
 .vim/
+.vim/
 .vim/.netrwhist
 .vim/pack/
 .vim/plugged/
 .vim/view/
 .viminfo
+.vimrc
 .vimrc
 .wget-hsts
 .wine/
@@ -272,5 +275,3 @@ router_hacking/
 scripts/
 storage
 testdisk.log
-.vim/
-.vimrc
