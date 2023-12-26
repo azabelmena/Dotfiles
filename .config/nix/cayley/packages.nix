@@ -34,6 +34,7 @@ users.users.alec.packages = with pkgs; [
     discord
     eza
     fastfetch
+    fd
     gamemode
     geogebra
     grimblast
@@ -49,11 +50,13 @@ users.users.alec.packages = with pkgs; [
     mako
     manix
     mpv
+    neovim
     obs-studio
     papirus-icon-theme
     pavucontrol
     protonup-ng
     qutebrowser
+    ripgrep
     rofi-wayland
     sage
     starship
@@ -66,7 +69,6 @@ users.users.alec.packages = with pkgs; [
     xdg-desktop-portal-gtk
     zathura
     zsh
-    neovim
 ];
 
 programs = {

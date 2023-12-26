@@ -15,6 +15,12 @@ package = pkgs.neovim-unwrapped;
     nerdcommenter
     ultisnips
     vimtex
+    plenary-nvim
+    nvim-treesitter.withAllGrammars
+    telescope-nvim
+    telescope-fzf-native-nvim
+    telescope-file-browser-nvim
+
     gruvbox-nvim
     lualine-nvim
   ];
@@ -24,6 +30,8 @@ package = pkgs.neovim-unwrapped;
     require("remap")
     require("vimtex")
     require("ultisnips")
+    require("telescope")
+
     require("gruvbox").setup()
     require("lualine").setup()
   '';
