@@ -14,7 +14,6 @@ package = pkgs.neovim-unwrapped;
   plugins = with pkgs.vimPlugins; [
     nerdcommenter
     ultisnips
-    vim-nix
     vimtex
     gruvbox-nvim
     lualine-nvim
@@ -23,6 +22,7 @@ package = pkgs.neovim-unwrapped;
   extraLuaConfig = ''
     require("general")
     require("remap")
+    require("vimtex")
     require("ultisnips")
     require("gruvbox").setup()
     require("lualine").setup()
