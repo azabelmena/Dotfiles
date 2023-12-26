@@ -10,7 +10,7 @@
     home.stateVersion = "23.11";
 
     home.sessionVariables = {
-    EDITOR = "vim";
+    EDITOR = "nvim";
     XDG_CONFIG_HOME = ".config";
     };
 
