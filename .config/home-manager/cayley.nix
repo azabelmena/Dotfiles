@@ -59,6 +59,12 @@
         "/home/alec/.config/home-manager/nvim/UltiSnips";
         target = ".config/nvim/UltiSnips/";
       };
+
+      "waybar" = {
+        source = config.lib.file.mkOutOfStoreSymlink
+        "/home/alec/.config/home-manager/waybar/style.css";
+        target = ".config/waybar/style.css";
+      };
   };
 
   gtk = {
