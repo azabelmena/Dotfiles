@@ -38,6 +38,7 @@
   monkeytype = "https://monkeytype.com/";
   moodle = "https://online.uprrp.edu/";
   mynixos = "https://mynixos.com/";
+  nixos = "https://nixos.org/";
   nixpkgs = "https://search.nixos.org/packages";
   noip = "https://www.noip.com/login";
   osdev = "https://wiki.osdev.org/Main_Page";
