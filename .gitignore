@@ -134,6 +134,7 @@
 .config/tutanota-desktop/
 .config/unity3d/
 .config/user-dirs.dirs/
+.config/fastfetch/
 .config/user-dirs.locale/
 .config/vifm/
 .config/vifm/vifminfo.json
