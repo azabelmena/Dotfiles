@@ -16,7 +16,7 @@ in
 
     initExtra = ''
         sleep 0.1
-        fastfetch --logo pop_os
+        fastfetch
 
         bindkey -v
 

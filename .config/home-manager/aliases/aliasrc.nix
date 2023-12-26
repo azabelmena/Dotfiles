@@ -6,13 +6,11 @@
     hibernate="systemctl hibernate";
 
     # Listing
-    clear="clear && fastfetch --logo pop_os"; # continue to flex.
-    Clear="Clear && fastfetch --logo pop_os"; # continue to flex.
+    clear="clear && fastfetch"; # continue to flex.
     ls="exa";
     bat="bat --theme gruvbox-dark";    # Add bat alternative to less.
 
     # Fetching programs
-    fastfetchrc="vim ~/.config/fastfetch/config.jsonc";
 
     vifmrc="vim ~/.config/vifm/vifmrc";
 
