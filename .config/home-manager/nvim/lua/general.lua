@@ -2,11 +2,12 @@ vim.g.netrw_banner = 0
 vim.g.netrw_browse_split = 0
 vim.g.netrw_browse_liststyle = 1
 
-vim.cmd([[let g:netrw_bufsettings = 'noma nomod nu nowrap ro nobl']])
+vim.cmd([[let g:netrw_bufsettings = 'noma nomod nonu nowrap ro nobl']])
 vim.cmd("colorscheme gruvbox")
 
 vim.opt.nu = false
 vim.opt.relativenumber = true
+vim.opt.showmode = false
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
@@ -63,8 +64,3 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 
 
 vim.cmd("command C let @/=\"\"")
-
-vim.cmd([[imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>']])
-vim.cmd([[smap <silent><expr> <Tab> luasnip#jumpable(1) ? '<Plug>luasnip-jump-next' : '<Tab>']])
-vim.cmd([[imap <silent><expr> <S-Tab> luasnip#jumpable(-1) ? '<Plug>luasnip-jump-prev' : '<S-Tab>']])
-vim.cmd([[smap <silent><expr> <S-Tab> luasnip#jumpable(-1) ? '<Plug>luasnip-jump-prev' : '<S-Tab>']])

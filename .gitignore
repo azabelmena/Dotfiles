@@ -102,6 +102,7 @@
 .config/matplotlib
 .config/mimeapps.list
 .config/mpv
+.config/nvim/
 .config/obs-studio/
 .config/okular.kmessagebox
 .config/okularrc
@@ -181,11 +182,13 @@
 .steam/
 .steampath
 .steampid
+.vim/
 .vim/.netrwhist
 .vim/pack/
 .vim/plugged/
 .vim/view/
 .viminfo
+.vimrc
 .wget-hsts
 .wine/
 .xinitrc
@@ -269,5 +272,3 @@ router_hacking/
 scripts/
 storage
 testdisk.log
-.config/nvim/
-.vim/

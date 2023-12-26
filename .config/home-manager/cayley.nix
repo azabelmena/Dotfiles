@@ -56,7 +56,7 @@
       "ultisnips" = {
         recursive = true;
         source = "/home/alec/.config/home-manager/nvim/UltiSnips";
-        target = ".vim/UltiSnips";
+        target = ".config/nvim/UltiSnips/";
       };
   };
 
