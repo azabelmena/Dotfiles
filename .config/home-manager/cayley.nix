@@ -42,10 +42,23 @@
       zsh = (import ./zsh/zsh.nix { inherit pkgs; });
   };
 
-  home.file = {
+    home.file = {
       ".local/share/zsh/zsh-autosuggestions".source =
       "${pkgs.zsh-autosuggestions}/share/zhs-autosuggestions";
-      ".vimrc".source = "${pkgs.vim-full}/share/vim/vimrc";
+
+      "nvim" = {
+        recursive = true;
+        source = config.lib.file.mkOutOfStoreSymlink
+        "/home/alec/.config/home-manager/nvim/lua/";
+        target = ".config/nvim/lua/";
+      };
+
+      "ultisnips" = {
+        recursive = true;
+        source = config.lib.file.mkOutOfStoreSymlink
+        "/home/alec/.config/home-manager/nvim/UltiSnips";
+        target = ".config/nvim/UltiSnips/";
+      };
   };
 
   gtk = {
