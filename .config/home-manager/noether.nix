@@ -1,7 +1,6 @@
 { config, pkgs, inputs, ... }: #NOETHER NIX!
 
 {
-
     imports = [
       inputs.nix-colors.homeManagerModules.default
     ];
@@ -32,7 +31,6 @@
       starship = ( import ./starship.nix { inherit pkgs config; });
       tmux = (import ./tmux.nix { inherit pkgs; });
       neovim = ( import ./nvim/nvim.nix { inherit pkgs config; } );
-      zathura = (import ./zathura.nix { inherit pkgs; });
       zsh = (import ./zsh/zsh-darwin.nix { inherit pkgs; });
     };
 
