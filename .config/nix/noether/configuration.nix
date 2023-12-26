@@ -42,7 +42,6 @@
     vifm
     vim-full
     yabai
-    zathura
     zsh
     zsh-autosuggestions
     zsh-syntax-highlighting
