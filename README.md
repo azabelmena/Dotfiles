@@ -18,20 +18,20 @@ here are:
     - An Apple M2 MacBook Pro.
 
 By the way, all my machines are named after mathematicians:
-    - The, name `noether` can refer to either Emmy Noether, or Max Noether
-    (Emmy's father); although I named my M2 MacBook specifically after Emmy.
-    - If you copy my (nix) configs, you do not need to adhere to the
-    mathematician naming scheme; although it would be neat if you did.
-    - Hopefully down the line I will acquire a framework laptop and name it one
-    of the following:
-        - `hilbert` (David Hilbert)
-        - `sophie` (Sophie Germaine)
-        - `hypatia` (Hypatia of Alexandria)
-        - `agnesi` (Maria Gaetana Agnesi)
-        - `fermat` (Pierre de Fermat)
-        - `weyl` (Hermann Weyl)
-    - The names here are not capitalized (even though they should be) to be in
-    keeping with hostname conventions.
+- The, name `noether` can refer to either Emmy Noether, or Max Noether
+(Emmy's father); although I named my M2 MacBook specifically after Emmy.
+- If you copy my (nix) configs, you do not need to adhere to the
+mathematician naming scheme; although it would be neat if you did.
+- Hopefully down the line I will acquire a framework laptop and name it one
+of the following:
+    - `hilbert` (David Hilbert)
+    - `sophie` (Sophie Germaine)
+    - `hypatia` (Hypatia of Alexandria)
+    - `agnesi` (Maria Gaetana Agnesi)
+    - `fermat` (Pierre de Fermat)
+    - `weyl` (Hermann Weyl)
+- The names here are not capitalized (even though they should be) to be in
+keeping with hostname conventions.
 
 # What's Here?
 
@@ -84,6 +84,12 @@ given machine. This system should be:
             - `.config/nix/`
     - The `Pictures` directory should not be counted torwards the state of the
     system, as is it is completely optional to include.
+        - Technically, the files `swaylock.nix` and `hyprland.nix` introduce
+        state through `Pictures` and henced depends on `Pictures`, however I
+        don't think it is too big of an issue, and I should be able to remedy
+        this pretty quickly when I have time.
+        - There are other configuration files that may introduce state, and I
+        plan on fixing them as I stumble upon them.
 
 # A note for People Who Wish to Steal from This Repository.
 
@@ -108,3 +114,8 @@ switch over completely to NixOS.
 
 # Finally.
 Feel free to steal my dots, the repository is public for a reason.
+
+# P.S.
+If for some reason these configs violate the goals of achieving Reproducability,
+Consistency, and Statelessness, please let me know. You can do this by opening
+an issue on github.
