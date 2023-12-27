@@ -1,85 +1,110 @@
 <p align="center">
   <b>azabelmena/Dotfiles</b><br />
-  <span align="center">Declarative and reproducible system configurations for NixOS
-  and Nix-Darwin.</span>
+  <span align="center">Declarative, reproducible, and stateless system
+  configurations for NixOS and Nix-Darwin.</span>
 </p>
 
-# What's here?
-Here are NixOS and Nix-Darwin configuration files, and dotfiles that I
-have declared in the nix language for different machines. The machines included
-here are:
-- `cayley`
-    - A system76 Thelio desktop.
-- `cauchy`
-    - An old Lenovo Ideapad I have lying around for tinkering.
-- `noether`
-    - An Apple Silicon M1 MacBook Pro.
+# A Nice Warm Welcome.
 
-- All my machines are named after mathematicians.
-    - The, `noether` can refer to either Emmy Noether, or Max Noether (Emmy's father);
-    although I had Emmy Noether in mind when I named my M1 Mac.
-    - If you copy my nix configs, you do not need to adhere to the mathematician
-    naming scheme; algthough it would be neat if you did.
+Welcome to my dotfiles repository. What we have here are NixOS and Nix-Darwin
+configuration files, and dotfiles that I have declared in the nix language for
+different machines. The machines included
+here are:
+- `cayley` (Arthur Cayley)
+    - A system76 Thelio desktop.
+- `cauchy` (Augustin-Louis Cauchy)
+    - An old Lenovo Ideapad I have lying around for tinkering and testing.
+- `noether` (Emmy Noether)
+    - An Apple M2 MacBook Pro.
+
+By the way, all my machines are named after mathematicians:
+    - The, name `noether` can refer to either Emmy Noether, or Max Noether
+    (Emmy's father); although I named my M2 MacBook specifically after Emmy.
+    - If you copy my (nix) configs, you do not need to adhere to the
+    mathematician naming scheme; although it would be neat if you did.
     - Hopefully down the line I will acquire a framework laptop and name it one
     of the following:
-        - `hilbert`
-        - `sophie` (after sophi germaine)
-        - `hypatia`
-        - `agnesi`
-        - `fermat`
-        - `weyl`
-    - The names here are not capitalized (although they should be) to be in
+        - `hilbert` (David Hilbert)
+        - `sophie` (Sophie Germaine)
+        - `hypatia` (Hypatia of Alexandria)
+        - `agnesi` (Maria Gaetana Agnesi)
+        - `fermat` (Pierre de Fermat)
+        - `weyl` (Hermann Weyl)
+    - The names here are not capitalized (even though they should be) to be in
     keeping with hostname conventions.
+
+# What's Here?
 
 Here you will find:
 
-- My NixOS and Nix-Darwin configuration files, as well as the flake.nix used to
-build them on different machines.
-    - NixOS for generic machines
+- My NixOS and Nix-Darwin configuration files, as well as the flake.nix and the
+flake.lock files used to build them on different machines.
+    - NixOS for machines with generic hardware.
         - i.e. `cayley`, `cauchy`, etc...
-    - Nix-Darwin to have a reporducible and pure nix environment in OSX.
+    - Nix-Darwin for Apple hardware and have a reproducible system on OSX.
         - i.e. `noether`.
+        - Reproducibility here is limited given how locked down OSX is.
 - Various home-manager `.nix` files for programs which include:
-    - Vim
-    - Neovim
-    - Zsh and Bash
-    - Kitty (a terminal emulator)
-    - Hyprland
-    - Waybar
-    - Zathura
-    - Rofi
-    - Yabai and `skhd` (a window manager and hotkey daemon for OSX, respectively)
-    - Many other programs (look through `.config/home-manager/`)
+    - Vim.
+    - Neovim.
+    - Zsh and Bash.
+    - Kitty (a terminal emulator).
+    - Hyprland.
+    - Waybar.
+    - Zathura.
+    - Rofi.
+    - Yabai and `skhd` (a window manager and hotkey daemon for OSX, respectively).
+    - Many other programs (look through `.config/home-manager/`).
 
-The goal here is to create a repository which describes a given system. This
-system should be:
+- A folder of pictures (these are for storing wallpapers) and should not really
+be considered as part of the configs.
+- A .gitignore and this README.
+    - These are just boilerplate and should also not be considered a part of the
+    configs.
+
+# What's The Goal?
+
+The goal here is to create a repository which describes a given system on a
+given machine. This system should be:
 - Reproducible
-    - It can be built on many different machines, and give the same programs.
+    - It can be built on many different machines, and give the same programs and
+    configurations according to a given specification.
 - Consistent
-    - Each build should have exactly the same versions of programs specified
-    in the files.
-    - This is usually a part of reproducibility, but I like to seperate it out.
-- stateless
+    - Each build should have exactly the same versions of programs from a given
+    specification.
+    - This is actually a part of reproducibility, but I like to seperate it out.
+- Stateless
     - The system described should only depend on the configuration files
-    specified, and not on any outside state.
+    specified, and not on any *outside* state.
+        - Think `/etc/`, or `~/.local/` or `~/.config/some-program-directory`.
+        - It should only depend on the following:
+            - `flake.nix`
+            - `flake.lock`
+            - `.config/home-manager/`
+            - `.config/nix/`
+    - The `Pictures` directory should not be counted torwards the state of the
+    system, as is it is completely optional to include.
 
-# A note on people who wish to steal from this repository.
+# A note for People Who Wish to Steal from This Repository.
 
 The dotfiles here are primarly geared around `nix` and using `nix` to declare
 actual configuration files. As such, the actual configuration files for programs
-here (should not) don't exist, and you will find just their `nix` declerations.
-If you don't have a `nix` based system (i.e. NixOS, Nix-Darwnin, or just having
-the `nix` package manager installed), you could do one of the following:
-- You could comb through the individual `.nix` files, and reverse enginner and
+here don't really exist (at least, they shouldn't), and you will find just their
+`nix` declerations. If you don't have a `nix` based system (i.e. NixOS,
+Nix-Darwnin, or just having the `nix` package manager installed), you could do
+one of the following:
+1. You could comb through the individual `.nix` files, and reverse enginner and
 retrofit the configs to your own configuration files (I do not recomend this).
-- You could contact me and ask for the individual config files.
+2. You could contact me and ask for the individual config files.
     - i.e. you ask for my `.vimrc`, and I send you the `.vimrc` that was generated
-    in my nix store.
-- You could, install the `nix` package manager, Nix-Darwin, or you could just
+    in my nix store (this is perhaps the most sane option).
+3. You could, install the `nix` package manager, Nix-Darwin, or you could just
 switch over completely to NixOS.
-    - If you're new to `nix`, you will have to do some reading, especially on `nix`
-    flakes.
-    - I highly recomend this option.
+    - If you're new to `nix`, you will have to do some reading, especially on
+    `nix` flakes.
+    - Switching to NixOS on Apple hardware is ill-advised; I recommend
+    Nix-Darwin for this.
+    - I highly recomend option 3 (I cannot guarantee your sanity).
 
-# A Final note.
+# Finally.
 Feel free to steal my dots, the repository is public for a reason.
