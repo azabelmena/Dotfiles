@@ -1,11 +1,13 @@
 { pkgs }:
 
 let
-  imgLink = "https://github.com/azabelmena/Dotfiles/blob/main/Pictures/Wallpapers/gruvbox-dark-lockscreen-scalable.png?raw=true";
+  imgLink = "https://gruvbox-wallpapers.pages.dev/wallpapers/mix/houses.jpg";
+  #imgLink = "https://github.com/azabelmena/Dotfiles/blob/main/Pictures/Wallpapers/gruvbox-dark-lockscreen-scalable.png?raw=true";
 
   image = pkgs.fetchurl {
     url = imgLink;
-    sha256 = "18fj7s6jfp5rbdirlc8hd94kl6xl94b25g7m66xwgaymbzxvv6yk";
+    sha256 = "0w9w5gjvdw9vc2xhv07z8c389jv2nrrd1kzkx1hid31q23bji4x7";
+    #sha256 = "18fj7s6jfp5rbdirlc8hd94kl6xl94b25g7m66xwgaymbzxvv6yk";
   };
 in
 pkgs.stdenv.mkDerivation {
