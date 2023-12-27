@@ -58,7 +58,6 @@ users.users.alec.packages = with pkgs; [
     qutebrowser
     ripgrep
     rofi-wayland
-    sage
     starship
     swaylock-effects
     texlive.combined.scheme-full
