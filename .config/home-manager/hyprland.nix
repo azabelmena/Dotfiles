@@ -12,7 +12,7 @@
     exec-once = [
       "waybar &  mako"
       "wlsunset -S 06:30 -s 18:30"
-      "${pkgs.swaybg}/bin/swaybg -i ~/Pictures/Wallpapers/gruvbox-dark-lockscreen-scalable.png"
+      "${pkgs.swaybg}/bin/swaybg -i ~/Pictures/Wallpapers/gruvbox-mountain-village.png"
       "swayidle -w timeout 300 'swaylock' before-sleep 'swaylock"
       "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
       "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
