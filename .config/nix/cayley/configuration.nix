@@ -11,7 +11,6 @@
 
   imports = [
     ./hardware-configuration.nix
-    ./packages.nix
     ./nvidia.nix
 
     inputs.home-manager.nixosModules.home-manager
@@ -31,10 +30,7 @@
 
   time.timeZone = "America/Puerto_Rico";
 
-  environment.sessionVariables = {
-      WLR_NO_HARDWARE_CURSORS = "1";
-      NIXOS_OZONE_WL = "1";
-  };
+  environment = ( import ./environment.nix { inherit pkgs; } );
 
   i18n.defaultLocale = "en_US.UTF-8";
   console = lib.mkDefault {
@@ -52,18 +48,30 @@
 
   sound.enable = true;
 
+  xdg.portal = {
+    enable = true;
+    extraPortals = [pkgs.xdg-desktop-portal-gtk];
+    config = {
+      common.default = "*";
+    };
+  };
+
   security = ( import ./security.nix { inherit pkgs; } );
 
-  users.users.alec = {
-      isNormalUser = true;
-      extraGroups = [ "wheel" "networkmanager" ];
-      shell = pkgs.zsh;
-  };
+  users = ( import ./users.nix { inherit pkgs; } );
+
+  programs = ( import ./programs.nix { inherit pkgs; } );
 
   nix.nixPath = [
     "nixpkgs=/nix/var/nix/profiles/per-user/root/channels/nixos/nixpkgs"
     "nixos-config=/home/alec/.config/nixos/cayley/configuration.nix"
   ];
+
+  fonts.packages = with pkgs; [
+     (nerdfonts.override {fonts  = ["IBMPlexMono"];})
+  ];
+
+  documentation.dev.enable = true;
 
   system.stateVersion = "unstable";
 
