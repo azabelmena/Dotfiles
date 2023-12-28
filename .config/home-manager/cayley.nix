@@ -42,7 +42,7 @@
       zsh = (import ./zsh/zsh.nix { inherit pkgs; });
   };
 
-    home.file = ( import ./file.nix { inherit pkgs config lib; });
+  home.file = ( import .config/home-manager/files/files.nix { inherit pkgs config lib; });
 
   gtk = {
       enable = true;
