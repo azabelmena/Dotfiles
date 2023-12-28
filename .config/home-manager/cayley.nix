@@ -42,18 +42,8 @@
       zsh = (import ./zsh/zsh.nix { inherit pkgs; });
   };
 
-    home.file = ( import ./file.nix { inherit pkgs config lib; });
+  home.file = ( import ./file.nix { inherit pkgs config lib; });
 
-  gtk = {
-      enable = true;
-      theme = {
-      name = "adw-gtk3";
-      package = pkgs.adw-gtk3;
-      };
-      cursorTheme = {
-      name = "GoogleDot-Black";
-      package = pkgs.google-cursor;
-      size = 16;
-      };
-  };
+  gtk = ( import ./gtk.nix { inherit pkgs; });
+  qt = ( import ./qt.nix { inherit pkgs; });
 }
