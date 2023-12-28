@@ -44,16 +44,6 @@
 
   home.file = ( import .config/home-manager/files/files.nix { inherit pkgs config lib; });
 
-  gtk = {
-      enable = true;
-      theme = {
-      name = "adw-gtk3";
-      package = pkgs.adw-gtk3;
-      };
-      cursorTheme = {
-      name = "GoogleDot-Black";
-      package = pkgs.google-cursor;
-      size = 16;
-      };
-  };
+  gtk = ( import ./gtk.nix { inherit pkgs; });
+  qt = ( import ./qt.nix { inherit pkgs; });
 }
