@@ -63,3 +63,4 @@ vim.keymap.set("n", "<localleader>fs", "<cmd>Telescope live_grep<CR>", { desc = 
 vim.keymap.set("n", "<localleader>fc", "<cmd>Telescope grep_string<CR>", { desc = "Find string under cursor in cwd" })
 vim.keymap.set("n", "<localleader>fh", "<cmd>Telescope help_tags<CR>", { desc = "Find help tags" })
 vim.keymap.set("n", "<localleader>fm", "<cmd>Telescope man_pages<CR>", { desc = "Find man pages" })
+vim.keymap.set("n", "<localleader>fb", "<cmd>Telescope buffers<CR>", { desc = "Find man pages" })
