@@ -49,8 +49,10 @@ services = {
   xserver = {
     enable = true;
     displayManager = {
-      sddm.enable = true;
-      sddm.theme = "${import ../../home-manager/sddm.nix { inherit pkgs; }}";
+      sddm = {
+        enable = true;
+        theme = "${import ../../home-manager/sddm.nix { inherit pkgs; }}";
+      };
     };
   };
 };

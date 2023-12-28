@@ -60,6 +60,7 @@ users.users.alec.packages = with pkgs; [
     rofi-wayland
     starship
     swaylock-effects
+    system76-keyboard-configurator
     texlive.combined.scheme-full
     tmux
     tutanota-desktop
