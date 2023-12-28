@@ -1,103 +1,109 @@
 { config, pkgs, ... }: # Cayley NIX!
 
 {
+  environment.systemPackages = with pkgs; [ # System essential programs
+      autoconf
+      automake
+      bc
+      btop
+      cmake
+      coreutils
+      cudatoolkit
+      file
+      gcc
+      git
+      gmp
+      gnumake
+      htop-vim
+      libsForQt5.qt5.qtgraphicaleffects
+      libsForQt5.qt5.qtquickcontrols2
+      llvmPackages_9.openmp
+      lshw
+      man-pages
+      man-pages-posix
+      mpfr
+      mpi
+      polkit_gnome
+      python3
+      vim-full
+  ];
 
-environment.systemPackages = with pkgs; [ # System essential programs
-    autoconf
-    automake
-    bc
-    btop
-    cmake
-    coreutils
-    cudatoolkit
-    file
-    gcc
-    git
-    gmp
-    gnumake
-    htop-vim
-    libsForQt5.qt5.qtgraphicaleffects
-    libsForQt5.qt5.qtquickcontrols2
-    llvmPackages_9.openmp
-    lshw
-    man-pages
-    man-pages-posix
-    mpfr
-    mpi
-    python3
-    vim-full
-];
+  users.users.alec.packages = with pkgs; [
+      authy
+      bat
+      discord
+      eza
+      fastfetch
+      fd
+      gamemode
+      geogebra
+      grimblast
+      home-manager
+      hugo
+      hyprland
+      hyprpaper
+      inkscape-with-extensions
+      kitty
+      lf
+      libnotify
+      localsend
+      mako
+      manix
+      mpv
+      neovim
+      obs-studio
+      papirus-icon-theme
+      pavucontrol
+      protonup-ng
+      qutebrowser
+      ripgrep
+      rofi-wayland
+      starship
+      swaylock-effects
+      system76-keyboard-configurator
+      texlive.combined.scheme-full
+      tmux
+      tutanota-desktop
+      waybar
+      wlsunset
+      xdg-desktop-portal-gtk
+      zathura
+      zsh
+  ];
 
-users.users.alec.packages = with pkgs; [
-    authy
-    bat
-    discord
-    eza
-    fastfetch
-    fd
-    gamemode
-    geogebra
-    grimblast
-    home-manager
-    hugo
-    hyprland
-    hyprpaper
-    inkscape-with-extensions
-    kitty
-    lf
-    libnotify
-    localsend
-    mako
-    manix
-    mpv
-    neovim
-    obs-studio
-    papirus-icon-theme
-    pavucontrol
-    protonup-ng
-    qutebrowser
-    ripgrep
-    rofi-wayland
-    starship
-    swaylock-effects
-    system76-keyboard-configurator
-    texlive.combined.scheme-full
-    tmux
-    tutanota-desktop
-    waybar
-    wlsunset
-    xdg-desktop-portal-gtk
-    zathura
-    zsh
-];
+  programs = {
+    mtr.enable = true;
+    gnupg.agent = {
+      enable = true;
+      enableSSHSupport = true;
+    };
 
-programs = {
-  zsh.enable = true;
-  hyprland.enable = true;
-  steam = {
+    zsh.enable = true;
+    hyprland.enable = true;
+    steam = {
+      enable = true;
+      remotePlay.openFirewall = true;
+      dedicatedServer.openFirewall = true;
+    };
+  };
+
+  environment.sessionVariables = {
+      NIXOS_OZONE_WL = "1";
+  };
+
+  xdg.portal = {
     enable = true;
-    remotePlay.openFirewall = true;
-    dedicatedServer.openFirewall = true;
+    extraPortals = [pkgs.xdg-desktop-portal-gtk];
+    config = {
+      common.default = "*";
+    };
   };
-};
-
-environment.sessionVariables = {
-    NIXOS_OZONE_WL = "1";
-};
-
-xdg.portal = {
-  enable = true;
-  extraPortals = [pkgs.xdg-desktop-portal-gtk];
-  config = {
-    common.default = "*";
-  };
-};
 
 
-fonts.packages = with pkgs; [
-   (nerdfonts.override {fonts  = ["IBMPlexMono"];})
-];
+  fonts.packages = with pkgs; [
+     (nerdfonts.override {fonts  = ["IBMPlexMono"];})
+  ];
 
-documentation.dev.enable = true;
+  documentation.dev.enable = true;
 
 }

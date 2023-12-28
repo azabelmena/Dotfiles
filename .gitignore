@@ -254,7 +254,6 @@ gene_Regulatory/
 geogebra/
 go/
 gpu_cuda/
-hardware-configuration.nix
 hooks/
 images/
 index
