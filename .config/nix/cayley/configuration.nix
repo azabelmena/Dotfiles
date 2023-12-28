@@ -48,13 +48,7 @@
 
   sound.enable = true;
 
-  xdg.portal = {
-    enable = true;
-    extraPortals = [pkgs.xdg-desktop-portal-gtk];
-    config = {
-      common.default = "*";
-    };
-  };
+  xdg = ( import ./xdg.nix { inherit pkgs; } );
 
   security = ( import ./security.nix { inherit pkgs; } );
 
@@ -62,16 +56,16 @@
 
   programs = ( import ./programs.nix { inherit pkgs; } );
 
-  nix.nixPath = [
-    "nixpkgs=/nix/var/nix/profiles/per-user/root/channels/nixos/nixpkgs"
-    "nixos-config=/home/alec/.config/nixos/cayley/configuration.nix"
-  ];
-
   fonts.packages = with pkgs; [
      (nerdfonts.override {fonts  = ["IBMPlexMono"];})
   ];
 
-  documentation.dev.enable = true;
+  documentation = ( import ./documentation.nix  );
+
+  nix.nixPath = [
+    "nixpkgs=/nix/var/nix/profiles/per-user/root/channels/nixos/nixpkgs"
+    "nixos-config=/home/alec/.config/nixos/cayley/configuration.nix"
+  ];
 
   system.stateVersion = "unstable";
 
