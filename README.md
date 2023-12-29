@@ -32,7 +32,7 @@ of the following:
     - `weyl` (Hermann Weyl)
 - The names here are not capitalized (even though they should be) to be in
 keeping with <a href="https://datatracker.ietf.org/doc/html/rfc1178"
-:target="_blank">DNS hostname conventions</a>.
+target="_blank">DNS hostname conventions</a>.
 
 # What's Here?
 
