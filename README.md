@@ -31,8 +31,7 @@ of the following:
     - `fermat` (Pierre de Fermat)
     - `weyl` (Hermann Weyl)
 - The names here are not capitalized (even though they should be) to be in
-keeping with <a href="https://datatracker.ietf.org/doc/html/rfc1178"
-target="_blank">DNS hostname conventions</a>.
+keeping with [DNS hostname conventions](https://datatracker.ietf.org/doc/html/rfc1178).
 
 # What's Here?
 
