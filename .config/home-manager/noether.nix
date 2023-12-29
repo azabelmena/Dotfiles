@@ -6,6 +6,9 @@
     ];
     colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-soft;
 
+    home.username = "alec";
+    home.homeDirectory = "/Users/alec";
+
     home.stateVersion = "23.11";
 
     home.sessionVariables = {
@@ -35,5 +38,5 @@
       zsh = (import ./zsh/zsh-darwin.nix { inherit pkgs; });
     };
 
-  home.file = ( import ./files/files-darwin.nix { inherit pkgs config lib; });
+  home.file = ( import ./files.nix { inherit pkgs config lib; });
 }
