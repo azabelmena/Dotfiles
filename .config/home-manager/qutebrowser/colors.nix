@@ -43,7 +43,7 @@
     bar.bg = "#${config.colorScheme.colors.base00}";
 
     start.fg = "#${config.colorScheme.colors.base00}";
-    start.bg = "#${config.colorScheme.colors.base0C}";
+    start.bg = "#${config.colorScheme.colors.base0B}";
     stop.fg = "#${config.colorScheme.colors.base00}";
     stop.bg = "#${config.colorScheme.colors.base0D}";
     error.fg = "#${config.colorScheme.colors.base08}";
