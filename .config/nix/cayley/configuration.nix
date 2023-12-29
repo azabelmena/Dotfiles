@@ -18,7 +18,11 @@
 
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
-    users.alec = import ../../home-manager/cayley.nix;
+
+    users = {
+      alec = import ../../home-manager/cayley.nix;
+    };
+
     useGlobalPkgs = true;
     useUserPackages = true;
   };

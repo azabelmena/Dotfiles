@@ -6,20 +6,23 @@
   ];
   colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-soft;
 
-  home.username = "alec";
-  home.homeDirectory = "/home/alec";
+  home = {
+    username = "alec";
+    homeDirectory = "/home/alec";
+    stateVersion = "23.11";
 
-  home.stateVersion = "23.11";
+    sessionVariables = {
+        EDITOR = "nvim";
+    };
 
-  home.sessionVariables = {
-      EDITOR = "nvim";
+    packages = [
+      (pkgs.nerdfonts.override { fonts = ["IBMPlexMono"]; })
+    ];
+
+    file = ( import ./files.nix { inherit pkgs config lib; });
   };
 
   programs.home-manager.enable = true;
-
-  home.packages = [
-    (pkgs.nerdfonts.override { fonts = ["IBMPlexMono"]; })
-  ];
 
   wayland.windowManager.hyprland = ( import ./hyprland.nix { inherit pkgs config;});
 
@@ -41,8 +44,6 @@
       zathura = (import ./zathura.nix { inherit pkgs config; });
       zsh = (import ./zsh/zsh.nix { inherit pkgs; });
   };
-
-  home.file = ( import ./files/files.nix { inherit pkgs config lib; });
 
   gtk = ( import ./gtk.nix { inherit pkgs; });
   qt = ( import ./qt.nix { inherit pkgs; });

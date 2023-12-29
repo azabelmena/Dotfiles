@@ -20,6 +20,7 @@
       gmp
       gnumake
       htop-vim
+      iptables-legacy
       libsForQt5.qt5.qtgraphicaleffects
       libsForQt5.qt5.qtquickcontrols2
       llvmPackages_9.openmp

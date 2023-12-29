@@ -2,6 +2,8 @@
 {
   rtkit.enable = true;
 
+  forcePageTableIsolation = false;
+
   audit = {
     enable = true;
 
@@ -22,5 +24,11 @@
     text = ''
       auth include login
     '';
+  };
+
+  sudo = {
+    enable = true;
+    wheelNeedsPassword = true;
+    execWheelOnly = true;
   };
 }
