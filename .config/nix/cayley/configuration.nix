@@ -27,7 +27,6 @@
 
   networking = ( import ./networking.nix { inherit pkgs; });
 
-
   time.timeZone = "America/Puerto_Rico";
 
   environment = ( import ./environment.nix { inherit pkgs; } );
