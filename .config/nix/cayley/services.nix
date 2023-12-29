@@ -14,7 +14,7 @@
     displayManager = {
       sddm = {
         enable = true;
-        theme = "${import ../../home-manager/sddm.nix { inherit pkgs; }}";
+        theme = "${import ./sddm.nix { inherit pkgs; }}";
       };
     };
   };
