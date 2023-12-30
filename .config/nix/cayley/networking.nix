@@ -11,6 +11,7 @@
     enable = true;
     allowPing = true;
     pingLimit = "--limit 1/minute --limit-burst 5";
+
     allowedTCPPorts = [
       22
       80
