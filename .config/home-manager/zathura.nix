@@ -33,9 +33,9 @@
     notification-bg = "#${config.colorScheme.colors.base0B}";
     notification-fg = "#${config.colorScheme.colors.base00}";
 
-    index-bg = "#${config.colorScheme.colors.base0D}";
-    index-fg = "#${config.colorScheme.colors.base03}";
-    index-active-bg = "#${config.colorScheme.colors.base0D}";
+    index-bg = "#${config.colorScheme.colors.base00}";
+    index-fg = "#${config.colorScheme.colors.base06}";
+    index-active-bg = "#${config.colorScheme.colors.base09}";
     index-active-fg = "#${config.colorScheme.colors.base03}";
 
     inputbar-bg = "#${config.colorScheme.colors.base09}";
