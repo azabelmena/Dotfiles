@@ -22,7 +22,6 @@
         hyprpaper
         inkscape-with-extensions
         kitty
-        lf
         libnotify
         localsend
         mako
@@ -42,6 +41,7 @@
         texlive.combined.scheme-full
         tmux
         tutanota-desktop
+        vifm
         waybar
         wlsunset
         xdg-desktop-portal-gtk
