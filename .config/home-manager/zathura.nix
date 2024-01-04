@@ -45,7 +45,8 @@
     statusbar-fg = "#${config.colorScheme.colors.base06}";
 
     highlight-color = "#${config.colorScheme.colors.base09}";
-    highlight-active-color = "#${config.colorScheme.colors.base03}";
+    highlight-fg = "#${config.colorScheme.colors.base03}";
+    highlight-active-color = "#${config.colorScheme.colors.base0B}";
 
     default-bg = "#${config.colorScheme.colors.base00}";
     default-fg = "#${config.colorScheme.colors.base06}";
@@ -58,5 +59,6 @@
     page-padding = 1;
     recolor = true;
     selection-clipboard = "clipboard";
+    selection-notification = false;
   };
 }

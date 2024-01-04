@@ -130,16 +130,16 @@
     bind = $mod_main, 9, workspace, 9
     bind = $mod_main, 0, workspace, 10
 
-    bind = $mod_main SHIFT, 1, movetoworkspace, 1
-    bind = $mod_main SHIFT, 2, movetoworkspace, 2
-    bind = $mod_main SHIFT, 3, movetoworkspace, 3
-    bind = $mod_main SHIFT, 4, movetoworkspace, 4
-    bind = $mod_main SHIFT, 5, movetoworkspace, 5
-    bind = $mod_main SHIFT, 6, movetoworkspace, 6
-    bind = $mod_main SHIFT, 7, movetoworkspace, 7
-    bind = $mod_main SHIFT, 8, movetoworkspace, 8
-    bind = $mod_main SHIFT, 9, movetoworkspace, 9
-    bind = $mod_main SHIFT, 0, movetoworkspace, 10
+    bind = $mod_main SHIFT, 1, movetoworkspacesilent, 1
+    bind = $mod_main SHIFT, 2, movetoworkspacesilent, 2
+    bind = $mod_main SHIFT, 3, movetoworkspacesilent, 3
+    bind = $mod_main SHIFT, 4, movetoworkspacesilent, 4
+    bind = $mod_main SHIFT, 5, movetoworkspacesilent, 5
+    bind = $mod_main SHIFT, 6, movetoworkspacesilent, 6
+    bind = $mod_main SHIFT, 7, movetoworkspacesilent, 7
+    bind = $mod_main SHIFT, 8, movetoworkspacesilent, 8
+    bind = $mod_main SHIFT, 9, movetoworkspacesilent, 9
+    bind = $mod_main SHIFT, 0, movetoworkspacesilent, 10
 
     bind = $mod_main, mouse_down, workspace, e+1
     bind = $mod_main, mouse_up, workspace, e-1

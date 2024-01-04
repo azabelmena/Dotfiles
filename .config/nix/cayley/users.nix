@@ -4,7 +4,11 @@
   users = {
     alec = {
       isNormalUser = true;
-      extraGroups = [ "wheel" "networkmanager" ];
+      extraGroups = [
+        "libvirtd"
+        "networkmanager"
+        "wheel"
+      ];
       shell = pkgs.zsh;
       packages = with pkgs; [
         authy
@@ -14,7 +18,6 @@
         fastfetch
         fd
         gamemode
-        geogebra
         grimblast
         home-manager
         hugo

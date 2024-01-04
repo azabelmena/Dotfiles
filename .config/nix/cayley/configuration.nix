@@ -48,6 +48,8 @@
     bluetooth.enable = true;
   };
 
+  virtualisation.libvirtd.enable = true;
+
   services = ( import ./services.nix { inherit pkgs; } );
 
   sound.enable = true;

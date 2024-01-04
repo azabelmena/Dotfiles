@@ -10,7 +10,6 @@
     backlogLimit = 512;
     rateLimit = 1000;
   };
-  auditd.enable = true;
 
   polkit = {
     enable = true;

@@ -6,6 +6,8 @@
     enableSSHSupport = true;
   };
 
+  virt-manager.enable = true;
+
   zsh.enable = true;
   hyprland.enable = true;
   steam = {
