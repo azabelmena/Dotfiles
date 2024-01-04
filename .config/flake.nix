@@ -24,6 +24,35 @@
   in{
     nixosConfigurations = {
 
+      recovery = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
+          ({ pkgs, ... }: {
+            environment.systemPackages = with pkgs; [
+              vim-full
+              testdisk
+              foremost
+              git
+            ];
+
+            systemd.services.sshd.wantedBy = pkgs.lib.mkForce [ "multi-user.target" ];
+            users.users.root.openssh.authorizedKeys.keys = [
+            "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMSx69aMu/G7HEqdpe3TGn8q8wDhGMGVEubsK82ijSC1 alec@cayley"
+            ];
+          })
+        ];
+      };
+
+      exampleIso = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs system-x86_64-linux; };
+
+        modules = [
+          "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
+        ];
+      };
+
+
       cayley = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs system-x86_64-linux; };
 
