@@ -1,138 +1,76 @@
 # Cauchy NIX!
-# HAPPY NEW YEAR!!!
 
-{inputs, config, pkgs, ... }:
+{inputs, config, pkgs, lib, ... }:
 
 {
 
-nixpkgs.config.allowUnfree = true;
-nix.settings = {
-    experimental-features = ["nix-command" "flakes"];
-};
-
-imports = [
-  ./hardware-configuration.nix
-  ./packages.nix
-  ./nvidia.nix
-
-  inputs.home-manager.nixosModules.home-manager
-];
-
-home-manager = {
-  extraSpecialArgs = { inherit inputs; };
-  users.alec = import ../../home-manager/cauchy.nix;
-};
-
-# Use the systemd-boot EFI boot loader.
-boot.kernelPackages = pkgs.linuxPackages_zen;
-boot.loader.systemd-boot.enable = true;
-boot.loader.efi.canTouchEfiVariables = true;
-
-networking.hostName = "cauchy";
-networking.networkmanager.enable = true;
-
-# Set your time zone.
-time.timeZone = "America/Puerto_Rico";
-
-environment.sessionVariables = {
-    WLR_NO_HARDWARE_CURSORS = "1";
-    NIXOS_OZONE_WL = "1";
-};
-environment.systemPackages = [
-  pkgs.libsForQt5.qt5.qtquickcontrols2
-  pkgs.libsForQt5.qt5.qtgraphicaleffects
-];
-
-# Select internationalisation properties.
-#i18n.defaultLocale = "en_US.UTF-8";
-#console = {
-#    font = "Lat2-Terminus16";
-#    keyMap = "us";
-#    useXkbConfig = true; # use xkbOptions in tty.
-#};
-
-# Enable the X11 windowing system.
-services.xserver = {
-  enable = true;
-  displayManager = {
-    sddm.enable = true;
-    sddm.theme = "${import ../../home-manager/sddm/sddm.nix { inherit pkgs; }}";
+  nixpkgs.config.allowUnfree = true;
+  nix.settings = {
+      experimental-features = ["nix-command" "flakes"];
   };
-};
 
-# Configure keymap in X11
-#services.xserver.layout = "us";
-#services.xserver.xkbOptions = "eurosign:e,caps:escape";
+  imports = [
+    ./hardware-configuration.nix
 
-# Enable CUPS to print documents.
-services.printing.enable = true;
+    inputs.home-manager.nixosModules.home-manager
+  ];
 
-# Enable sound.
-sound.enable = true;
-security.rtkit.enable = true;
-services.pipewire = {
-        enable = true;
-        alsa.enable = true;
-        alsa.support32Bit = true;
-        pulse.enable = true;
-        jack.enable = true;
-};
+  home-manager = {
+    extraSpecialArgs = { inherit inputs; };
 
-#hardware.pulseaudio.enable = true;
-hardware.bluetooth.enable = true;
-services.blueman.enable = true;
+    users = {
+      alec = import ../../home-manager/cauchy.nix;
+    };
 
-security.pam.services.swaylock = {
-  text = ''
-      auth include login
-  '';
-};
+    useGlobalPkgs = true;
+    useUserPackages = true;
+  };
 
-# Enable touchpad support (enabled default in most desktopManager).
-# services.xserver.libinput.enable = true;
+  boot = ( import ./boot.nix { inherit pkgs; });
 
-# Define a user account. Don't forget to set a password with ‘passwd’.
-users.users.alec = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" ];
-    shell = pkgs.zsh;
-};
+  networking = ( import ./networking.nix { inherit pkgs; });
 
-nix.nixPath = [
-  "nixpkgs=/nix/var/nix/profiles/per-user/root/channels/nixos/nixpkgs"
-  "nixos-config=/home/alec/.config/nixos/cauchy/configuration.nix"
-];
+  time.timeZone = "America/Puerto_Rico";
 
-# Some programs need SUID wrappers, can be configured further or are
-# started in user sessions.
-# programs.mtr.enable = true;
-programs.gnupg.agent = {
-  enable = true;
-  enableSSHSupport = true;
-};
+  environment = ( import ./environment.nix { inherit pkgs; } );
 
-# List services that you want to enable:
+  i18n.defaultLocale = "en_US.UTF-8";
+  console = lib.mkDefault {
+      font = "Lat2-Terminus16";
+      keyMap = "us";
+      useXkbConfig = true;
+  };
 
-# Enable the OpenSSH daemon.
-services.openssh.enable = false;
+  hardware = {
+    system76.enableAll = true;
+    bluetooth.enable = true;
+  };
 
-# Open ports in the firewall.
-networking.firewall.allowedTCPPorts = [ 80 443 22 53317 ];
-#networking.firewall.allowedUDPPorts = [];
-# Or disable the firewall altogether.
-networking.firewall.enable = true;
+  virtualisation.libvirtd.enable = true;
 
-# Copy the NixOS configuration file and link it from the resulting system
-# (/run/current-system/configuration.nix). This is useful in case you
-# accidentally delete configuration.nix.
-# system.copySystemConfiguration = true;
+  services = ( import ./services.nix { inherit pkgs; } );
 
-# This value determines the NixOS release from which the default
-# settings for stateful data, like file locations and database versions
-# on your system were taken. It's perfectly fine and recommended to leave
-# this value at the release version of the first install of this system.
-# Before changing this value read the documentation for this option
-# (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-system.stateVersion = "unstable"; # Did you read the comment?
+  sound.enable = true;
+
+  xdg = ( import ./xdg.nix { inherit pkgs; } );
+
+  security = ( import ./security.nix { inherit pkgs; } );
+
+  users = ( import ./users.nix { inherit pkgs; } );
+
+  programs = ( import ./programs.nix { inherit pkgs; } );
+
+  fonts.packages = with pkgs; [
+     (nerdfonts.override {fonts  = ["IBMPlexMono"];})
+  ];
+
+  documentation = ( import ./documentation.nix  );
+
+  nix.nixPath = [
+    "nixpkgs=/nix/var/nix/profiles/per-user/root/channels/nixos/nixpkgs"
+    "nixos-config=/home/alec/.config/nixos/cayley/configuration.nix"
+  ];
+
+  system.stateVersion = "unstable";
 
 }
