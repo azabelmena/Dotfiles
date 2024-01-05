@@ -2,10 +2,13 @@
   description = "NixOS Configuration for Cayley and Cauchy.";
 
   inputs = {
+    nixos.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixos-stable.url = "github:NixOS/nixpkgs/nixos-23.11";
+
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
     home-manager.url = "github:/nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager.inputs.nixpkgs.follows = "nixos";
 
     darwin.url = "github:LnL7/nix-darwin";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
@@ -13,18 +16,18 @@
     nix-colors.url = "github:misterio77/nix-colors";
   };
 
-  outputs = {self, nixpkgs, darwin, home-manager, ...}@inputs:
+  outputs = {self, nixos, nixos-stable, nixpkgs, darwin, home-manager, ...}@inputs:
   let
     system-x86_64-linux = "x86_64-linux";
     system-aarch64-darwin = "aarch64-darwin";
 
-    pkgs-nixos = import nixpkgs { inherit system-x86_64-linux; };
+    pkgs-nixos = import nixos { inherit system-x86_64-linux; };
     pkgs-darwin = import nixpkgs { inherit system-aarch64-darwin; };
 
   in{
     nixosConfigurations = {
 
-      recovery = nixpkgs.lib.nixosSystem {
+      recovery = nixos.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
@@ -44,16 +47,7 @@
         ];
       };
 
-      exampleIso = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs system-x86_64-linux; };
-
-        modules = [
-          "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
-        ];
-      };
-
-
-      cayley = nixpkgs.lib.nixosSystem {
+      cayley = nixos.lib.nixosSystem {
         specialArgs = { inherit inputs system-x86_64-linux; };
 
         modules = [
@@ -61,11 +55,19 @@
         ];
       };
 
-      cauchy = nixpkgs.lib.nixosSystem {
+      cauchy = nixos.lib.nixosSystem {
         specialArgs = { inherit inputs system-x86_64-linux; };
 
         modules = [
           ./nix/cauchy/configuration.nix
+        ];
+      };
+
+      lovelace = nixos.lib.nixosSystem {
+        specialArgs = { inherit inputs system-x86_64-linux; };
+
+        modules = [
+          ./nix/lovelace/configuration.nix
         ];
       };
 
