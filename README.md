@@ -10,10 +10,15 @@ Welcome to my dotfiles repository. What we have here are NixOS and Nix-Darwin
 configuration files, and dotfiles that I have declared in the nix language for
 different machines. The machines included
 here are:
-- `cayley` (Arthur Cayley)
-    - A system76 Thelio desktop.
 - `cauchy` (Augustin-Louis Cauchy)
     - An old Lenovo Ideapad I have lying around for tinkering and testing.
+- `cayley` (Arthur Cayley)
+    - A system76 Thelio desktop. This is my main machine, and the one that sees
+      the most upates.
+- `lovelace` (Ada Lovelace)
+    - This configuration is meant for KVM virtual machines using qemu. This is
+      also the most minimal config out of all of them, as it is meant to be
+      accessed through ssh.
 - `noether` (Emmy Noether)
     - An Apple M2 MacBook Pro.
 
