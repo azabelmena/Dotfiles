@@ -4,7 +4,7 @@
 
   avahi = {
   enable = true;
-  nssmdns4 = true;
+  nssmdns = true;
   openFirewall = true;
   };
 }

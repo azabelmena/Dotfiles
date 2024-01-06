@@ -12,7 +12,7 @@
   imports = [
     ./hardware-configuration.nix
 
-    inputs.home-manager.nixosModules.home-manager
+    inputs.home-manager-stable.nixosModules.home-manager
   ];
 
   home-manager = {
@@ -48,11 +48,6 @@
   users = ( import ./users.nix { inherit pkgs; } );
 
   programs = ( import ./programs.nix { inherit pkgs; } );
-
-  nix.nixPath = [
-    "nixpkgs=/nix/var/nix/profiles/per-user/root/channels/nixos/nixpkgs"
-    "nixos-config=/home/alec/.config/nixos/cayley/configuration.nix"
-  ];
 
   documentation.dev.enable = true;
 
