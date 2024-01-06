@@ -32,6 +32,7 @@
 
   programs = {
       bash = (import ./bash/bash.nix { inherit pkgs; });
+      btop = (import ./btop.nix { inherit pkgs; });
       git = ( import ./git.nix { inherit pkgs; } );
       kitty = (import ./kitty/kitty.nix { inherit pkgs config; });
       qutebrowser = (import ./qutebrowser/qutebrowser.nix { inherit pkgs config; });
