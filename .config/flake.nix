@@ -8,7 +8,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
     home-manager.url = "github:/nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixos";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     darwin.url = "github:LnL7/nix-darwin";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
@@ -27,21 +27,16 @@
   in{
     nixosConfigurations = {
 
-      recovery = nixos.lib.nixosSystem {
+      recovery = nixos-stable.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
+          "${nixos-stable}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
           ({ pkgs, ... }: {
             environment.systemPackages = with pkgs; [
               vim-full
               testdisk
               foremost
               git
-            ];
-
-            systemd.services.sshd.wantedBy = pkgs.lib.mkForce [ "multi-user.target" ];
-            users.users.root.openssh.authorizedKeys.keys = [
-            "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMSx69aMu/G7HEqdpe3TGn8q8wDhGMGVEubsK82ijSC1 alec@cayley"
             ];
           })
         ];
