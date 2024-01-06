@@ -5,36 +5,26 @@
 
 {
   imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
+    [ (modulesPath + "/profiles/qemu-guest.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "sd_mod" ];
+  boot.initrd.availableKernelModules = [ "ahci" "xhci_pci" "virtio_pci" "virtio_scsi" "sr_mod" "virtio_blk" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/d4789a80-7bcf-4c4b-bbed-880930072bf8";
-      fsType = "ext4";
-    };
-
-  fileSystems."/mnt/games" =
-    { device = "/dev/disk/by-uuid/747a30ab-b445-4f3b-a276-67da3eff89a8";
+    { device = "/dev/disk/by-uuid/e6900636-39f8-421b-a5c9-576fcca4e8c9";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/BD24-3919";
+    { device = "/dev/disk/by-uuid/11A9-6A88";
       fsType = "vfat";
     };
 
-  fileSystems."/mnt/storage" =
-    { device = "/dev/disk/by-uuid/7554707e-0473-41dc-a6af-1e3cc77825f9";
-      fsType = "btrfs";
-    };
-
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/6c7157d1-41f4-426e-86da-cd4300290c4a"; }
+    [ { device = "/dev/disk/by-uuid/5ef2af9b-81ad-47ae-a2c6-6b661f13f9ab"; }
     ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
@@ -42,10 +32,7 @@
   # still possible to use this option, but it's recommended to use it in conjunction
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
   networking.useDHCP = lib.mkDefault true;
-  # networking.interfaces.enp3s0.useDHCP = lib.mkDefault true;
-  # networking.interfaces.wlo1.useDHCP = lib.mkDefault true;
+  # networking.interfaces.enp1s0.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
-  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }
