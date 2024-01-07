@@ -4,9 +4,9 @@
     enable = true;
 
     settings = {
+      UseDns = true;
       PasswordAuthentication = false;
-
-      PermitRootLogin = false;
+      PermitRootLogin = "no";
     };
 
   };
