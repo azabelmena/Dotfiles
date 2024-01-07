@@ -70,4 +70,5 @@
   wired = "https://www.wired.com/";
   wolfram = "https://www.wolframalpha.com/";
   youtube = "https://www.youtube.com/";
+  nlab = "https://ncatlab.org/nlab/show/HomePage";
 }
