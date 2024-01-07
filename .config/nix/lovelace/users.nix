@@ -3,7 +3,7 @@
 
   users.turing = {
     isNormalUser = true;
-    hashedPassword = "$y$j9T$Tni9qXs20vyC70hXpLOol.$wCUnWEIjNHfkrfdJCYPrdPNtb7nWUPCOJIkkgmkalW4";
+    hashedPassword = "";
     extraGroups = [ "wheel" "networkmanager" ];
     shell = pkgs.zsh;
     packages = with pkgs; [
