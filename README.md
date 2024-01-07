@@ -15,10 +15,14 @@ here are:
 - `cayley` (Arthur Cayley)
     - A system76 Thelio desktop. This is my main machine, and the one that sees
       the most upates.
+- `fermat` (Pierre de Fermat)
+    - Configurations for buildiong a NixOS bootable recovery and installation media.
+    - This is the most minimal configuration out of all of them, as it's
+      intended to live on a usb stick.
 - `lovelace` (Ada Lovelace)
-    - This configuration is meant for KVM virtual machines using qemu. This is
-      also the most minimal config out of all of them, as it is meant to be
-      accessed through ssh.
+    - This configuration is meant for KVM virtual machines using qemu.
+    - This is second most minimal config out of all of them, as it is meant to be
+    accessed through ssh.
 - `noether` (Emmy Noether)
     - An Apple M2 MacBook Pro.
 
@@ -33,7 +37,6 @@ of the following:
     - `sophie` (Sophie Germaine)
     - `hypatia` (Hypatia of Alexandria)
     - `agnesi` (Maria Gaetana Agnesi)
-    - `fermat` (Pierre de Fermat)
     - `weyl` (Hermann Weyl)
 - The names here are not capitalized (even though they should be) to be in
 keeping with [DNS hostname conventions](https://datatracker.ietf.org/doc/html/rfc1178).
