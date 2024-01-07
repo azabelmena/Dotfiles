@@ -6,7 +6,8 @@
       NIXOS_OZONE_WL = "1";
   };
 
-  systemPackages = with pkgs; [ # System essential programs
+  systemPackages = with pkgs; [
+      OVMFFull
       age
       autoconf
       automake

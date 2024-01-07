@@ -1,6 +1,15 @@
 { pkgs, ... }:
 {
-  openssh.enable = true;
+  openssh = {
+    enable = true;
+
+    settings = {
+      UseDns = true;
+      PasswordAuthentication = false;
+      PermitRootLogin = "no";
+    };
+
+  };
 
   avahi = {
 

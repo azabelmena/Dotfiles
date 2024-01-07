@@ -1,5 +1,4 @@
 # Cayley NIX!
-# HAPPY NEW YEAR!!!
 
 {inputs, config, pkgs, lib, ... }:
 
@@ -48,7 +47,7 @@
     bluetooth.enable = true;
   };
 
-  virtualisation.libvirtd.enable = true;
+  virtualisation = ( import ./virtualisation.nix { inherit pkgs; });
 
   services = ( import ./services.nix { inherit pkgs; } );
 
