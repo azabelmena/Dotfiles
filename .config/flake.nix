@@ -1,5 +1,6 @@
 {
-  description = "NixOS Configuration for Cayley and Cauchy.";
+  description = "Declarative, reproducible, and stateless system configurations
+  for NixOS and Nix-Darwin.";
 
   inputs = {
     nixos.url = "github:NixOS/nixpkgs/nixos-unstable";
