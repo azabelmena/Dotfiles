@@ -15,6 +15,8 @@
     sessionVariables = {
         EDITOR = "nvim";
     };
+
+    file = ( import ./files.nix { inherit pkgs config lib; });
   };
 
   programs.home-manager.enable = true;
