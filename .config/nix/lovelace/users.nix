@@ -13,6 +13,7 @@
       lynx
       manix
       neovim
+      nmap
       starship
       tmux
       zsh
