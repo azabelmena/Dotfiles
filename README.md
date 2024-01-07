@@ -10,20 +10,22 @@ Welcome to my dotfiles repository. What we have here are NixOS and Nix-Darwin
 configuration files, and dotfiles that I have declared in the nix language for
 different machines. The machines included
 here are:
-- `cauchy` (Augustin-Louis Cauchy)
+- `cauchy` ([Augustin-Louis Cauchy](https://ncatlab.org/nlab/show/Augustin-Louis+Cauchy))
     - An old Lenovo Ideapad I have lying around for tinkering and testing.
 - `cayley` (Arthur Cayley)
     - A system76 Thelio desktop. This is my main machine, and the one that sees
       the most upates.
-- `fermat` (Pierre de Fermat)
+- `fermat` ([Pierre de Fermat](https://www.britannica.com/biography/Pierre-de-Fermat))
     - Configurations for buildiong a NixOS bootable recovery and installation media.
     - This is the most minimal configuration out of all of them, as it's
       intended to live on a usb stick.
-- `lovelace` (Ada Lovelace)
+- `lovelace` ([Ada Lovelace](https://www.britannica.com/biography/Ada-Lovelace))
     - This configuration is meant for KVM virtual machines using qemu.
     - This is second most minimal config out of all of them, as it is meant to be
     accessed through ssh.
-- `noether` (Emmy Noether)
+    - Most notably known as the first computer programmer, Ada was also a
+      mathematician.
+- `noether` ([Emmy Noether](https://www.britannica.com/biography/Emmy-Noether))
     - An Apple M2 MacBook Pro.
 
 By the way, all my machines are named after mathematicians:
@@ -33,11 +35,11 @@ By the way, all my machines are named after mathematicians:
 mathematician naming scheme; although it would be neat if you did.
 - Hopefully down the line I will acquire a framework laptop and name it one
 of the following:
-    - `hilbert` (David Hilbert)
-    - `sophie` (Sophie Germaine)
-    - `hypatia` (Hypatia of Alexandria)
-    - `agnesi` (Maria Gaetana Agnesi)
-    - `weyl` (Hermann Weyl)
+    - `hilbert` ([David Hilbert](https://en.wikipedia.org/wiki/David_Hilbert))
+    - `sophie` ([Sophie Germaine](https://www.britannica.com/biography/Sophie-Germain))
+    - `hypatia` ([Hypatia of Alexandria](https://en.wikipedia.org/wiki/Hypatia))
+    - `agnesi` ([Maria Gaetana Agnesi](https://www.britannica.com/biography/Maria-Gaetana-Agnesi))
+    - `weyl` ([Hermann Weyl](https://plato.stanford.edu/entries/weyl/))
 - The names here are not capitalized (even though they should be) to be in
 keeping with [DNS hostname conventions](https://datatracker.ietf.org/doc/html/rfc1178).
 
