@@ -31,11 +31,11 @@
   in{
     nixosConfigurations = {
 
-      recovery = nixos-stable.lib.nixosSystem {
+      fermat = nixos-stable.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           "${nixos-stable}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
-          ./nix/recovery/configuration.nix
+          ./nix/fermat/configuration.nix
         ];
       };
 
