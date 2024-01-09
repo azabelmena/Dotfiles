@@ -1,25 +1,12 @@
-{ config, lib, pkgs, ... }:
+{ config, ... }: # Cayley NIX!
 {
+  package = config.boot.kernelPackages.nvidiaPackages.stable;
 
-# Cayley NIX!
+  modesetting.enable = true;
+  powerManagement.enable = false;
+  powerManagement.finegrained = false;
 
-  hardware.opengl = {
-      enable = true;
-      driSupport = true;
-      driSupport32Bit = true;
-  };
+  open = true; # Open source driver (nvidia-open-dkms)
 
-  services.xserver.videoDrivers = ["nvidia"];
-
-  hardware.nvidia = {
-      package = config.boot.kernelPackages.nvidiaPackages.stable;
-
-      modesetting.enable = true;
-      powerManagement.enable = false;
-      powerManagement.finegrained = false;
-
-      open = true; # Open source driver (nvidia-open-dkms)
-
-      nvidiaSettings = true;
-    };
+  nvidiaSettings = true;
 }
