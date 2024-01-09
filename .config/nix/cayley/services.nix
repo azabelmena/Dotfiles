@@ -5,9 +5,15 @@
 
     settings = {
       UseDns = true;
-      PasswordAuthentication = false;
+      PasswordAuthentication = true;
       PermitRootLogin = "no";
+      GatewayPorts = "yes";
     };
+
+    ports = [
+      22
+      4096
+    ];
 
   };
 
