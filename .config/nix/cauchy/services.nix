@@ -1,6 +1,21 @@
 { pkgs, ... }:
 {
-  openssh.enable = true;
+  openssh = {
+    enable = false;
+
+    settings = {
+      UseDns = true;
+      PasswordAuthentication = true;
+      PermitRootLogin = "no";
+      GatewayPorts = "yes";
+    };
+
+    ports = [
+      22
+      4096
+    ];
+
+  };
 
   avahi = {
 
@@ -17,6 +32,7 @@
   xserver = {
     enable = true;
     layout = "us";
+    videoDrivers = ["modesetting"];
     displayManager = {
       sddm = {
         enable = true;
@@ -42,8 +58,8 @@
   };
 
   printing = {
-    enable = true;
-    startWhenNeeded = true;
+    enable = false;
+    startWhenNeeded = false;
     stateless = true;
     tempDir = "/tmp/cups";
 

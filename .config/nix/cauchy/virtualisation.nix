@@ -2,23 +2,27 @@
 
 {
   libvirtd = {
+    package = pkgs.libvirt;
+
     enable = true;
 
     qemu = {
-
       package = pkgs.qemu;
 
       runAsRoot = false;
 
       ovmf = {
-        packages = pkgs.OVMFFull.fd;
+
         enable = true;
+        packages = with pkgs; [
+          OVMFFull.fd
+        ];
+
       };
     };
 
     allowedBridges = [
       "virbr0"
     ];
-
   };
 }

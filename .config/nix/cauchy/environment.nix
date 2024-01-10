@@ -23,7 +23,6 @@
       iptables-legacy
       libsForQt5.qt5.qtgraphicaleffects
       libsForQt5.qt5.qtquickcontrols2
-      libvirt
       llvmPackages_9.openmp
       lshw
       man-pages
@@ -32,9 +31,7 @@
       mpi
       polkit_gnome
       python3
-      qemu
       vim-full
-      virt-manager
   ];
 
 }

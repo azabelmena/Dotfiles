@@ -1,12 +1,12 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
+  useDHCP =  lib.mkDefault true;
   hostName = "cauchy";
   networkmanager = {
     enable = true;
     dns = "default";
     logLevel = "INFO";
   };
-
   firewall = {
     package = pkgs.iptables-legacy;
     enable = true;
@@ -14,16 +14,18 @@
     pingLimit = "--limit 1/minute --limit-burst 5";
 
     allowedTCPPorts = [
-      22
-      80
-      443
       1024
+      22
+      4096
+      443
       53317
+      80
     ];
     allowedUDPPorts = [
-      80
+      4096
       443
       53317
+      80
     ];
   };
 }

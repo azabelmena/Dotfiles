@@ -5,6 +5,7 @@
     alec = {
       isNormalUser = true;
       extraGroups = [
+        "libvirtd"
         "networkmanager"
         "wheel"
       ];
