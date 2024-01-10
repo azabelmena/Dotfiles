@@ -32,6 +32,7 @@
   xserver = {
     enable = true;
     layout = "us";
+    videoDrivers = ["nvidia"];
     displayManager = {
       sddm = {
         enable = true;

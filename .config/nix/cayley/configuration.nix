@@ -4,15 +4,20 @@
 
 {
 
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs = {
+    config.allowUnfree = true;
+    hostPlatform = lib.mkDefault "x86_64-linux";
+  };
   nix.settings = {
       experimental-features = ["nix-command" "flakes"];
   };
 
-  imports = [
-    ./hardware-configuration.nix
-    ./nvidia.nix
+  boot = ( import ./boot.nix { inherit pkgs; });
 
+  fileSystems = ( import ./filesystems.nix );
+  swapDevices = ( import ./swap.nix );
+
+  imports = [
     inputs.home-manager.nixosModules.home-manager
   ];
 
@@ -27,9 +32,7 @@
     useUserPackages = true;
   };
 
-  boot = ( import ./boot.nix { inherit pkgs; });
-
-  networking = ( import ./networking.nix { inherit pkgs; });
+  networking = ( import ./networking.nix { inherit pkgs lib; });
 
   time.timeZone = "America/Puerto_Rico";
 
@@ -42,10 +45,7 @@
       useXkbConfig = true;
   };
 
-  hardware = {
-    system76.enableAll = true;
-    bluetooth.enable = true;
-  };
+  hardware = ( import ./hardware.nix { inherit pkgs config lib; });
 
   virtualisation = ( import ./virtualisation.nix { inherit pkgs; });
 

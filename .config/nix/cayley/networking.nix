@@ -1,5 +1,6 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
+  useDHCP =  lib.mkDefault true;
   hostName = "cayley";
   networkmanager = {
     enable = true;
