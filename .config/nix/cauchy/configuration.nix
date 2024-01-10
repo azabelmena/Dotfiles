@@ -1,52 +1,73 @@
-# Cauchy NIX!
+# Cayley NIX!
 
 {inputs, config, pkgs, lib, ... }:
 
 {
 
-  nixpkgs.config.allowUnfree = true;
-  nix.settings = {
+  nixpkgs = {
+    config = {
+      allowBroken = false;
+      allowUnfree = true;
+    };
+    hostPlatform = lib.mkDefault "x86_64-linux";
+  };
+  nix = {
+    settings = {
+      auto-optimise-store = true;
+      max-jobs = 8;
+      require-sigs = true;
+      sandbox = true;
       experimental-features = ["nix-command" "flakes"];
+      allowed-users = [ "@wheel" ];
+
+      system-features = [
+      "kvm"
+      "big-parallel"
+      "benchmark"
+      "nixos-test"
+      ];
+    };
+
+    nixPath = [
+        "nixpkgs=/nix/var/nix/profiles/per-user/root/channels/nixos/nixpkgs"
+        "nixos-config=/home/alec/.config/nixos/cayley/configuration.nix"
+      ];
   };
 
-  imports = [
-    ./hardware-configuration.nix
+  boot = ( import ./boot.nix { inherit pkgs; });
 
+  fileSystems = ( import ./filesystems.nix );
+  swapDevices = ( import ./swap.nix );
+
+  imports = [
     inputs.home-manager.nixosModules.home-manager
+    inputs.nix-colors.homeManagerModules.default
   ];
+  colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-soft;
 
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
 
     users = {
-      alec = import ../../home-manager/cauchy.nix;
+      alec = import ../../home-manager/cayley.nix;
     };
 
     useGlobalPkgs = true;
     useUserPackages = true;
   };
 
-  boot = ( import ./boot.nix { inherit pkgs; });
-
-  networking = ( import ./networking.nix { inherit pkgs; });
+  networking = ( import ./networking.nix { inherit pkgs lib; });
 
   time.timeZone = "America/Puerto_Rico";
 
   environment = ( import ./environment.nix { inherit pkgs; } );
 
   i18n.defaultLocale = "en_US.UTF-8";
-  console = lib.mkDefault {
-      font = "Lat2-Terminus16";
-      keyMap = "us";
-      useXkbConfig = true;
-  };
+  console = lib.mkDefault ( import ./console.nix { inherit config; });
 
-  hardware = {
-    system76.enableAll = true;
-    bluetooth.enable = true;
-  };
+  hardware = ( import ./hardware.nix { inherit pkgs config lib; });
 
-  virtualisation.libvirtd.enable = true;
+  virtualisation = ( import ./virtualisation.nix { inherit pkgs; });
 
   services = ( import ./services.nix { inherit pkgs; } );
 
@@ -65,11 +86,6 @@
   ];
 
   documentation = ( import ./documentation.nix  );
-
-  nix.nixPath = [
-    "nixpkgs=/nix/var/nix/profiles/per-user/root/channels/nixos/nixpkgs"
-    "nixos-config=/home/alec/.config/nixos/cayley/configuration.nix"
-  ];
 
   system.stateVersion = "unstable";
 

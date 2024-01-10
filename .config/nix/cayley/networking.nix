@@ -9,7 +9,7 @@
   };
   firewall = {
     package = pkgs.iptables-legacy;
-    enable = false;
+    enable = true;
     allowPing = true;
     pingLimit = "--limit 1/minute --limit-burst 5";
 

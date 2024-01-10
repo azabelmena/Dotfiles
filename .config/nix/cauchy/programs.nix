@@ -9,7 +9,7 @@
   virt-manager.enable = true;
 
   zsh.enable = true;
-  hyprland.enable = false;
+  hyprland.enable = true;
   steam = {
     enable = true;
     remotePlay.openFirewall = true;
