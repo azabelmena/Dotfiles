@@ -7,6 +7,7 @@
     kernel-modules.enable = true;
     power-daemon.enable = true;
   };
+
   bluetooth.enable = true;
 
   opengl = {

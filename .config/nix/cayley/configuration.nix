@@ -5,11 +5,33 @@
 {
 
   nixpkgs = {
-    config.allowUnfree = true;
+    config = {
+      allowBroken = false;
+      allowUnfree = true;
+    };
     hostPlatform = lib.mkDefault "x86_64-linux";
   };
-  nix.settings = {
+  nix = {
+    settings = {
+      auto-optimise-store = true;
+      max-jobs = 8;
+      require-sigs = true;
+      sandbox = true;
       experimental-features = ["nix-command" "flakes"];
+      allowed-users = [ "@wheel" ];
+
+      system-features = [
+      "kvm"
+      "big-parallel"
+      "benchmark"
+      "nixos-test"
+      ];
+    };
+
+    nixPath = [
+        "nixpkgs=/nix/var/nix/profiles/per-user/root/channels/nixos/nixpkgs"
+        "nixos-config=/home/alec/.config/nixos/cayley/configuration.nix"
+      ];
   };
 
   boot = ( import ./boot.nix { inherit pkgs; });
@@ -19,7 +41,9 @@
 
   imports = [
     inputs.home-manager.nixosModules.home-manager
+    inputs.nix-colors.homeManagerModules.default
   ];
+  colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-soft;
 
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
@@ -39,11 +63,7 @@
   environment = ( import ./environment.nix { inherit pkgs; } );
 
   i18n.defaultLocale = "en_US.UTF-8";
-  console = lib.mkDefault {
-      font = "Lat2-Terminus16";
-      keyMap = "us";
-      useXkbConfig = true;
-  };
+  console = lib.mkDefault ( import ./console.nix { inherit config; });
 
   hardware = ( import ./hardware.nix { inherit pkgs config lib; });
 
@@ -66,11 +86,6 @@
   ];
 
   documentation = ( import ./documentation.nix  );
-
-  nix.nixPath = [
-    "nixpkgs=/nix/var/nix/profiles/per-user/root/channels/nixos/nixpkgs"
-    "nixos-config=/home/alec/.config/nixos/cayley/configuration.nix"
-  ];
 
   system.stateVersion = "unstable";
 
