@@ -1,7 +1,5 @@
 { pkgs, config, ... }:
 {
-  ".local/share/zsh/zsh-autosuggestions".source =
-  "${pkgs.zsh-autosuggestions}/share/zhs-autosuggestions";
 
   "nvim" = {
     recursive = true;
