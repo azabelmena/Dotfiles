@@ -4,6 +4,13 @@
 
 {
 
+  imports = [
+    inputs.home-manager.nixosModules.home-manager
+    inputs.nix-colors.homeManagerModules.default
+  ];
+  colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-soft;
+
+
   nixpkgs = {
     config = {
       allowBroken = false;
@@ -12,6 +19,7 @@
     hostPlatform = lib.mkDefault "x86_64-linux";
   };
   nix = {
+    package = pkgs.nixFlakes;
     settings = {
       auto-optimise-store = true;
       max-jobs = 8;
@@ -38,12 +46,6 @@
 
   fileSystems = ( import ./filesystems.nix );
   swapDevices = ( import ./swap.nix );
-
-  imports = [
-    inputs.home-manager.nixosModules.home-manager
-    inputs.nix-colors.homeManagerModules.default
-  ];
-  colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-soft;
 
   home-manager = {
     extraSpecialArgs = { inherit inputs; };

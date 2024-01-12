@@ -19,9 +19,14 @@
     darwin.inputs.nixpkgs.follows = "nixpkgs";
 
     nix-colors.url = "github:misterio77/nix-colors";
+
+    nixvim = {
+      url = "github:nix-community/nixvim/main";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = {self, nixos, nixos-stable, nixpkgs, nixpkgs-stable, darwin, home-manager, home-manager-stable, ...}@inputs:
+  outputs = {self, nixos, nixpkgs, nixos-stable, nixpkgs-stable, darwin, home-manager, ...}@inputs:
   let
     system-x86_64-linux = "x86_64-linux";
     system-aarch64-darwin = "aarch64-darwin";

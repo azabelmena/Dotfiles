@@ -30,7 +30,6 @@
         mako
         manix
         mpv
-        neovim
         obs-studio
         papirus-icon-theme
         pavucontrol

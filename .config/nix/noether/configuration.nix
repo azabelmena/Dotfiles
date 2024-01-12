@@ -31,7 +31,6 @@
     llvmPackages_15.openmp
     manix
     mpv
-    neovim
     openmpi
     python3
     qbittorrent

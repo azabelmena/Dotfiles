@@ -3,6 +3,7 @@
 {
   imports = [
     inputs.nix-colors.homeManagerModules.default
+    inputs.nixvim.homeManagerModules.nixvim
   ];
   colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-soft;
 
@@ -38,9 +39,9 @@
       qutebrowser = (import ./qutebrowser/qutebrowser.nix { inherit pkgs config; });
       rofi = (import ./rofi/rofi.nix { inherit pkgs config lib; });
       starship = ( import ./starship.nix { inherit pkgs config; });
+      nixvim = ( import ./nvim/nixvim.nix { inherit pkgs; } );
       swaylock = ( import ./swaylock.nix { inherit pkgs config; });
       tmux = (import ./tmux.nix { inherit pkgs; });
-      neovim = ( import ./nvim/nvim.nix { inherit pkgs config; } );
       waybar = (import ./waybar/waybar.nix { inherit pkgs; });
       zathura = (import ./zathura.nix { inherit pkgs config; });
       zsh = (import ./zsh/zsh.nix { inherit pkgs; });

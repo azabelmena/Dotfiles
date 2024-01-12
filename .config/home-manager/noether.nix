@@ -3,6 +3,7 @@
 {
     imports = [
       inputs.nix-colors.homeManagerModules.default
+      inputs.nixvim.homeManagerModules.nixvim
     ];
     colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-soft;
 
@@ -31,7 +32,7 @@
 
       bash = (import ./bash/bash-darwin.nix { inherit pkgs; });
       kitty = (import ./kitty/kitty-darwin.nix { inherit pkgs config; });
-      neovim = ( import ./nvim/nvim.nix { inherit pkgs config; } );
+      nixvim = ( import ./nvim/nixvim.nix { inherit pkgs; } );
       qutebrowser = (import ./qutebrowser/qutebrowser.nix { inherit pkgs config; });
       starship = ( import ./starship.nix { inherit pkgs config; });
       tmux = (import ./tmux.nix { inherit pkgs; });
