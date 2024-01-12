@@ -1,0 +1,6 @@
+{
+
+  mapleader = ",";
+  localleader = "\\";
+  
+}
