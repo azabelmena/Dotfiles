@@ -1,6 +1,6 @@
 { pkgs, ... }:
 
-let shellAliases = import ../aliases/aliasrc-darwin.nix;
+let shellAliases = import ../aliasrc.nix;
 in
   {
     package = pkgs.zsh;
