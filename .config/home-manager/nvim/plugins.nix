@@ -8,4 +8,6 @@
 
   floaterm = ( import ./plugins/floaterm.nix );
 
+  bufferline = ( import ./plugins/bufferline.nix );
+
 }
