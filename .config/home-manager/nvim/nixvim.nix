@@ -20,7 +20,10 @@
   colorschemes = ( import ./colors.nix );
 
   plugins = ( import ./plugins.nix { inherit pkgs; });
-  extraPlugins = [ pkgs.vimPlugins.ultisnips ];
+  extraPlugins = with pkgs.vimPlugins; [
+    ultisnips
+    nerdcommenter
+  ];
 
   enableMan = true;
 
