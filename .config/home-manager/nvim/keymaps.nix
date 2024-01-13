@@ -1,5 +1,5 @@
 [
-  
+
   {
     key = "<C-n>";
     action = ":Ex!<CR>";
@@ -103,7 +103,7 @@
 
   {
     key = "<ESC>";
-    action = "<ESC>";
+    action = ":noh<RETURN><ESC>";
     mode = [ "n" "i" "v" ];
   }
   {
