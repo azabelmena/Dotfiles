@@ -71,6 +71,7 @@
 
   virtualisation = ( import ./virtualisation.nix { inherit pkgs; });
 
+  systemd = ( import ./systemd.nix { inherit pkgs; } );
   services = ( import ./services.nix { inherit pkgs; } );
 
   sound.enable = true;
