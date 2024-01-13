@@ -1,7 +1,5 @@
 { pkgs, config, ... }:
 {
-
-package = pkgs.neovim-unwrapped;
   enable = true;
 
   defaultEditor = true;
@@ -9,30 +7,24 @@ package = pkgs.neovim-unwrapped;
   viAlias = true;
   vimAlias = true;
 
-  withPython3 = true;
+  luaLoader.enable = true;
 
-  plugins = with pkgs.vimPlugins; [
-    nerdcommenter
+  options = ( import ./options.nix { inherit config; } );
+
+  globals = ( import ./globals.nix { inherit config; } );
+
+  autoCmd = ( import ./autocmd.nix );
+
+  keymaps = ( import ./keymaps.nix );
+
+  colorschemes = ( import ./colors.nix );
+
+  plugins = ( import ./plugins.nix { inherit pkgs; });
+  extraPlugins = with pkgs.vimPlugins; [
     ultisnips
-    vimtex
-    plenary-nvim
-    nvim-treesitter.withAllGrammars
-    telescope-nvim
-    telescope-fzf-native-nvim
-    telescope-file-browser-nvim
-
-    gruvbox-nvim
-    lualine-nvim
+    nerdcommenter
   ];
 
-  extraLuaConfig = ''
-    require("general")
-    require("remap")
-    require("vimtex")
-    require("ultisnips")
-    require("telescope")
+  enableMan = true;
 
-    require("gruvbox").setup()
-    require("lualine").setup()
-  '';
 }
