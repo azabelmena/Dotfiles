@@ -102,8 +102,14 @@
   }
 
   {
+    key = "<C-C>";
+    action = ":noh<CR>";
+    mode = [ "n" "i" "v" ];
+  }
+
+  {
     key = "<ESC>";
-    action = ":noh<RETURN><ESC>";
+    action = "<ESC>";
     mode = [ "n" "i" "v" ];
   }
   {
