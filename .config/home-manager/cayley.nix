@@ -39,7 +39,7 @@
       qutebrowser = (import ./qutebrowser/qutebrowser.nix { inherit pkgs config; });
       rofi = (import ./rofi/rofi.nix { inherit pkgs config lib; });
       starship = ( import ./starship.nix { inherit pkgs config; });
-      nixvim = ( import ./nvim/nixvim.nix { inherit pkgs; } );
+      nixvim = ( import ./nvim/nixvim.nix { inherit pkgs config; } );
       swaylock = ( import ./swaylock.nix { inherit pkgs config; });
       tmux = (import ./tmux.nix { inherit pkgs; });
       waybar = (import ./waybar/waybar.nix { inherit pkgs; });
