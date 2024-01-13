@@ -1,12 +1,12 @@
 { pkgs, config, ... }:
 {
 
-#  "ultisnips" = {
-#    recursive = true;
-#    source = config.lib.file.mkOutOfStoreSymlink
-#    "${config.home.homeDirectory}/.config/home-manager/nvim/UltiSnips";
-#    target = ".config/nvim/UltiSnips/";
-#  };
+  "ultisnips" = {
+    recursive = true;
+    source = config.lib.file.mkOutOfStoreSymlink
+    "${config.home.homeDirectory}/.config/home-manager/nvim/UltiSnips";
+    target = ".config/nvim/UltiSnips";
+  };
 
   "waybar" = {
     source = config.lib.file.mkOutOfStoreSymlink

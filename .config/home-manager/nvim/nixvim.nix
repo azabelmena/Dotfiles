@@ -11,7 +11,7 @@
 
   options = ( import ./options.nix { inherit config; } );
 
-  globals = ( import ./globals.nix );
+  globals = ( import ./globals.nix { inherit config; } );
 
   autoCmd = ( import ./autocmd.nix );
 
@@ -20,6 +20,7 @@
   colorschemes = ( import ./colors.nix );
 
   plugins = ( import ./plugins.nix { inherit pkgs; });
+  extraPlugins = [ pkgs.vimPlugins.ultisnips ];
 
   enableMan = true;
 
