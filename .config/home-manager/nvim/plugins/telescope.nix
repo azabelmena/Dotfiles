@@ -4,8 +4,20 @@
 
   highlightTheme = "gruvbox";
 
+  extraOptions = {
+    pickers ={
+      find_files = {
+        hidden = true;
+      };
+    };
+  };
+
   keymaps = {
    "<localleader>ff" = {
+     action = "find_files";
+     desc = "Fuzzy find recent files";
+   };
+   "<localleader>fr" = {
      action = "oldfiles";
      desc = "Fuzzy find recent files";
    };
