@@ -32,10 +32,10 @@
   };
 
   programs = {
-      bash = (import ./bash/bash.nix { inherit pkgs; });
+      bash = (import ./bash.nix { inherit pkgs; });
       btop = (import ./btop.nix { inherit pkgs; });
       git = ( import ./git.nix { inherit pkgs; } );
-      kitty = (import ./kitty/kitty.nix { inherit pkgs config; });
+      kitty = (import ./kitty.nix { inherit pkgs config; });
       qutebrowser = (import ./qutebrowser/qutebrowser.nix { inherit pkgs config; });
       rofi = (import ./rofi/rofi.nix { inherit pkgs config lib; });
       starship = ( import ./starship.nix { inherit pkgs config; });
@@ -44,7 +44,7 @@
       tmux = (import ./tmux.nix { inherit pkgs; });
       waybar = (import ./waybar/waybar.nix { inherit pkgs; });
       zathura = (import ./zathura.nix { inherit pkgs config; });
-      zsh = (import ./zsh/zsh.nix { inherit pkgs; });
+      zsh = (import ./zsh.nix { inherit pkgs; });
   };
 
   gtk = ( import ./gtk.nix { inherit pkgs; });

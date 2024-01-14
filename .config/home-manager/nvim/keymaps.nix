@@ -67,7 +67,7 @@
     action = ":bprev<CR>";
   }
   {
-    key = "<C-p>";
+    key = "<C-q>";
     action = ":bdelete<CR>";
   }
 

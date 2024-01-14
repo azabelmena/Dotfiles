@@ -1,8 +1,9 @@
 { pkgs, ... }:
 
-let shellAliases = import ../aliasrc.nix;
+let shellAliases = import ./aliasrc.nix;
 in
   {
+
     package = pkgs.zsh;
     enable = true;
     enableAutosuggestions = true;
@@ -15,7 +16,7 @@ in
 
     initExtra = ''
         sleep 0.1
-        fastfetch --logo macos
+        fastfetch
 
         bindkey -v
 
@@ -39,8 +40,6 @@ in
 
         eval "$(ssh-agent -s)" &>/dev/null # dump output.
         ssh-add $HOME/.ssh/id_github 2> /dev/null
-
-        cd ~
     '';
 
     inherit shellAliases;
