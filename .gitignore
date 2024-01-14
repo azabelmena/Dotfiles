@@ -40,6 +40,7 @@
 .config/btop/
 .config/cef_user_data/
 .config/dconf
+.config/discord*
 .config/discord/
 .config/dleyna-server-service.conf
 .config/dolphin-emu/

@@ -13,7 +13,7 @@
       packages = with pkgs; [
         authy
         bat
-        discord
+        discord-canary
         eza
         fastfetch
         fd
