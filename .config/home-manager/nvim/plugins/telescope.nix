@@ -9,6 +9,11 @@
       find_files = {
         hidden = true;
       };
+
+      man_pages = {
+        sections = [ "ALL" ];
+        man_cmd = [ "apropos" ".*" ];
+      };
     };
   };
 
@@ -32,10 +37,6 @@
    "<localleader>fh" = {
      action = "help_tags";
      desc = "Find help tags";
-   };
-   "<localleader>fm" = {
-     action = "man_pages";
-     desc = "Find man pages";
    };
    "<localleader>fb" = {
      action = "buffers";
