@@ -16,9 +16,6 @@
     new = "<localleader>tn";
     kill = "<localleader>tk";
 
-    show = "<localleader>ts";
-    hide = "<localleader>th";
-
     prev = "<localleader>th";
     last = "<localleader>tj";
     first = "<localleader>tk";
