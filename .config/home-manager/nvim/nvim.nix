@@ -19,7 +19,7 @@
 
   colorschemes = ( import ./colors.nix );
 
-  plugins = ( import ./plugins.nix { inherit pkgs; });
+  plugins = ( import ./plugins.nix );
   extraPlugins = with pkgs.vimPlugins; [
     ultisnips
     nerdcommenter

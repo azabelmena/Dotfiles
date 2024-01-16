@@ -16,29 +16,33 @@
   {
     key = "J";
     action = "<C-d>zz";
-    mode = ["n" "v"];
+    mode = [ "n" "v" ];
   }
   {
     key = "K";
     action = "<C-u>zz";
-    mode = ["n" "v"];
+    mode = [ "n" "v" ];
   }
 
   {
     key = "<C-h>";
     action = "<C-w>h";
+    mode = [ "n" "i" "v" ];
   }
   {
     key = "<C-j>";
     action = "<C-w>j";
+    mode = [ "n" "i" "v" ];
   }
   {
     key = "<C-k>";
     action = "<C-w>k";
+    mode = [ "n" "i" "v" ];
   }
   {
     key = "<C-l>";
     action = "<C-w>l";
+    mode = [ "n" "i" "v" ];
   }
 
   {

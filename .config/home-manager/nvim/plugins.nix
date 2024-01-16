@@ -1,13 +1,10 @@
-{pkgs, ...}:
 {
-  lualine = ( import ./plugins/lualine.nix );
-
-  telescope = ( import ./plugins/telescope.nix );
-
-  vimtex = ( import ./plugins/vimtex.nix );
-
-  floaterm = ( import ./plugins/floaterm.nix );
 
   bufferline = ( import ./plugins/bufferline.nix );
+  floaterm = ( import ./plugins/floaterm.nix );
+  lualine = ( import ./plugins/lualine.nix );
+  telescope = ( import ./plugins/telescope.nix );
+  treesitter = ( import ./plugins/treesitter.nix );
+  vimtex = ( import ./plugins/vimtex.nix );
 
 }
