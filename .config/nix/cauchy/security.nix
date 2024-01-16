@@ -11,13 +11,7 @@
     rateLimit = 1000;
   };
 
-  polkit = {
-    enable = true;
-    debug = true;
-    adminIdentities = [
-      "unix-group:wheel"
-    ];
-  };
+  polkit = ( import ./polkit.nix );
 
   pam.services.swaylock = {
     text = ''

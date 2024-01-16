@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, ... }: # Cayley NIX!
 {
   package = config.boot.kernelPackages.nvidiaPackages.stable;
 

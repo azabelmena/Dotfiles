@@ -15,16 +15,11 @@
 
     allowedTCPPorts = [
       1024
-      22
-      4096
       443
-      53317
       80
     ];
     allowedUDPPorts = [
-      4096
       443
-      53317
       80
     ];
   };

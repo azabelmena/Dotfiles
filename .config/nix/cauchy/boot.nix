@@ -1,13 +1,13 @@
 { pkgs, ... }:
 {
-  kernelPackages = pkgs.linuxPackages_latest;
+  kernelPackages = pkgs.linuxPackages_zen;
   loader = {
     systemd-boot.enable = true;
     efi.canTouchEfiVariables = true;
   };
 
-  initrd.availableKernelModules = [];
-  initrd.kernelModules = [];
-  kernelModules = [];
-  extraModulePackages = [];
+  initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "sd_mod" ];
+  initrd.kernelModules = [ ];
+  kernelModules = [ "kvm-intel" ];
+  extraModulePackages = [ ];
 }

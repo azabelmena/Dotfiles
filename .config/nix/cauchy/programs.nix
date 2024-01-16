@@ -3,16 +3,16 @@
   mtr.enable = true;
   gnupg.agent = {
     enable = true;
-    enableSSHSupport = true;
+    enableSSHSupport = false;
   };
 
-  virt-manager.enable = true;
+  virt-manager.enable = false;
 
   zsh.enable = true;
   hyprland.enable = true;
   steam = {
-    enable = true;
-    remotePlay.openFirewall = true;
-    dedicatedServer.openFirewall = true;
+    enable = false;
+    remotePlay.openFirewall = false;
+    dedicatedServer.openFirewall = false;
   };
 }

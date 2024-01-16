@@ -4,10 +4,10 @@
     enable = false;
 
     settings = {
-      UseDns = true;
-      PasswordAuthentication = true;
+      UseDns = false;
+      PasswordAuthentication = false;
       PermitRootLogin = "no";
-      GatewayPorts = "yes";
+      GatewayPorts = "no";
     };
 
     ports = [
@@ -32,7 +32,7 @@
   xserver = {
     enable = true;
     layout = "us";
-    videoDrivers = ["modesetting"];
+    videoDrivers = [""];
     displayManager = {
       sddm = {
         enable = true;
@@ -42,7 +42,7 @@
     };
   };
 
-  blueman.enable = false;
+  blueman.enable = true;
 
   pipewire = {
     enable = true;
@@ -64,11 +64,9 @@
     tempDir = "/tmp/cups";
 
     allowFrom = [
-      "127.0.0.1"
     ];
 
     listenAddresses = [
-      "127.0.0.1:53317"
     ];
 
     openFirewall = false;
