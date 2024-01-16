@@ -40,6 +40,8 @@
   mynixos = "https://mynixos.com/";
   nixos = "https://nixos.org/";
   nixpkgs = "https://search.nixos.org/packages";
+  nixvim = "https://github.com/nix-community/nixvim";
+  nlab = "https://ncatlab.org/nlab/show/HomePage";
   noip = "https://www.noip.com/login";
   osdev = "https://wiki.osdev.org/Main_Page";
   outlook = "https://outlook.office.com/mail/";
@@ -70,5 +72,4 @@
   wired = "https://www.wired.com/";
   wolfram = "https://www.wolframalpha.com/";
   youtube = "https://www.youtube.com/";
-  nlab = "https://ncatlab.org/nlab/show/HomePage";
 }
