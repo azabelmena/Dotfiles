@@ -6,7 +6,7 @@
   powerManagement.enable = false;
   powerManagement.finegrained = false;
 
-  open = false; # Open source driver (nvidia-open-dkms)
+  open = false;
 
   nvidiaSettings = true;
 
