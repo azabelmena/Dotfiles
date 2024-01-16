@@ -9,20 +9,31 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nixpkgs-stable.url = "github:NixOS/nixpkgs/release-23.11";
 
-    home-manager.url = "github:nix-community/home-manager";
-    home-manager-stable.url = "github:nix-community/home-manager/release-23.11";
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    home-manager-stable.inputs.nixpkgs.follows = "nixpkgs-stable";
+    home-manager-stable = {
+      url = "github:nix-community/home-manager/release-23.11";
+      inputs.nixpkgs.follows = "nixpkgs-stable";
+    };
 
-    darwin.url = "github:LnL7/nix-darwin";
-    darwin.inputs.nixpkgs.follows = "nixpkgs";
+    darwin = {
+      url = "github:LnL7/nix-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     nix-colors.url = "github:misterio77/nix-colors";
 
     nixvim = {
       url = "github:nix-community/nixvim/main";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nixvim-stable = {
+      url = "github:nix-community/nixvim/nixos-23.11";
+      inputs.nixpkgs.follows = "nixpkgs-stable";
     };
   };
 
@@ -37,10 +48,11 @@
   in{
     nixosConfigurations = {
 
-      fermat = nixos-stable.lib.nixosSystem {
-        system = "x86_64-linux";
+      fermat = nixos.lib.nixosSystem {
+        specialArgs = { inherit inputs system-x86_64-linux; };
+
         modules = [
-          "${nixos-stable}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
+          "${nixos}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
           ./nix/fermat/configuration.nix
         ];
       };
