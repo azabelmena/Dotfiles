@@ -6,8 +6,11 @@
   autohide = 0;
   autoinsert = true;
 
-  wintype = "split";
-  height = 22;
+  wintype = "float";
+  position = "center";
+
+  height = 0.6;
+  width = 0.6;
 
   shell = "zsh";
 
