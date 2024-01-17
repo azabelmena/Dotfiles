@@ -1,9 +1,7 @@
 { pkgs, lib, ... }:
 {
   users.nixos = {
-    uid = 1000;
-    isNormalUser = lib.mkForce false;
-    isSystemUser = true;
+    isNormalUser = true;
     hashedPassword = "";
     group = "wheel";
     shell = pkgs.zsh;

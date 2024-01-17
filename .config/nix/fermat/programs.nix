@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
   mtr.enable = true;
   gnupg.agent = {
@@ -6,5 +6,7 @@
     enableSSHSupport = true;
   };
 
-  zsh.enable = true;
+  nixvim = ( import ./nvim/nvim.nix { inherit pkgs config; } );
+
+  zsh = ( import ./zsh.nix { inherit pkgs; } );
 }

@@ -1,13 +1,41 @@
-# RECOVERY NIX!
+# Fermat NIX!
 
 {inputs, config, pkgs, lib, ... }:
 
 {
 
-  nixpkgs.config.allowUnfree = true;
-  nix.settings = {
-      experimental-features = ["nix-command" "flakes"];
+imports = [
+  inputs.nix-colors.homeManagerModules.default
+  inputs.nixvim-stable.nixosModules.nixvim
+];
+colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-soft;
+
+nixpkgs = {
+    config = {
+      allowBroken = false;
+      allowUnfree = true;
+    };
+    hostPlatform = lib.mkDefault "x86_64-linux";
   };
+  nix = {
+    package = pkgs.nixFlakes;
+    settings = {
+      auto-optimise-store = true;
+      max-jobs = 8;
+      require-sigs = true;
+      sandbox = true;
+      experimental-features = ["nix-command" "flakes"];
+      allowed-users = [ "@wheel" ];
+
+      system-features = [
+      "kvm"
+      "big-parallel"
+      "benchmark"
+      "nixos-test"
+      ];
+      };
+  };
+
 
   boot = ( import ./boot.nix { inherit pkgs; });
 
@@ -18,11 +46,7 @@
   environment = ( import ./environment.nix { inherit pkgs; } );
 
   i18n.defaultLocale = "en_US.UTF-8";
-  console = lib.mkDefault {
-      font = "Lat2-Terminus16";
-      keyMap = "us";
-      useXkbConfig = true;
-  };
+  console = lib.mkDefault ( import ./console.nix { inherit config; });
 
   services = ( import ./services.nix { inherit pkgs lib; } );
 
@@ -30,7 +54,7 @@
 
   users = ( import ./users.nix { inherit pkgs lib; } );
 
-  programs = ( import ./programs.nix { inherit pkgs; } );
+  programs = ( import ./programs.nix { inherit pkgs config; } );
 
   documentation.dev.enable = true;
 
