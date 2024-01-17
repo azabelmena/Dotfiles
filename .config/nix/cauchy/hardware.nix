@@ -9,6 +9,5 @@
       driSupport = true;
       driSupport32Bit = true;
   };
-
   #nvidia = ( import ./nvidia.nix { inherit config; });
 }

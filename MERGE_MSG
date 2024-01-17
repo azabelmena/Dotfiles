@@ -1,0 +1,8 @@
+First commit from cauchy.
+
+# Conflicts:
+#	.config/home-manager/waybar/waybar.nix
+#	.config/nix/cauchy/boot.nix
+#	.config/nix/cauchy/filesystems.nix
+#	.config/nix/cauchy/hardware.nix
+#	.config/nix/cauchy/swap.nix
