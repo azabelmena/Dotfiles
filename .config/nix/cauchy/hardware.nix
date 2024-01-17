@@ -2,7 +2,7 @@
 {
   cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
-  bluetooth.enable = true;
+  bluetooth.enable = false;
 
   opengl = {
       enable = true;
