@@ -1,5 +1,0 @@
-Refreshed install of cayley.
-
-# Conflicts:
-#	.config/nix/cayley/filesystems.nix
-#	.config/nix/cayley/swap.nix
