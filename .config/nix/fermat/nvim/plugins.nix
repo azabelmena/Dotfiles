@@ -1,7 +1,6 @@
 {
-  bufferline = ( import ./plugins/bufferline.nix );
-  floaterm = ( import ./plugins/floaterm.nix );
-  lualine = ( import ./plugins/lualine.nix );
-  telescope = ( import ./plugins/telescope.nix );
-  treesitter = ( import ./plugins/treesitter.nix );
+  bufferline = ( import ../../../home-manager/nvim/plugins/bufferline.nix );
+  floaterm = ( import ../../../home-manager/nvim/plugins/floaterm.nix );
+  telescope = ( import ../../../home-manager/nvim/plugins/telescope.nix );
+  treesitter = ( import ../../../home-manager/nvim/plugins/treesitter.nix );
 }

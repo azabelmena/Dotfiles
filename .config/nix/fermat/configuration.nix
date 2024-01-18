@@ -33,7 +33,7 @@ nixpkgs = {
       "benchmark"
       "nixos-test"
       ];
-      };
+    };
   };
 
 
@@ -52,7 +52,7 @@ nixpkgs = {
 
   security = ( import ./security.nix { inherit pkgs; } );
 
-  users = ( import ./users.nix { inherit pkgs lib; } );
+  #users = ( import ./users.nix { inherit pkgs lib; } );
 
   programs = ( import ./programs.nix { inherit pkgs config; } );
 

@@ -8,5 +8,5 @@
 
   nixvim = ( import ./nvim/nvim.nix { inherit pkgs config; } );
 
-  zsh = ( import ./zsh.nix { inherit pkgs; } );
+  bash = ( import ./bash.nix { inherit pkgs; } );
 }
