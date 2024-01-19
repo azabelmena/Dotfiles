@@ -3,7 +3,7 @@
   rtkit.enable = true;
 
   audit = {
-    enable = true;
+    enable = false;
 
     backlogLimit = 512;
     rateLimit = 1000;
