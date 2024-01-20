@@ -1,6 +1,8 @@
 { pkgs, lib, ... }:
 {
-  useDHCP =  lib.mkDefault true;
+  interfaces = {
+    enp7s0.useDHCP = lib.mkDefault true;
+  };
   hostName = "cauchy";
   networkmanager = {
     enable = true;
