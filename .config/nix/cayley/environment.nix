@@ -35,6 +35,7 @@
       polkit_gnome
       python3
       qemu
+      sage
       vim-full
       virt-manager
   ];
