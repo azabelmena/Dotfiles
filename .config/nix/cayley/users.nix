@@ -13,6 +13,7 @@
       packages = with pkgs; [
         authy
         bat
+        blueberry
         discord
         eza
         fastfetch
