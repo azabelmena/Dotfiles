@@ -1,5 +1,6 @@
 { pkgs, config, lib, ... }:
 {
+  enableAllFirmware = true;
   cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
   system76 = {
     enableAll = true;
