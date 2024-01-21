@@ -1,13 +1,13 @@
 {
   "/boot" =
     {
-      device = "/dev/disk/by-uuid/9DAD-4E6C";
+      device = "/dev/disk/by-uuid/E820-7F6C";
       fsType = "vfat";
     };
 
   "/" =
     {
-      device = "/dev/disk/by-uuid/1a22ddbf-99c4-46da-841e-a40269b169d2";
+      device = "/dev/disk/by-uuid/251add71-65ad-4464-9a41-2f5a52d9e784";
       fsType = "ext4";
     };
 
