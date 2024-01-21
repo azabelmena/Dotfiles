@@ -9,7 +9,7 @@
       layer = "top";
       modules-left = ["custom/logo" "disk" "cpu" "memory" "temperature"];
       modules-center = ["clock"];
-      modules-right = [ "hyprland/workspaces" "pulseaudio" "battery" "network"];
+      modules-right = [ "hyprland/workspaces" "pulseaudio" "bluetooth" "battery" "network"];
 
       "pulseaudio" = {
         tooltip = false;
@@ -78,14 +78,8 @@
       };
 
       "bluetooth"= {
-          "controller"= "controller1";
-          "format"= "  ";
-          "format-disabled"= " 󰂲 ";
-          "format-connected"= " {num_connections} connected";
-          "tooltip-format"= "{controller_alias}\t{controller_address}";
-          "tooltip-format-connected"=
-              "{controller_alias}\t{controller_address}\n\n{device_enumerate}";
-          "tooltip-format-enumerate-connected"= "{device_alias}\t{device_address}";
+          "format-off"= " 󰂲 ";
+          "format-on"= " ";
       };
 
       "disk"= {
