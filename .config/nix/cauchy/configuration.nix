@@ -58,7 +58,7 @@
     useUserPackages = true;
   };
 
-  networking = ( import ./networking.nix { inherit pkgs lib; });
+  networking = ( import ./networking.nix { inherit pkgs; });
 
   time.timeZone = "America/Puerto_Rico";
 

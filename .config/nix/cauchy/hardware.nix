@@ -1,8 +1,12 @@
 { pkgs, config, lib, ... }:
 {
+  enableAllFirmware = true;
   cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
-  bluetooth.enable = false;
+  bluetooth = {
+    enable = true;
+    powerOnBoot = false;
+  };
 
   opengl = {
       enable = true;

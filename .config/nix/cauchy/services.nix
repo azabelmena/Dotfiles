@@ -42,7 +42,7 @@
     };
   };
 
-  blueman.enable = true;
+  blueman.enable = false;
 
   pipewire = {
     enable = true;
