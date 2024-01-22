@@ -78,8 +78,8 @@
       };
 
       "bluetooth"= {
-          "format-off"= " 󰂲 ";
-          "format-on"= " ";
+          format-disabled= " 󰂲 ";
+          format-on= "  ";
       };
 
       "disk"= {
