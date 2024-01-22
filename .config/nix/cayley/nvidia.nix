@@ -1,6 +1,6 @@
 { config, ... }: # Cayley NIX!
 {
-  package = config.boot.kernelPackages.nvidiaPackages.vulkan_beta;
+  package = config.boot.kernelPackages.nvidiaPackages.stable;
 
   modesetting.enable = true;
   powerManagement.enable = false;
