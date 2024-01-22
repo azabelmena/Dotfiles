@@ -2,8 +2,8 @@
 {
 
   interfaces = {
-    enp7s0.useDHCP = true;
-    wlp0s20f3.useDHCP = true;
+    enp3s0.useDHCP = true;
+    wlo1.useDHCP = true;
   };
 
   hostName = "cayley";
