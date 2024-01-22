@@ -26,7 +26,8 @@
 
     input = {
       kb_layout = "us";
-      follow_mouse = 0;
+      follow_mouse = 1;
+      mouse_refocus = false;
       sensitivity = 0;
     };
 
