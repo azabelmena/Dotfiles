@@ -12,9 +12,8 @@
     };
 
   "/mnt/storage" =
-    {
-      device = "/dev/disk/by-uuid/7554707e-0473-41dc-a6af-1e3cc77825f9";
-      fsType = "btrfs";
+    { device = "/dev/disk/by-uuid/a2b80594-d3f1-4291-af41-521667e8f484";
+      fsType = "ext4";
     };
 
   "/mnt/games" =
