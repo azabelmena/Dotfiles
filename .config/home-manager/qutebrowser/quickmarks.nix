@@ -7,6 +7,7 @@
   azabelmena = "https://azabelmena.github.io/";
   azabelmena_testing = "http://127.0.0.1:1313/";
   bitwarden = "https://vault.bitwarden.com/#/login";
+  boqueron = "https://www.hpcf.upr.edu/documentation/boqueron/";
   chalkdustmag = "https://chalkdustmagazine.com/";
   cienciasnaturalesuprrp = "https://natsci.uprrp.edu/";
   cuda = "https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html";
@@ -31,6 +32,7 @@
   intercept = "https://theintercept.com/";
   journalmathny = "http://nyjm.albany.edu/nyjm.html";
   libgen = "http://libgen.rs/";
+  lmfdb = "https://www.lmfdb.org/";
   mathstack = "https://math.stackexchange.com/";
   mibanco = "https://www.bancopopular.com/cibp-web/actions/login";
   mitreattack = "https://attack.mitre.org/";
