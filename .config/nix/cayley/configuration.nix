@@ -21,7 +21,7 @@
   nix = {
     package = pkgs.nixFlakes;
     settings = {
-      auto-optimise-store = true;
+      auto-optimise-store = false;
       max-jobs = 8;
       require-sigs = true;
       sandbox = true;
