@@ -18,27 +18,27 @@
   };
 
   keymaps = {
-   "<localleader>ff" = {
+   "<leader>ff" = {
      action = "find_files";
      desc = "Fuzzy find recent files";
    };
-   "<localleader>fr" = {
+   "<leader>fr" = {
      action = "oldfiles";
      desc = "Fuzzy find recent files";
    };
-   "<localleader>fs" = {
+   "<leader>fs" = {
      action = "live_grep";
      desc = "Find string";
    };
-   "<localleader>fc" = {
+   "<leader>fc" = {
      action = "grep_string";
      desc = "Find string under cursor";
    };
-   "<localleader>fh" = {
+   "<leader>fh" = {
      action = "help_tags";
      desc = "Find help tags";
    };
-   "<localleader>fb" = {
+   "<leader>fb" = {
      action = "buffers";
      desc = "Find buffers";
    };
