@@ -50,5 +50,7 @@
   gtk = ( import ./gtk.nix { inherit pkgs; });
   qt = ( import ./qt.nix { inherit pkgs; });
 
+  xdg = ( import ./xdg.nix { inherit pkgs config; });
+
   dconf = ( import ./dconf.nix);
 }

@@ -32,7 +32,6 @@
 .config/RStudio/
 .config/Unknown Organization/
 .config/VA_11_Hall_A/
-.config/Vieb/
 .config/VirtualBox/
 .config/alacritty
 .config/autostart
@@ -99,6 +98,7 @@
 .config/tuta_integration/
 .config/tutanota-desktop/
 .config/unity3d/
+.config/user-dirs.*
 .config/user-dirs.dirs/
 .config/user-dirs.locale/
 .config/vifm/
