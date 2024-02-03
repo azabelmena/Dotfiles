@@ -41,7 +41,6 @@
 .config/cef_user_data/
 .config/dconf
 .config/discord*
-.config/discord/
 .config/dleyna-server-service.conf
 .config/dolphin-emu/
 .config/enchant/
@@ -80,6 +79,7 @@
 .config/openrazer/
 .config/pavucontrol.ini
 .config/polychromatic/
+.config/protonvpn/
 .config/pulse/
 .config/pupgui/
 .config/qBittorrent/
@@ -230,6 +230,7 @@ notes/
 objects/
 packed-refs
 prlsamp
+protonvpn/
 refs/
 result
 router_hacking/
