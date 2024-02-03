@@ -52,7 +52,10 @@
   piratebay = "https://thepiratebay.org/index.html";
   portal = "https://portal.upr.edu/uprrp/portal.php?a=rea_login";
   projecteuclid = "https://projecteuclid.org/";
+  proton = "https://proton.me/";
   protondb = "https://www.protondb.com/";
+  protonmail = "https://account.proton.me/login";
+  protonvpn = "https://account.protonvpn.com/login";
   quiver = "https://q.uiver.app/";
   radicaldefenc = "https://radicaldefence.keybase.pub/";
   reddit = "https://www.reddit.com/";
