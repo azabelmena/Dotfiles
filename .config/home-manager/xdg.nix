@@ -23,6 +23,7 @@
 
     extraConfig = {
       XDG_MISC_DIR = "${config.home.homeDirectory}/Misc/";
+      XDG_SCREENSHOTS_DIR = "${config.home.homeDirectory}/Pictures/Screenshots/";
       XDG_MOUNT_DIR = "${config.home.homeDirectory}/mount/";
       XDG_MOUNT0_DIR = "${config.home.homeDirectory}/mount/mount0/";
       XDG_MOUNT1_DIR = "${config.home.homeDirectory}/mount/mount1/";
