@@ -1,75 +1,14 @@
 { pkgs, ... }:
 {
-  openssh = {
-    enable = true;
+  openssh = ( import ./services/ssh.nix );
 
-    settings = {
-      UseDns = true;
-      PasswordAuthentication = true;
-      PermitRootLogin = "no";
-      GatewayPorts = "yes";
-    };
+  avahi = ( import ./services/avahi.nix );
 
-    ports = [
-      22
-      4096
-    ];
+  acpid = ( import ./services/acpid.nix );
 
-  };
+  xserver = ( import ./services/xserver.nix { inherit pkgs; } );
 
-  avahi = {
+  pipewire = ( import ./services/pipewire.nix );
 
-  enable = true;
-  nssmdns4 = true;
-  openFirewall = true;
-  };
-
-  acpid = {
-    enable = true;
-    logEvents = false;
-  };
-
-  xserver = {
-    enable = true;
-    layout = "us";
-    videoDrivers = ["nvidia"];
-    displayManager = {
-      sddm = {
-        enable = true;
-        theme = "${import ./sddm.nix { inherit pkgs; }}";
-        autoNumlock = false;
-      };
-    };
-  };
-
-  pipewire = {
-    enable = true;
-    audio.enable = true;
-
-    alsa = {
-      enable = true;
-      support32Bit = true;
-    };
-
-    pulse.enable = true;
-    jack.enable = true;
-  };
-
-  printing = {
-    enable = true;
-    startWhenNeeded = true;
-    stateless = true;
-    tempDir = "/tmp/cups";
-
-    allowFrom = [
-      "127.0.0.1"
-    ];
-
-    listenAddresses = [
-      "127.0.0.1:53317"
-    ];
-
-    openFirewall = false;
-    logLevel = "info";
-  };
+  printing = ( import ./services/printing.nix );
 }
