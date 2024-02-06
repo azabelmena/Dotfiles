@@ -66,6 +66,7 @@
   submittable= "https://manager.submittable.com/login";
   system76 = "https://system76.com/";
   system76-docs = "https://tech-docs.system76.com/README.html";
+  tendawifi = "http://192.168.0.1/";
   tor = "https://www.torproject.org/";
   twitter = "https://twitter.com/home";
   uprrp = "https://www.uprrp.edu/";
@@ -77,4 +78,5 @@
   wired = "https://www.wired.com/";
   wolfram = "https://www.wolframalpha.com/";
   youtube = "https://www.youtube.com/";
+  zhone = "http://192.168.1.1/";
 }
