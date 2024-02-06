@@ -35,6 +35,8 @@
         papirus-icon-theme
         pavucontrol
         protonup-ng
+        protonvpn-cli
+        protonvpn-gui_legacy
         qutebrowser
         ripgrep
         rofi-wayland
@@ -49,6 +51,7 @@
         wlsunset
         xdg-desktop-portal-gtk
         zathura
+        zoom-us
         zsh
       ];
     };

@@ -32,6 +32,8 @@
       man-pages-posix
       mpfr
       mpi
+      openvpn
+      openssh
       polkit_gnome
       python3
       qemu
