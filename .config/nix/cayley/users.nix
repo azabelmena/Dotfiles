@@ -1,6 +1,8 @@
 { pkgs, ... }:
 {
 
+  groups.ssh-users = {};
+
   users = {
     alec = {
       isNormalUser = true;
@@ -8,6 +10,7 @@
         "libvirtd"
         "networkmanager"
         "wheel"
+        "ssh-users"
       ];
       shell = pkgs.zsh;
       packages = with pkgs; [
