@@ -6,4 +6,15 @@
 
   userName = "Alec S. Zabel-Mena";
   userEmail = "alec.zabel@upr.edu";
+
+  signing = {
+    key = "~/.ssh/sig_github";
+    signByDefault = true;
+  };
+
+  extraConfig = {
+    commit.gpgsign = true;
+    gpg.format = "ssh";
+  };
+
 }
