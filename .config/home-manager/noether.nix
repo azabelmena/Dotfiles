@@ -30,13 +30,13 @@
         userEmail = "alec.zabel@upr.edu";
       };
 
-      bash = (import ./bash/bash-darwin.nix { inherit pkgs; });
-      kitty = (import ./kitty/kitty-darwin.nix { inherit pkgs config; });
+      bash = (import ./bash/bash.nix { inherit pkgs; });
+      kitty = (import ./kitty/kitty.nix { inherit pkgs config; });
       nixvim = ( import ./nvim/nixvim.nix { inherit pkgs; } );
       qutebrowser = (import ./qutebrowser/qutebrowser.nix { inherit pkgs config; });
       starship = ( import ./starship.nix { inherit pkgs config; });
       tmux = (import ./tmux.nix { inherit pkgs; });
-      zsh = (import ./zsh/zsh-darwin.nix { inherit pkgs; });
+      zsh = (import ./zsh/zsh.nix { inherit pkgs; });
     };
 
   home.file = ( import ./files.nix { inherit pkgs config lib; });
