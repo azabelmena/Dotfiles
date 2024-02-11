@@ -15,6 +15,7 @@ in
     syntaxHighlighting.enable = true;
 
     initExtra = ''
+        cd ~
         sleep 0.1
         fastfetch
 

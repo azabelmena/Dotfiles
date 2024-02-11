@@ -7,7 +7,7 @@
 
   font = {
           name = "BlexMono Nerd Font Mono";
-          size = 12;
+          size = 16;
   };
 
   keybindings = {

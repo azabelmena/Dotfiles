@@ -4,7 +4,7 @@
   package = pkgs.skhd;
   enable = true;
   skhdConfig = ''
-    cmd - return      : '/Applications/Nix Apps/kitty.app/Contents/MacOS'/kitty --hold sh -c 'cd'
+    cmd - return      : '/Applications/Nix Apps/kitty.app/Contents/MacOS'/kitty
     cmd - b           : /Applications/qutebrowser.app/Contents/MacOS/qutebrowser
     ctrl + cmd - z    : zathura
 

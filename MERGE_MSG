@@ -1,0 +1,10 @@
+Configured noether.
+
+# Conflicts:
+#	.config/home-manager/kitty.nix
+#	.config/home-manager/noether.nix
+#	.config/home-manager/nvim/plugins.nix
+#	.config/home-manager/skhd.nix
+#	.config/home-manager/yabai.nix
+#	.config/home-manager/zsh.nix
+#	.config/nix/noether/configuration.nix

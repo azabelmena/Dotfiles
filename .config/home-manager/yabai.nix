@@ -20,7 +20,6 @@
   };
   extraConfig=''
     sudo yabai --load-sa
-    source "~/.config/colors.sh"
     echo "yabai configuration loaded..."
 
     yabai -m rule --add title='Preferences' manage=off layer=above

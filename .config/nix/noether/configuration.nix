@@ -1,5 +1,4 @@
 # Noether NIX!
-# HAPPY NEW YEAR!!!
 
 {inputs, config, pkgs, lib, ... }:
 
