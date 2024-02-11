@@ -32,7 +32,7 @@
 
       bash = (import ./bash.nix { inherit pkgs; });
       kitty = (import ./kitty.nix { inherit pkgs config; });
-      nixvim = ( import ./nvim/nixvim.nix { inherit pkgs; } );
+      nixvim = ( import ./nvim/nvim.nix { inherit pkgs; } );
       qutebrowser = (import ./qutebrowser/qutebrowser.nix { inherit pkgs config; });
       starship = ( import ./starship.nix { inherit pkgs config; });
       tmux = (import ./tmux.nix { inherit pkgs; });
