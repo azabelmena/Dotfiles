@@ -24,15 +24,6 @@
     ## Kitty terminal
     icat="kitty +kitten icat";
 
-    ## qutebrowser
-    quterc="vim ~/.config/qutebrowser/config.py";
-
-    ##dunst
-    dunstrc="vim ~/.config/dunst/dunstrc";
-
-    ##TMUX
-    tmuxrc="vim ~/.tmux.conf";
-
     ##
     scriptrc="vim ~/scripts/";
 
@@ -44,4 +35,7 @@
     homerc="vim ~/.config/home-manager/";
     flakerc="vim ~/.config/flake.nix";
     nix-shell="nix-shell --command 'zsh'";
+
+    #ssh
+    sshrc="vim ~/.ssh/config";
 }
