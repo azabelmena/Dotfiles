@@ -83,7 +83,6 @@
 
     yabai = ( import ../../home-manager/yabai.nix { inherit pkgs; } );
     skhd = ( import ../../home-manager/skhd.nix { inherit pkgs; } );
-    spacebar = ( import ../../home-manager/spacebar.nix { inherit pkgs; } );
   };
 
  security.pam.enableSudoTouchIdAuth = true;
