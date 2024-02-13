@@ -3,7 +3,7 @@
 {
     imports = [
       inputs.nix-colors.homeManagerModules.default
-      inputs.nixvim.homeManagerModules.nixvim
+      inputs.nixvim-stable.homeManagerModules.nixvim
     ];
     colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-soft;
 
