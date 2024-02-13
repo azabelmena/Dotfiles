@@ -75,6 +75,7 @@
   uprrpmath = "https://math.uprrp.edu/";
   whatsapp = "https://web.whatsapp.com/";
   wikipedia = "https://www.wikipedia.org/";
+  wiles = "http://192.168.50.1/";
   wired = "https://www.wired.com/";
   wolfram = "https://www.wolframalpha.com/";
   youtube = "https://www.youtube.com/";
