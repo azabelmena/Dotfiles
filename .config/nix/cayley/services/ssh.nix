@@ -37,9 +37,9 @@
   };
 
 
-  allowSFTP = false;
+  allowSFTP = true;
 
   ports = [
-    4096
+    22
   ];
 }
