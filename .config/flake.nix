@@ -30,11 +30,6 @@
       url = "github:nix-community/nixvim/main";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    nixvim-stable = {
-      url = "github:nix-community/nixvim/nixos-23.11";
-      inputs.nixpkgs.follows = "nixpkgs-stable";
-    };
   };
 
   outputs = {self, nixos, nixpkgs, nixos-stable, nixpkgs-stable, darwin, home-manager, ...}@inputs:
