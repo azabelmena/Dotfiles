@@ -20,6 +20,7 @@
 
     allowedTCPPorts = [
       22
+      41641
       53317
     ];
     allowedUDPPorts = [

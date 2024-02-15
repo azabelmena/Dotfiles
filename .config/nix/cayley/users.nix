@@ -46,6 +46,7 @@
         starship
         swaylock-effects
         system76-keyboard-configurator
+        tailscale
         texlive.combined.scheme-full
         tmux
         tutanota-desktop

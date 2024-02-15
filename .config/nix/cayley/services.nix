@@ -11,4 +11,6 @@
   pipewire = ( import ./services/pipewire.nix );
 
   printing = ( import ./services/printing.nix );
+
+  tailscale = ( import ./services/tailscale.nix { inherit pkgs; } );
 }
