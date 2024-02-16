@@ -13,7 +13,7 @@
 
     AllowGroups = [ "ssh-users" ];
 
-    HostKeyAlgorithms = "ssh-ed25519-cert-v01@openssh.com,ssh-rsa-cert-v01@openssh.com,ssh-ed25519,ssh-rsa";
+    HostKeyAlgorithms = "ssh-ed25519-cert-v01@openssh.com,ssh-ed25519,ssh-rsa-cert-v01@openssh.com,ssh-rsa";
     KexAlgorithms = [
       "curve25519-sha256@libssh.org"
       "diffie-hellman-group-exchange-sha256"
@@ -40,6 +40,6 @@
   allowSFTP = true;
 
   ports = [
-    22
+    16384
   ];
 }

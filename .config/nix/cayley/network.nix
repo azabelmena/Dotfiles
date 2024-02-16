@@ -19,11 +19,12 @@
     pingLimit = "--limit 1/minute --limit-burst 5";
 
     allowedTCPPorts = [
-      22
+      16384
       41641
       53317
     ];
     allowedUDPPorts = [
+      41641
       53317
     ];
   };

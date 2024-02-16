@@ -5,5 +5,7 @@
 
   openFirewall = true;
 
+  useRoutingFeatures = "server";
+
   port = 41641;
 }
