@@ -21,8 +21,9 @@
 
   plugins = ( import ./plugins.nix );
   extraPlugins = with pkgs.vimPlugins; [
-    ultisnips
     nerdcommenter
+    ultisnips
+    vimtex
   ];
 
   enableMan = true;
