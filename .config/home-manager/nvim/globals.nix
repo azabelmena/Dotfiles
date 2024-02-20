@@ -1,5 +1,6 @@
 { config, ... }:
 {
+
   mapleader = ",";
   maplocalleader = "\\";
 
@@ -12,4 +13,11 @@
   UltiSnipsJumpForwardTrigger = "<C-j>";
   UltiSnipsJumpBackwardTrigger = "<C-k>";
   UltiSnipsSnippetDirectories = [ "${config.home.homeDirectory}/.config/nvim/UltiSnips" ];
+
+  tex_flavor = "latex";
+  vimtex_parser_bib_backend = "bibtex";
+  vimtex_view_method = "zathura";
+  vimtex_quickfix_mode = 0;
+  vimtex_syntax_enabled = 0;
+  tex_conceal = "abdmg";
 }
