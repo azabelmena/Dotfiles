@@ -37,6 +37,7 @@
         obs-studio
         papirus-icon-theme
         pavucontrol
+        protontricks
         protonup-ng
         protonvpn-cli
         protonvpn-gui_legacy
