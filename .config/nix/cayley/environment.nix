@@ -15,7 +15,6 @@
       btop
       cmake
       coreutils
-      cudatoolkit
       file
       gcc
       git
