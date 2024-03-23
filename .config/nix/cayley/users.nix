@@ -14,7 +14,6 @@
       ];
       shell = pkgs.zsh;
       packages = with pkgs; [
-        authy
         bat
         blueberry
         discord
@@ -24,7 +23,6 @@
         gamemode
         grimblast
         home-manager
-        hugo
         hyprland
         hyprpaper
         inkscape-with-extensions
