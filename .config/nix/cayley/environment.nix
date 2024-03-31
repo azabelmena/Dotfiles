@@ -8,7 +8,6 @@
 
   systemPackages = with pkgs; [
       OVMFFull
-      age
       autoconf
       automake
       bc
@@ -30,6 +29,7 @@
       openssh
       openvpn
       polkit_gnome
+      python3
       qemu
       vim-full
       virt-manager
