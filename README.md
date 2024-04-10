@@ -1,131 +1,23 @@
-<p align="center">
-  <b>azabelmena/Dotfiles</b><br />
-  <span align="center">Declarative, reproducible, and stateless system
-  configurations for NixOS and Nix-Darwin.</span>
-</p>
+# ProtographLDPC
 
-# A Nice Warm Welcome.
+**Implementation of Protograph LDPC error correction codes**  
+*Roshan Prabhakar<sup>1</sup>, Shubham Chandak<sup>2</sup>, Kedar Tatwawadi<sup>2</sup>*
 
-Welcome to my dotfiles repository. What we have here are NixOS and Nix-Darwin
-configuration files, and dotfiles that I have declared in the nix language for
-different machines. The machines included
-here are:
-- `cauchy` ([Augustin-Louis Cauchy](https://ncatlab.org/nlab/show/Augustin-Louis+Cauchy))
-    - An old Lenovo Ideapad I have lying around for tinkering and testing.
-- `cayley` (Arthur Cayley)
-    - A system76 Thelio desktop. This is my main machine, and the one that sees
-      the most upates.
-- `fermat` ([Pierre de Fermat](https://www.britannica.com/biography/Pierre-de-Fermat))
-    - Configurations for buildiong a NixOS bootable recovery and installation media.
-    - This is the most minimal configuration out of all of them, as it's
-      intended to live on a usb stick.
-- `lovelace` ([Ada Lovelace](https://www.britannica.com/biography/Ada-Lovelace))
-    - This configuration is meant for KVM virtual machines using qemu.
-    - This is second most minimal config out of all of them, as it is meant to be
-    accessed through ssh.
-    - Most notably known as the first computer programmer, Ada was also a
-      mathematician.
-- `noether` ([Emmy Noether](https://www.britannica.com/biography/Emmy-Noether))
-    - An Apple M2 MacBook Pro.
+<sup>1</sup>Fremont High School, Sunnyvale, CA, USA  
+<sup>2</sup>Stanford University, Stanford, CA, USA  
 
-By the way, all my machines are named after mathematicians:
-- The, name `noether` can refer to either Emmy Noether, or Max Noether
-(Emmy's father); although I named my M2 MacBook specifically after Emmy.
-- If you copy my (nix) configs, you do not need to adhere to the
-mathematician naming scheme; although it would be neat if you did.
-- Hopefully down the line I will acquire a framework laptop and name it one
-of the following:
-    - `hilbert` ([David Hilbert](https://en.wikipedia.org/wiki/David_Hilbert))
-    - `sophie` ([Sophie Germaine](https://www.britannica.com/biography/Sophie-Germain))
-    - `hypatia` ([Hypatia of Alexandria](https://en.wikipedia.org/wiki/Hypatia))
-    - `agnesi` ([Maria Gaetana Agnesi](https://www.britannica.com/biography/Maria-Gaetana-Agnesi))
-    - `weyl` ([Hermann Weyl](https://plato.stanford.edu/entries/weyl/))
-- The names here are not capitalized (even though they should be) to be in
-keeping with [DNS hostname conventions](https://datatracker.ietf.org/doc/html/rfc1178).
+[![DOI](https://zenodo.org/badge/287030442.svg)](https://zenodo.org/badge/latestdoi/287030442)
 
-# What's Here?
+**Documentation**: https://shubhamchandak94.github.io/ProtographLDPC/
 
-Here you will find:
+LDPC codes are a class of linear error-correction codes on sparse bipartite graphs providing efficient decoding using message passing (between variable and check nodes on the graph) and excellent error correction performance. Among the various classes of LDPC codes, regular LDPC codes have fixed degree variable and check nodes and perform quite well in the high rate regimes for finite block lengths. Irregular LDPC codes can achieve performance closer to capacity but need some fixes to achieve good finite block length performance. Protograph LDPC codes offer the best of both worlds by lifting a small protograph with desirable properties. This work aims to provide an open-source library for protograph LDPC codes that is easy to use and extend. We hope this can be useful for researchers and practitioners in traditional and modern areas like DNA-based data storage. The library includes functionality for:
 
-- My NixOS and Nix-Darwin configuration files, as well as the flake.nix and the
-flake.lock files used to build them on different machines.
-    - NixOS for machines with generic hardware.
-        - i.e. `cayley`, `cauchy`, etc...
-    - Nix-Darwin for Apple hardware and have a reproducible system on OSX.
-        - i.e. `noether`.
-        - Reproducibility here is limited given how locked down OSX is.
-- Various home-manager `.nix` files for programs which include:
-    - Vim.
-    - Neovim.
-    - Zsh and Bash.
-    - Kitty (a terminal emulator).
-    - Hyprland.
-    - Waybar.
-    - Zathura.
-    - Rofi.
-    - Yabai and `skhd` (a window manager and hotkey daemon for OSX, respectively).
-    - Many other programs (look through `.config/home-manager/`).
+- Generation of regular and protograph LDPC matrices using PEG and other construction methods.
+- Encoding and decoding of these codes, including support for puncturing.
+- Utility and test scripts to allow analysis of these codes.
 
-- A folder of pictures (these are for storing wallpapers) and should not really
-be considered as part of the configs.
-- A .gitignore and this README.
-    - These are just boilerplate and should also not be considered a part of the
-    configs.
+This library heavily uses two prior libraries and we would like to thank the corresponding developers:
+- [LDPC-codes](https://github.com/shubhamchandak94/LDPC-codes): Library for construction, encoding, decoding of regular and irregular LDPC codes, also containing several utility scripts. This is a fork of Radford Neal's library available [here](https://github.com/radfordneal/LDPC-codes).
+- [peg](peg/): Implementation of the Progressive Edge Growth (PEG) algorithm used for parity check matrix construction. This was obtained from http://www.inference.org.uk/mackay/PEG_ECC.html.
 
-# What's The Goal?
-
-The goal here is to create a repository which describes a given system on a
-given machine. This system should be:
-- Reproducible
-    - It can be built on many different machines, and give the same programs and
-    configurations according to a given specification.
-- Consistent
-    - Each build should have exactly the same versions of programs from a given
-    specification.
-    - This is actually a part of reproducibility, but I like to seperate it out.
-- Stateless
-    - The system described should only depend on the configuration files
-    specified, and not on any *outside* state.
-        - Think `/etc/`, or `~/.local/` or `~/.config/some-program-directory`.
-        - It should only depend on the following:
-            - `flake.nix`
-            - `flake.lock`
-            - `.config/home-manager/`
-            - `.config/nix/`
-    - The `Pictures` directory should not be counted torwards the state of the
-    system, as is it is completely optional to include.
-        - Technically, the files `swaylock.nix` and `hyprland.nix` introduce
-        state through `Pictures` and henced depends on `Pictures`, however I
-        don't think it is too big of an issue, and I should be able to remedy
-        this pretty quickly when I have time.
-        - There are other configuration files that may introduce state, and I
-        plan on fixing them as I stumble upon them.
-
-# A note for People Who Wish to Steal from This Repository.
-
-The dotfiles here are primarly geared around `nix` and using `nix` to declare
-actual configuration files. As such, the actual configuration files for programs
-here don't really exist (at least, they shouldn't), and you will find just their
-`nix` declerations. If you don't have a `nix` based system (i.e. NixOS,
-Nix-Darwnin, or just having the `nix` package manager installed), you could do
-one of the following:
-1. You could comb through the individual `.nix` files, and reverse enginner and
-retrofit the configs to your own configuration files (I do not recomend this).
-2. You could contact me and ask for the individual config files.
-    - i.e. you ask for my `.vimrc`, and I send you the `.vimrc` that was generated
-    in my nix store (this is perhaps the most sane option).
-3. You could, install the `nix` package manager, Nix-Darwin, or you could just
-switch over completely to NixOS.
-    - If you're new to `nix`, you will have to do some reading, especially on
-    `nix` flakes.
-    - Switching to NixOS on Apple hardware is ill-advised; I recommend
-    Nix-Darwin for this.
-    - I highly recomend option 3 (I cannot guarantee your sanity).
-
-# Finally.
-Feel free to steal my dots, the repository is public for a reason.
-
-# P.S.
-If for some reason these configs violate the goals of achieving Reproducability,
-Consistency, and Statelessness, please let me know. You can do this by opening
-an issue on github.
+See the [documentation](https://shubhamchandak94.github.io/ProtographLDPC/) for details on the library including installation instructions, usage, examples, methods, simulation results, references and citation information.
