@@ -1,7 +1,11 @@
 { pkgs, ... }:
 {
+
+#`services.xserver.layout
+#`services.xserver.xkb.layout'.
+
   enable = true;
-  layout = "us";
+  xkb.layout = "us";
   videoDrivers = ["nvidia"];
   displayManager = {
     sddm = {
