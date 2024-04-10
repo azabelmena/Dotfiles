@@ -6,7 +6,7 @@ in
 
     package = pkgs.zsh;
     enable = true;
-    enableAutosuggestions = true;
+    autosuggestion.enable = true;
     enableCompletion = true;
     autocd = false;
     dotDir = ".config";
