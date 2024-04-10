@@ -9,7 +9,7 @@
 
   luaLoader.enable = true;
 
-  options = ( import ./options.nix { inherit config; } );
+  opts = ( import ./options.nix { inherit config; } );
 
   globals = ( import ./globals.nix { inherit config; } );
 

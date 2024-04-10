@@ -2,22 +2,24 @@
   gruvbox = {
     enable = true;
 
-    bold = true;
-    colorColumn = "gray";
-    contrastDark = "soft";
-    highlightSearchCursor = "yellow";
+    settings = {
+      bold = true;
+      colorColumn = "gray";
+      contrastDark = "soft";
+      highlightSearchCursor = "yellow";
 
-    improvedStrings = true;
-    improvedWarnings = true;
+      improvedStrings = true;
+      improvedWarnings = true;
 
-    italics = true;
-    italicizeComments = true;
-    italicizeStrings = true;
+      italics = true;
+      italicizeComments = true;
+      italicizeStrings = true;
 
-    undercurl = true;
+      undercurl = true;
 
-    transparentBg = true;
-    trueColor = true;
+      transparentBg = true;
+      trueColor = true;
 
+    };
   };
 }

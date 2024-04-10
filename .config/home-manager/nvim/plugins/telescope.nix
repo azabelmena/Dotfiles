@@ -4,7 +4,7 @@
 
   highlightTheme = "gruvbox";
 
-  extraOptions = {
+  settings = {
     pickers ={
       find_files = {
         hidden = true;
@@ -18,30 +18,42 @@
   };
 
   keymaps = {
-   "<leader>ff" = {
-     action = "find_files";
-     desc = "Fuzzy find recent files";
-   };
-   "<leader>fr" = {
-     action = "oldfiles";
-     desc = "Fuzzy find recent files";
-   };
-   "<leader>fs" = {
-     action = "live_grep";
-     desc = "Find string";
-   };
-   "<leader>fc" = {
-     action = "grep_string";
-     desc = "Find string under cursor";
-   };
-   "<leader>fh" = {
-     action = "help_tags";
-     desc = "Find help tags";
-   };
-   "<leader>fb" = {
-     action = "buffers";
-     desc = "Find buffers";
-   };
+    "<leader>ff" = {
+      action = "find_files";
+      options = {
+        desc = "Files";
+      };
+    };
+    "<leader>fr" = {
+      action = "oldfiles";
+      options = {
+        desc = "Recent Files";
+      };
+    };
+    "<leader>fs" = {
+      action = "live_grep";
+      options = {
+        desc = "Live Grep";
+      };
+    };
+    "<leader>fc" = {
+      action = "grep_string";
+      options = {
+        desc = "Strings Under Cursor";
+      };
+    };
+    "<leader>fh" = {
+      action = "help_tags";
+      options = {
+        desc = "Help Tags";
+      };
+    };
+    "<leader>fb" = {
+      action = "buffers";
+      options = {
+        desc = "Buffers";
+      };
+    };
   };
 
 }
