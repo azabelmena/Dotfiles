@@ -11,10 +11,10 @@
       fsType = "ext4";
     };
 
-  "/mnt/storage" =
-    { device = "/dev/disk/by-uuid/a2b80594-d3f1-4291-af41-521667e8f484";
-      fsType = "ext4";
-    };
+  #"/mnt/storage" =
+    #{ device = "/dev/disk/by-uuid/a2b80594-d3f1-4291-af41-521667e8f484";
+      #fsType = "ext4";
+    #};
 
   "/mnt/games" =
     {
