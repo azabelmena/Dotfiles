@@ -10,12 +10,12 @@ in
 
     highlight = mkLiteral "bold italic";
 
-    background-color = mkLiteral "#${config.colorScheme.colors.base00}";
+    background-color = mkLiteral "#${config.colorScheme.palette.base00}";
     foreground-color = mkLiteral "#${config.colorscheme.colors.base06}";
-    border-color = mkLiteral "#${config.colorScheme.colors.base05}";
-    seperator-color = mkLiteral "#${config.colorScheme.colors.base05}";
-    scrollbar = mkLiteral "#${config.colorScheme.colors.base02}";
-    selected-color = mkLiteral "#${config.colorScheme.colors.base09}";
+    border-color = mkLiteral "#${config.colorScheme.palette.base05}";
+    seperator-color = mkLiteral "#${config.colorScheme.palette.base05}";
+    scrollbar = mkLiteral "#${config.colorScheme.palette.base02}";
+    selected-color = mkLiteral "#${config.colorScheme.palette.base09}";
   };
   "window" = {
     background-color = mkLiteral "@background-color";
@@ -69,7 +69,7 @@ in
   "scrollbar" = {
     width = mkLiteral "4px";
     border = 0;
-    handle-color = mkLiteral "#${config.colorScheme.colors.base06}";
+    handle-color = mkLiteral "#${config.colorScheme.palette.base06}";
     handle-width = mkLiteral "8px";
     padding = 0;
   };

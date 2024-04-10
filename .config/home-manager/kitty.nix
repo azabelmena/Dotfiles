@@ -29,22 +29,22 @@
       macos_hide_from_tasks = "yes";
       macos_quit_when_last_window_closed = "yes";
 
-      cursor = "#${config.colorScheme.colors.base06}";
-      cursor_text_color = "#${config.colorScheme.colors.base00}";
-      foreground = "#${config.colorScheme.colors.base06}";
-      background = "#${config.colorScheme.colors.base00}";
-      selection_background = "#${config.colorScheme.colors.base09}";
-      selection_foreground = "#${config.colorScheme.colors.base03}";
+      cursor = "#${config.colorScheme.palette.base06}";
+      cursor_text_color = "#${config.colorScheme.palette.base00}";
+      foreground = "#${config.colorScheme.palette.base06}";
+      background = "#${config.colorScheme.palette.base00}";
+      selection_background = "#${config.colorScheme.palette.base09}";
+      selection_foreground = "#${config.colorScheme.palette.base03}";
 
-      color0 = "#${config.colorScheme.colors.base00}";
-      color1 = "#${config.colorScheme.colors.base08}";
-      color2 = "#${config.colorScheme.colors.base0B}";
-      color3 = "#${config.colorScheme.colors.base0A}";
-      color4 = "#${config.colorScheme.colors.base0D}";
-      color5 = "#${config.colorScheme.colors.base0E}";
-      color6 = "#${config.colorScheme.colors.base0C}";
-      color7 = "#${config.colorScheme.colors.base06}";
-      color8 = "#${config.colorScheme.colors.base04}";
+      color0 = "#${config.colorScheme.palette.base00}";
+      color1 = "#${config.colorScheme.palette.base08}";
+      color2 = "#${config.colorScheme.palette.base0B}";
+      color3 = "#${config.colorScheme.palette.base0A}";
+      color4 = "#${config.colorScheme.palette.base0D}";
+      color5 = "#${config.colorScheme.palette.base0E}";
+      color6 = "#${config.colorScheme.palette.base0C}";
+      color7 = "#${config.colorScheme.palette.base06}";
+      color8 = "#${config.colorScheme.palette.base04}";
 
       macos_colorspace = "srgb";
   };
