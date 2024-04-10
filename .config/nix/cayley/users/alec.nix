@@ -4,13 +4,12 @@
   isNormalUser = true;
   extraGroups = [
     "libvirtd"
-      "networkmanager"
-      "wheel"
-      "ssh-users"
+    "networkmanager"
+    "wheel"
+    "ssh-users"
   ];
   shell = pkgs.zsh;
   packages = with pkgs; [
-    authy
     bat
     blueberry
     discord
@@ -37,7 +36,7 @@
     protonup-ng
     protonvpn-cli
     protonvpn-gui_legacy
-    qutebrowser
+    qutebrowser-qt5
     ripgrep
     rofi-wayland
     starship
