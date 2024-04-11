@@ -42,7 +42,7 @@
       nixvim = ( import ./nvim/nvim.nix { inherit pkgs config; } );
       swaylock = ( import ./swaylock.nix { inherit pkgs config; });
       tmux = (import ./tmux.nix { inherit pkgs; });
-      waybar = (import ./waybar/waybar.nix { inherit pkgs; });
+      waybar = (import ./waybar/waybar.nix { inherit pkgs config; });
       zathura = (import ./zathura.nix { inherit pkgs config; });
       zsh = (import ./zsh.nix { inherit pkgs; });
   };

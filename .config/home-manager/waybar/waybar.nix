@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
 
   package = pkgs.waybar;
@@ -56,12 +56,12 @@
               weeks-pos     = "right";
               on-scroll     = 1;
               on-click-right= "mode";
-              format= {
-              months=     "<span color='#ffead3'><b>{}</b></span>";
-              days=       "<span color='#ecc6d9'><b>{}</b></span>";
-              weeks=      "<span color='#99ffdd'><b>W{}</b></span>";
-              weekdays=   "<span color='#ffcc66'><b>{}</b></span>";
-              today=      "<span color='#ff6699'><b><u>{}</u></b></span>";
+              format = {
+              months = "<span color='#${config.colorScheme.palette.base06}'><b>{}</b></span>";
+              days = "<span color='#${config.colorScheme.palette.base0E}'><b>{}</b></span>";
+              weeks = "<span color='#${config.colorScheme.palette.base0C}'><b>W{}</b></span>";
+              weekdays = "<span color='#${config.colorScheme.palette.base0A}'><b>{}</b></span>";
+              today = "<span color='#${config.colorScheme.palette.base08}'><b><u>{}</u></b></span>";
               };
           };
       };
