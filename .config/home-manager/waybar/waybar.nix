@@ -47,7 +47,8 @@
 
       "clock" = {
           interval = 1;
-          format = "{:  %H:%M:%S}";
+          format = "   {:%H:%M:%S}";
+          tooltip = true;
           tooltip-format= "<tt><small>{calendar}</small></tt>";
           calendar= {
               mode          = "month";
