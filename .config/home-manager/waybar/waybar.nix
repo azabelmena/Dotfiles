@@ -17,7 +17,7 @@
         format = "{icon} {volume}%";
         format-muted = "󰝟 ";
         format-icons = {
-          default = ["" " " " "];
+         default = ["" " " " "];
         };
       };
 
@@ -58,7 +58,7 @@
               on-click-right= "mode";
               format = {
               months = "<span color='#${config.colorScheme.palette.base06}'><b>{}</b></span>";
-              days = "<span color='#${config.colorScheme.palette.base0E}'><b>{}</b></span>";
+              days = "<span color='#${config.colorScheme.palette.base02}'><b>{}</b></span>";
               weeks = "<span color='#${config.colorScheme.palette.base0C}'><b>W{}</b></span>";
               weekdays = "<span color='#${config.colorScheme.palette.base0A}'><b>{}</b></span>";
               today = "<span color='#${config.colorScheme.palette.base08}'><b><u>{}</u></b></span>";
@@ -114,4 +114,6 @@
       };
     };
   };
+
+  style = ( import ./style.nix { inherit config; });
 }
