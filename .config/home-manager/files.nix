@@ -8,11 +8,11 @@
     target = ".config/nvim/UltiSnips";
   };
 
-  "waybar" = {
-    source = config.lib.file.mkOutOfStoreSymlink
-    "${config.home.homeDirectory}/.config/home-manager/waybar/style.css";
-    target = ".config/waybar/style.css";
-  };
+  #"waybar" = {
+    #source = config.lib.file.mkOutOfStoreSymlink
+    #"${config.home.homeDirectory}/.config/home-manager/waybar/style.css";
+    #target = ".config/waybar/style.css";
+  #};
 
   "fastfetch" = {
     recursive = true;
