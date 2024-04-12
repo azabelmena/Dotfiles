@@ -17,7 +17,7 @@
         format = "{icon} {volume}%";
         format-muted = "󰝟 ";
         format-icons = {
-         default = ["" " " " "];
+          default = ["" " " " "];
         };
       };
 
@@ -46,47 +46,47 @@
       };
 
       "clock" = {
-          interval = 1;
-          format = "   {:%H:%M:%S}";
-          tooltip = true;
-          tooltip-format= "<tt><small>{calendar}</small></tt>";
-          calendar= {
-              mode          = "month";
-              mode-mon-col  = 3;
-              weeks-pos     = "right";
-              on-scroll     = 1;
-              on-click-right= "mode";
-              format = {
-              months = "<span color='#${config.colorScheme.palette.base06}'><b>{}</b></span>";
-              days = "<span color='#${config.colorScheme.palette.base02}'><b>{}</b></span>";
-              weeks = "<span color='#${config.colorScheme.palette.base0C}'><b>W{}</b></span>";
-              weekdays = "<span color='#${config.colorScheme.palette.base0A}'><b>{}</b></span>";
-              today = "<span color='#${config.colorScheme.palette.base08}'><b><u>{}</u></b></span>";
-              };
+        interval = 1;
+        format = "   {:%H:%M:%S}   ";
+        tooltip = true;
+        tooltip-format= "<tt><small>{calendar}</small></tt>";
+        calendar= {
+          mode          = "month";
+          mode-mon-col  = 3;
+          weeks-pos     = "right";
+          on-scroll     = 1;
+          on-click-right= "mode";
+          format = {
+            months = "<span color='#${config.colorScheme.palette.base06}'><b>{}</b></span>";
+            days = "<span color='#${config.colorScheme.palette.base0E}'><b>{}</b></span>";
+            weeks = "<span color='#${config.colorScheme.palette.base0C}'><b>W{}</b></span>";
+            weekdays = "<span color='#${config.colorScheme.palette.base0A}'><b>{}</b></span>";
+            today = "<span color='#${config.colorScheme.palette.base08}'><b><u>{}</u></b></span>";
           };
+        };
       };
 
       "network"= {
-          "format"= "{ifname}";
-          "format-wifi"= "  {essid} ({signalStrength}%)";
-          "format-ethernet"= "󰈁 {ipaddr}/{cidr}";
-          "format-disconnected"= "";
-          "tooltip-format"= "󰈁 {ifname} via {gwaddr}";
-          "tooltip-format-wifi"= "  {essid} ({signalStrength}%)";
-          "tooltip-format-ethernet"= "{ifname} ";
-          "tooltip-format-disconnected"= "";
-          "max-length"= 50;
+        "format"= "{ifname}";
+        "format-wifi"= "  {essid} ({signalStrength}%)";
+        "format-ethernet"= "󰈁 {ipaddr}/{cidr}";
+        "format-disconnected"= "";
+        "tooltip-format"= "󰈁 {ifname} via {gwaddr}";
+        "tooltip-format-wifi"= "  {essid} ({signalStrength}%)";
+        "tooltip-format-ethernet"= "{ifname} ";
+        "tooltip-format-disconnected"= "";
+        "max-length"= 50;
       };
 
       "bluetooth"= {
-          format-disabled= " 󰂲 ";
-          format-on= "  ";
+        format-disabled= " 󰂲 ";
+        format-on= "  ";
       };
 
       "disk"= {
-          "interval"= 60;
-          "format"= "󰋊 {percentage_free}% ";
-          "path"= "/";
+        "interval"= 60;
+        "format"= "󰋊 {percentage_free}% ";
+        "path"= "/";
       };
 
       "cpu" = {
@@ -102,11 +102,11 @@
       };
 
       "temperature" = {
-          hwmon-path = "/sys/class/hwmon/hwmon2/temp1_input";
-          critical-threshold = 90;
-          interval = 1;
-          format = "󰔏 {temperatureC}°C ";
-          tooltip = false;
+        hwmon-path = "/sys/class/hwmon/hwmon2/temp1_input";
+        critical-threshold = 90;
+        interval = 1;
+        format = "󰔏 {temperatureC}°C ";
+        tooltip = false;
       };
 
       "custom/logo" = {
