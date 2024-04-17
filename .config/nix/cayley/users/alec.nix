@@ -34,9 +34,7 @@
     pavucontrol
     protontricks
     protonup-ng
-    protonvpn-cli
-    protonvpn-gui_legacy
-    qutebrowser-qt5
+    qutebrowser
     ripgrep
     rofi-wayland
     starship
@@ -45,7 +43,6 @@
     tailscale
     texlive.combined.scheme-full
     tmux
-    tutanota-desktop
     vifm
     waybar
     wlsunset

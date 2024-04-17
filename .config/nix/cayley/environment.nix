@@ -22,6 +22,8 @@
       iptables-legacy
       libsForQt5.qt5.qtgraphicaleffects
       libsForQt5.qt5.qtquickcontrols2
+      libsForQt5.qt5.qtwayland
+      libsForQt5.qt5.qtwebengine
       libvirt
       lshw
       man-pages
