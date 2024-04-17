@@ -15,11 +15,9 @@
     discord
     eza
     fastfetch
-    fd
     gamemode
     grimblast
     home-manager
-    hugo
     hyprland
     hyprpaper
     inkscape-with-extensions
@@ -27,7 +25,6 @@
     libnotify
     localsend
     mako
-    manix
     mpv
     obs-studio
     papirus-icon-theme
@@ -48,8 +45,6 @@
     wlsunset
     xdg-desktop-portal-gtk
     zathura
-    zoom-us
     zsh
   ];
-
 }
