@@ -66,6 +66,7 @@
   submittable= "https://manager.submittable.com/login";
   system76 = "https://system76.com/";
   system76-docs = "https://tech-docs.system76.com/README.html";
+  tailscale = "https://login.tailscale.com/admin/machines";
   tendawifi = "http://192.168.0.1/";
   tor = "https://www.torproject.org/";
   twitter = "https://twitter.com/home";
