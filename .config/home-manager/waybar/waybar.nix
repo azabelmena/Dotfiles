@@ -68,7 +68,7 @@
 
       "network"= {
         "format"= "{ifname}";
-        "format-wifi"= "  {essid} ({signalStrength}%)";
+        "format-wifi"= "   {essid} ({signalStrength}%)";
         "format-ethernet"= "󰈁 {ipaddr}/{cidr}";
         "format-disconnected"= "";
         "tooltip-format"= "󰈁 {ifname} via {gwaddr}";
