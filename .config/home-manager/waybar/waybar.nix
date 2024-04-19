@@ -14,7 +14,7 @@
       "pulseaudio" = {
         tooltip = false;
         scroll-step = 5;
-        format = "{icon} {volume}%";
+        format = "{icon}  {volume}%";
         format-muted = "󰝟 ";
         format-icons = {
           default = ["" " " " "];
