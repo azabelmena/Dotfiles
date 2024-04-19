@@ -1,6 +1,6 @@
 <p align="center">
   <b>azabelmena/Dotfiles</b><br />
-  <span align="center">Declarative, reproducible, and stateless system
+  <span align="center">Declarative, Reproducible, and Stateless system
   configurations for NixOS and Nix-Darwin.</span>
 </p>
 
@@ -42,8 +42,8 @@ of the following:
     - `agnesi` ([Maria Gaetana Agnesi](https://www.britannica.com/biography/Maria-Gaetana-Agnesi))
     - `weyl` ([Hermann Weyl](https://plato.stanford.edu/entries/weyl/))
 - The names here are not capitalized (even though they should be) to be in
-keeping with [DNS hostname conventions](https://datatracker.ietf.org/doc/html/rfc1178)
-(RFC1178).
+keeping with DNS hostname conventions
+[(RFC1178)](https://datatracker.ietf.org/doc/html/rfc1178).
 
 # What's Here?
 
@@ -78,13 +78,16 @@ be considered as part of the configs.
 
 The goal here is to create a repository which describes a given system on a
 given machine. This system should be:
+- Declaritive
+    - Describe exactly what you want on the system, rather than telling the
+      system what to do.
+    - Files, settings and various other things should be declared.
+    - This is fundamentally how the `nix` language works.
 - Reproducible
     - It can be built on many different machines, and give the same programs and
     configurations according to a given specification.
-- Consistent
     - Each build should have exactly the same versions of programs from a given
     specification.
-    - This is actually a part of reproducibility, but I like to seperate it out.
 - Stateless
     - The system described should only depend on the configuration files
     specified, and not on any *outside* state.
@@ -128,6 +131,6 @@ or you could just switch over completely to NixOS.
 Feel free to steal my dots, the repository is public for a reason.
 
 # P.S.
-If for some reason these configs violate the goals of achieving Reproducability,
-Consistency, and Statelessness, please let me know. You can do this by opening
-an issue on github.
+If for some reason these configs violate the goals of achieving Declarability,
+Reproducability, and Statelessness, please let me know. You can do this by
+opening an issue on github.
