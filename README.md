@@ -30,6 +30,9 @@ here are:
       updates.
 
 By the way, all my machines are named after mathematicians:
+- `cayley` is named specifically after my favorite theorem.
+    - Cayley's theorem: Every group is isomorphic to a subgroup of the symmetric
+      group.
 - The, name `noether` can refer to either Emmy Noether, or Max Noether
 (Emmy's father); although I named my M2 MacBook specifically after Emmy.
 - If you copy my (nix) configs, you do not need to adhere to the
