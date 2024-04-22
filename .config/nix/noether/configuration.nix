@@ -16,24 +16,15 @@
   environment.systemPackages = with pkgs; [
     bat
     coreutils
-    discord
     eza
     fastfetch
     gcc
     git
-    hugo
-    inkscape
-    inkscape
+    inkscape-with-extensions
     jq
     kitty
-    libreoffice-bin
-    llvmPackages_15.openmp
-    manix
     mpv
-    openmpi
-    python3
     qbittorrent
-    sagetex
     skhd
     spacebar
     starship
