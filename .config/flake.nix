@@ -14,31 +14,20 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    home-manager-stable = {
-      url = "github:nix-community/home-manager/release-23.11";
-      inputs.nixpkgs.follows = "nixpkgs-stable";
-    };
-
     darwin = {
       url = "github:LnL7/nix-darwin";
-      inputs.nixpkgs.follows = "nixpkgs-stable";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     nix-colors.url = "github:misterio77/nix-colors";
 
     nixvim = {
-      url = "github:nix-community/nixvim/main";
+      url = "github:nix-community/nixvim/";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    nixvim-stable = {
-      url = "github:nix-community/nixvim/nixos-23.11";
-      inputs.nixpkgs.follows = "nixpkgs-stable";
     };
   };
 
-  outputs = {self, nixos, nixpkgs,
-    nixos-stable, nixpkgs-stable, darwin, home-manager, home-manager-stable, ...}@inputs:
+  outputs = {self, nixos, nixos-stable, nixpkgs, nixpkgs-stable, darwin, home-manager, ...}@inputs:
   let
     system-x86_64-linux = "x86_64-linux";
     system-aarch64-darwin = "aarch64-darwin";
@@ -90,7 +79,7 @@
         modules = [
           ./nix/noether/configuration.nix
 
-          home-manager-stable.darwinModules.home-manager{
+          home-manager.darwinModules.home-manager{
             home-manager.extraSpecialArgs = { inherit inputs system-aarch64-darwin; };
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
