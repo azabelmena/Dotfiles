@@ -11,7 +11,7 @@ in
     highlight = mkLiteral "bold italic";
 
     background-color = mkLiteral "#${config.colorScheme.palette.base00}";
-    foreground-color = mkLiteral "#${config.colorscheme.colors.base06}";
+    foreground-color = mkLiteral "#${config.colorScheme.palette.base06}";
     border-color = mkLiteral "#${config.colorScheme.palette.base05}";
     seperator-color = mkLiteral "#${config.colorScheme.palette.base05}";
     scrollbar = mkLiteral "#${config.colorScheme.palette.base02}";

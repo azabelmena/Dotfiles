@@ -15,9 +15,9 @@
 
     item = {
       selected.fg = "#${config.colorScheme.palette.base07}";
-      selected.bg = "#${config.colorscheme.colors.base02}";
-      selected.border.top = "#${config.colorscheme.colors.base02}";
-      selected.border.bottom = "#${config.colorscheme.colors.base02}";
+      selected.bg = "#${config.colorScheme.palette.base02}";
+      selected.border.top = "#${config.colorScheme.palette.base02}";
+      selected.border.bottom = "#${config.colorScheme.palette.base02}";
       selected.match.fg = "#${config.colorScheme.palette.base09}";
     };
 
@@ -85,7 +85,7 @@
 
   statusbar = {
     normal = {
-      fg = "#${config.colorscheme.colors.base05}";
+      fg = "#${config.colorScheme.palette.base05}";
       bg = "#${config.colorScheme.palette.base00}";
     };
 
