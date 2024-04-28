@@ -137,3 +137,8 @@ Feel free to steal my dots, the repository is public for a reason.
 If for some reason these configs violate the goals of achieving Declarability,
 Reproducability, and Statelessness, please let me know. You can do this by
 opening an issue on github.
+
+# P.P.S.
+This repository is now archived and unmaintained. To see the newer
+configurations files, please see the `.config` repository. Feel free to steal
+from here, if for some reasone the files in `.config` don't pique your interest.
