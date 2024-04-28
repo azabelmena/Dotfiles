@@ -31,7 +31,7 @@
   huhcat = "https://www.youtube.com/watch?v=igO9SmiY4hs";
   intercept = "https://theintercept.com/";
   journalmathny = "http://nyjm.albany.edu/nyjm.html";
-  libgen = "http://libgen.rs/";
+  libgen = "http://libgen.is/";
   lmfdb = "https://www.lmfdb.org/";
   mathstack = "https://math.stackexchange.com/";
   mibanco = "https://www.bancopopular.com/cibp-web/actions/login";
