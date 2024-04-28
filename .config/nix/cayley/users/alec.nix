@@ -32,6 +32,7 @@
     protontricks
     protonup-ng
     qutebrowser
+    qbittorrent
     ripgrep
     rofi-wayland
     starship
